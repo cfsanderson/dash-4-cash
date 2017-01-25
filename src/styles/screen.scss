@@ -12,3 +12,27 @@ body {
   margin: 0;
   font: $font-base-text-size / 1 $font-base-font-family;
 }
+
+// nav {
+//   overflow: hidden;
+//   position: fixed;
+//   top: 0;
+//   left: 0;
+//   bottom: 0;
+//   background-color: $color-green-dark;
+//   transition: transform 200ms ease;
+//   width: 300px;
+//   transform: translateX(0);
+//
+//   ul {
+//     list-style: none;
+//     display: flex;
+//     flex-direction: column;
+//     padding-left: 0;
+//     margin-top: 0;
+//   }
+//
+//   &.hidden {
+//     transform: translateX(-200px);
+//   }
+// }
