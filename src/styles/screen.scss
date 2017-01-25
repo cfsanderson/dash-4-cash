@@ -1,7 +1,7 @@
 @import 'utility';
 
-$base-text-size: 16px;
-$base-font-family: sans-serif;
+$font-base-text-size: 16px;
+$font-base-font-family: sans-serif;
 
 html {
   text-size-adjust: 100%;
@@ -10,5 +10,5 @@ html {
 body {
   @include font-smoothing(on);
   margin: 0;
-  font: $base-text-size / 1 $base-font-family;
+  font: $font-base-text-size / 1 $font-base-font-family;
 }
