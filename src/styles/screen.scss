@@ -7,7 +7,7 @@ html {
 
 body {
   margin: 0;
-  font: $font-base-text-size / 1 $font-OpenSans;
+  font: $font-base-text-size / 1 $font-Roboto;
   background-color: $color-navy;
   color: hsl(0, 0%, 100%);
 }
@@ -35,28 +35,36 @@ header {
   height: 100vh;
   display: flex;
   flex-direction: column;
-  // background-image: url(../images/woman-running.jpg);
-  // background-repeat: no-repeat;
-  // background-size: cover;
-  // background-position: center;
+  background-color: $color-mint;
+  background-image: url(../images/woman-running.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 
   nav.home-nav {
     ul {
       margin: 0;
       display: flex;
-      justify-content: space-between;
+      justify-content: space-around;
       list-style-type: none;
       padding-left: 0;
-      background-color: hsla(0, 0%, 69%, 0.5);
+      background-color: hsla(0, 0%, 69%, 0.75);
       margin-top: 0;
       padding: 10px;
+      padding-left: 20vw;
+      text-align: right;
+
+      li {
+        font-family: $font-Raleway;
+        text-transform: uppercase;
+      }
     }
   }
 
   h1 {
-    font-family: $font-NunitoSans;
+    font-family: $font-Raleway;
     font-size: 3em;
-    font-weight: 900;
+    font-weight: 300;
     text-align: center;
     text-transform: uppercase;
   }
@@ -74,10 +82,7 @@ header {
     margin-right: auto;
     width: 100px;
     text-align: center;
-    // display: flex;
-    // flex-direction: column;
-    // align-items: center;
-    // padding-bottom: -20px;
+    filter: drop-shadow(2px 2px 2px $color-navy);
   }
 }
 
@@ -86,26 +91,57 @@ a.chevron {
   font-size: 1.5em;
 }
 
-// nav {
-//   overflow: hidden;
-//   position: fixed;
-//   top: 0;
-//   left: 0;
-//   bottom: 0;
-//   background-color: $color-green-dark;
-//   transition: transform 200ms ease;
-//   width: 300px;
-//   transform: translateX(0);
-//
-//   ul {
-//     list-style: none;
-//     display: flex;
-//     flex-direction: column;
-//     padding-left: 0;
-//     margin-top: 0;
-//   }
-//
-//   &.hidden {
-//     transform: translateX(-200px);
-//   }
-// }
+h2 {
+  text-transform: uppercase;
+  font-family: $font-Raleway;
+  // font-weight:
+  font-size: 2.5em;
+}
+
+h3 {
+  text-transform: uppercase;
+  font-family: $font-Raleway;
+  font-weight: bold;
+  font-size: 3em;
+}
+
+.section {
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+
+  &.big {
+    padding: 40px 10px 40px 10px;
+  }
+
+  &.whatisD4C {
+    background-image: url(../images/man-on-trail.jpg);
+    color: $color-slime;
+  }
+
+  &.small {
+    padding-top: 25px;
+    padding-bottom: 25px;
+  }
+
+  &.header1 {
+    background-image: url(../images/man-on-trail.jpg);
+    color: $color-slime;
+  }
+}
+
+section {
+  padding-left: 20vw;
+  padding-right: 20vw;
+
+  // h2,
+  // h3, {
+  // }
+
+  p {
+    font-weight: lighter;
+    line-height: 1.5em;
+    // letter-spacing: 0.05em;
+  }
+}

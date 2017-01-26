@@ -1,13 +1,3 @@
-@mixin font-smoothing($value: on) {
-  @if $value == on {
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-font-smoothing: antialiased;
-  } @else {
-    -moz-osx-font-smoothing: auto;
-    -webkit-font-smoothing: subpixel-antialiased;
-  }
-}
-
 $color-vanilla: hsla(40, 85%, 76%, 1);
 $color-mint: hsla(169, 73%, 38%, 1);
 $color-slime: hsla(65, 64%, 65%, 1);
@@ -16,5 +6,5 @@ $color-steel: hsla(200, 42%, 17%, 1);
 $color-navy: hsla(196, 44%, 12%, 1);
 
 $font-base-text-size: 16px;
-$font-NunitoSans: 'Nunito Sans', sans-serif;
-$font-OpenSans: 'Open Sans', sans-serif;
+$font-Raleway: 'Raleway', sans-serif;
+$font-Roboto: 'Roboto', sans-serif;
