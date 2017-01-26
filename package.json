@@ -6,6 +6,7 @@
     "build": "rm -rf public && NODE_ENV=production webpack --optimize-minimize --progress --profile --colors"
   },
   "dependencies": {
+    "font-awesome-animation": "^0.0.10",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
     "react-router": "^3.0.2",

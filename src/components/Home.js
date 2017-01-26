@@ -1,14 +1,18 @@
 import React, { Component } from 'react'
 
+import posterURL from '../images/woman-running.jpg'
+import videoURL from '../images/Cohen-skimboard.mp4'
+
 class Home extends Component {
 
   render () {
     return (
       <div>
-        {/* <h1>I am in: {this.props.location.pathname}</h1> */}
         <header>
-          <nav>
-            <h2>Navbar</h2>
+          <video autoPlay loop muted poster={posterURL} id='video-bg'>
+            <source src={videoURL} type='video/mp4' />
+          </video>
+          <nav className='home-nav'>
             <ul>
               <li>What is D4C?</li>
               <li>Donate</li>
@@ -19,13 +23,24 @@ class Home extends Component {
           </nav>
           <h1>Dash 4 Cash</h1>
           <button>log in with Strava</button>
-          <button>Explore</button>
+          {/* <img src='../images/buttons/btn_strava_connectwith_orange.svg' /> */}
+          <div className='explore'>
+            <p>Explore</p>
+            <a href='https://simplynoise.com/' className='chevron'>
+              <i className='fa fa-chevron-down faa-float animated' aria-hidden='true' />
+            </a>
+          </div>
         </header>
         <section>
-          <h2>What is Dash 4 Cash?</h2>
-          <p>What is your motivation to get in shape? Health? Beauty? Personal achievement? Those are great reasons but all of them have the same thing in common, YOU!</p>
-          <p>What if you could achieve your fitness goals AND help others in need? What if you could also help your friends to meet their goals all while raising funds and awareness for causes that you care about? Now you can.</p>
-          <p>Dash for Cash is a social fitness platform that helps people maintain a healthy lifestyle by connecting their fitness goals to a greater purpose. So how does it work?”</p>
+          <div>
+            <img src='../images/Man-Running-Beach1.jpg' />
+          </div>
+          <div>
+            <h2>What is Dash 4 Cash?</h2>
+            <p>What is your motivation to get in shape? Health? Beauty? Personal achievement? Those are great reasons but all of them have the same thing in common, YOU!</p>
+            <p>What if you could achieve your fitness goals AND help others in need? What if you could also help your friends to meet their goals all while raising funds and awareness for causes that you care about? Now you can.</p>
+            <p>Dash for Cash is a social fitness platform that helps people maintain a healthy lifestyle by connecting their fitness goals to a greater purpose. So how does it work?”</p>
+          </div>
         </section>
         <section>
           <h3>Donate</h3>
