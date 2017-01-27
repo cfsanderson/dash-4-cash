@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router'
+// import { Link } from 'react-router'
+import ScrollAnim from 'rc-scroll-anim'
 
 export default class Navbar extends Component {
 
@@ -10,7 +11,6 @@ export default class Navbar extends Component {
     super()
     this.state = {
       visible: false
-      // categories: []
     }
   }
 
@@ -20,13 +20,7 @@ export default class Navbar extends Component {
   }
 
   render () {
-    // const categories = this.state.categories.map((category, i) => {
-    //   return <li>
-    //     <Link className='category-nav' to={'/c/' + category.name}>
-    //       {category.name.toUpperCase()}
-    //     </Link>
-    //   </li>
-    // })
+    const Link = ScrollAnim.Link
 
     return (
       <div className='navBar'>
@@ -37,11 +31,11 @@ export default class Navbar extends Component {
                 <i className='fa fa-window-close-o' aria-hidden='true' />
               </button>
             </li>
-            <li>What is D4C?</li>
-            <li>Donate</li>
-            <li>Dash</li>
-            <li>Track</li>
-            <li>Get Started</li>
+            <li><Link to='whatisD4C'>What is D4C?</Link></li>
+            <li><Link to='donate'>Donate</Link></li>
+            <li><Link to='dash'>Dash</Link></li>
+            <li><Link to='track'>Track</Link></li>
+            <li><Link to='ready'>Get Started</Link></li>
           </ul>
         </nav>
         <button className={`menu ${this.state.visible ? 'hidden' : ''}`} onClick={() => this.toggle()}>

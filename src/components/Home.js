@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Navbar from './Navbar'
+import ScrollAnim from 'rc-scroll-anim'
 
 import posterURL from '../images/woman-running.jpg'
 import videoURL from '../images/Cohen-skimboard.mp4'
@@ -7,6 +8,8 @@ import videoURL from '../images/Cohen-skimboard.mp4'
 class Home extends Component {
 
   render () {
+    const Link = ScrollAnim.Link
+
     return (
       <div>
         <header>
@@ -17,17 +20,17 @@ class Home extends Component {
           <Navbar />
 
           <h1>Dash 4 Cash</h1>
-          {/* <button>log in with Strava</button> */}
+          <a href='' target='_blank'><img src='../images/buttons/btn_strava_connectwith_orange.png' /></a>
           <div className='explore'>
             <p>Explore</p>
-            <a href='https://simplynoise.com/' target='_blank' className='chevron'>
+            <Link to='whatisD4C' className='chevron'>
               <i className='fa fa-chevron-down faa-float animated' aria-hidden='true' />
-            </a>
+            </Link>
           </div>
 
         </header>
 
-        <div className='section big whatisD4C'>
+        <div className='section big whatisD4C' id='whatisD4C'>
           <h2>What is <br />Dash 4 Cash?</h2>
         </div>
         <section>
@@ -38,7 +41,7 @@ class Home extends Component {
           </div>
         </section>
 
-        <div className='section small header1'>
+        <div className='section small header1' id='donate'>
           <h3>Donate</h3>
         </div>
         <section>
@@ -46,7 +49,7 @@ class Home extends Component {
           <p>At the beginning of each “Dash” you will be asked to make a donation. We make it easy to pay using your debit card or PayPal and we accept donations starting at only $2. Your giving amounts are private but the group’s total donation amount will be made available for all to see.</p>
         </section>
 
-        <div className='section small header2'>
+        <div className='section small header2' id='dash'>
           <h3>Dash</h3>
         </div>
         <section>
@@ -54,14 +57,14 @@ class Home extends Component {
           <p>* or whatever app you use to track your workouts as long as it syncs to Strava.</p>
         </section>
 
-        <div className='section small header3'>
+        <div className='section small header3' id='track'>
           <h3>Track</h3>
         </div>
         <section>
           <p>Log into D4C and see personal stats as well as your group’s progress. Dashes can last for a day, a week, or a month and are based on either total distance or total moving time* during that period. You will feel great as you watch your fitness grow along with your dollars. Every run now has a purpose and the potential to change not only your life but also the life of someone in need.</p>
         </section>
 
-        <div className='section big header4'>
+        <div className='section big header4' id='ready'>
           <h3>Ready to dash?</h3>
         </div>
         <section>
