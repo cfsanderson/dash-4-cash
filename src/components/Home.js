@@ -71,7 +71,7 @@ class Home extends Component {
         </div>
         <section>
           <p>We use your Strava data to keep track of your progress. Click the button below to get log into your Strava account and get connected.</p>
-          <a href='https://www.strava.com/login' target='_blank'><img src={stravaButton} /></a>
+          <Link to='/profile'><img src={stravaButton} /></Link>
           <p>Having trouble?<br />Click here for our <Link to='/help'>Help Section</Link></p>
         </section>
         <footer>
