@@ -1,25 +1,18 @@
 import React from 'react'
+import InnerNavbar from './InnerNavbar.js'
 
-export default function MyGroup () {
+export default function Group () {
   return (
     <div>
       <header>
-        {/* This is the same inner navbar */}
-        <nav>
-          <ul>
-            <li>My Profile</li>
-            <li>My Groups</li>
-            <li>Help</li>
-            <li>Log Out</li>
-          </ul>
-        </nav>
-        <h1>Group Title Here</h1>
+        <InnerNavbar />
+        <h1>This is my Group</h1>
       </header>
       <div>
         <table>
           <tbody>
             <tr>
-              <th>My Group</th>
+              <th>My Groups</th>
             </tr>
             <tr>
               <td>Group name A</td>

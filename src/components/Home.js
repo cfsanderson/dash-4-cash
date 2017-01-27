@@ -1,31 +1,33 @@
 import React, { Component } from 'react'
-import Navbar from './Navbar'
+import HomeNavbar from './HomeNavbar'
 import ScrollAnim from 'rc-scroll-anim'
+import { Link } from 'react-router'
 
 import posterURL from '../images/woman-running.jpg'
 import videoURL from '../images/Cohen-skimboard.mp4'
+import stravaButton from '../images/buttons/btn_strava_connectwith_orange.svg'
 
 class Home extends Component {
 
   render () {
-    const Link = ScrollAnim.Link
+    const ScrollAnimLink = ScrollAnim.Link
 
     return (
-      <div>
+      <div className='homePage'>
         <header>
           <video autoPlay loop muted poster={posterURL} id='video-bg'>
             <source src={videoURL} type='video/mp4' />
           </video>
 
-          <Navbar />
+          <HomeNavbar />
 
           <h1>Dash 4 Cash</h1>
-          <a href='' target='_blank'><img src='../images/buttons/btn_strava_connectwith_orange.png' /></a>
+          <a className='stravabutton' href='https://www.strava.com/login' target='_blank'><img src={stravaButton} /></a>
           <div className='explore'>
             <p>Explore</p>
-            <Link to='whatisD4C' className='chevron'>
+            <ScrollAnimLink to='whatisD4C' className='chevron'>
               <i className='fa fa-chevron-down faa-float animated' aria-hidden='true' />
-            </Link>
+            </ScrollAnimLink>
           </div>
 
         </header>
@@ -68,7 +70,9 @@ class Home extends Component {
           <h3>Ready to dash?</h3>
         </div>
         <section>
-          <button>log in with Strava</button>
+          <p>We use your Strava data to keep track of your progress. Click the button below to get log into your Strava account and get connected.</p>
+          <a href='https://www.strava.com/login' target='_blank'><img src={stravaButton} /></a>
+          <p>Having trouble?<br />Click here for our <Link to='/help'>Help Section</Link></p>
         </section>
         <footer>
           <div>

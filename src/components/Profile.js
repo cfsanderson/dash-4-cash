@@ -1,18 +1,12 @@
 import React from 'react'
+import InnerNavbar from './InnerNavbar'
+import ScrollAnim from 'rc-scroll-anim'
 
 export default function Profile () {
   return (
-    <div>
-      <nav>
-        <ul>
-          <li>My Profile</li>
-          <li>My Groups</li>
-          <li>Help</li>
-          <li>Log Out</li>
-        </ul>
-      </nav>
-      <h1>Profile Page</h1>
-      <p>profile pic from Strava or import</p>
+    <div className='profile inner'>
+      <InnerNavbar />
+      <h1>My Profile</h1>
       <h3>Circle chart for YTD cumulative $ given personally</h3>
       <h3>Circle chart for YTD cumulative $ by groups that you are in.</h3>
       <button>Big Green DONATE button</button>
