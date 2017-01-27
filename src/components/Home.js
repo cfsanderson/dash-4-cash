@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import Navbar from './Navbar'
 
 import posterURL from '../images/woman-running.jpg'
 import videoURL from '../images/Cohen-skimboard.mp4'
@@ -13,18 +14,10 @@ class Home extends Component {
             <source src={videoURL} type='video/mp4' />
           </video>
 
-          <nav className='home-nav'>
-            <ul>
-              <li>What is D4C?</li>
-              <li>Donate</li>
-              <li>Dash</li>
-              <li>Track</li>
-              <li>Get Started</li>
-            </ul>
-          </nav>
+          <Navbar />
 
           <h1>Dash 4 Cash</h1>
-          <button>log in with Strava</button>
+          {/* <button>log in with Strava</button> */}
           <div className='explore'>
             <p>Explore</p>
             <a href='https://simplynoise.com/' target='_blank' className='chevron'>
@@ -68,7 +61,7 @@ class Home extends Component {
           <p>Log into D4C and see personal stats as well as your group’s progress. Dashes can last for a day, a week, or a month and are based on either total distance or total moving time* during that period. You will feel great as you watch your fitness grow along with your dollars. Every run now has a purpose and the potential to change not only your life but also the life of someone in need.</p>
         </section>
 
-        <div className='section small header4'>
+        <div className='section big header4'>
           <h3>Ready to dash?</h3>
         </div>
         <section>
