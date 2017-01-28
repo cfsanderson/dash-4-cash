@@ -34,13 +34,24 @@ export default class InnerNavbar extends Component {
                 <i className='fa fa-window-close-o' aria-hidden='true' />
               </button>
             </li>
-            <li><Link to='/profile'>My Profile</Link></li>
-            <li><Link to='/mygroups'>My Groups</Link></li>
-            <li><Link to='/help'>Help</Link></li>
-            <li><Link to='/'>Log Out</Link></li>
+            <li>
+              <Link to='/profile'>My Profile</Link>
+              <i className='icon fa fa-user' aria-hidden='true' />
+            </li>
+            <li>
+              <Link to='/mygroups'>My Groups</Link>
+              <i className='icon fa fa-users' aria-hidden='true' /></li>
+            <li>
+              <Link to='/help'>Help</Link>
+              <i className='icon fa fa-question-circle' aria-hidden='true' />
+            </li>
+            <li>
+              <Link to='/'>Log Out</Link>
+              <i className='icon fa fa-sign-out' aria-hidden='true' />
+            </li>
           </ul>
         </nav>
-        <p className='profilePic'>Strava profile pic</p>
+        <Link to='/profile'><p className='profilePic'>Strava profile pic</p></Link>
       </div>
     )
   }
