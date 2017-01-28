@@ -146,7 +146,7 @@ body {
 // HomeNavbar and InnerNavbar styling
 
 .navBar {
-  background-color: $color-steel;
+  background-color: darken($color-steel, 0);
 
   button {
     background: transparent;

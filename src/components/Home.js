@@ -4,7 +4,7 @@ import ScrollAnim from 'rc-scroll-anim'
 import { Link } from 'react-router'
 
 import posterURL from '../images/woman-running.jpg'
-import videoURL from '../images/Cohen-skimboard.mp4'
+import videoURL from '../images/runners.mov'
 import stravaButton from '../images/buttons/btn_strava_connectwith_orange.svg'
 
 class Home extends Component {

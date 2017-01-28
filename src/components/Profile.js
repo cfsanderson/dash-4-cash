@@ -10,8 +10,14 @@ export default function Profile () {
         <header>
           <h1>My Profile</h1>
         </header>
-        <h3>Circle chart for YTD cumulative $ given personally</h3>
-        <h3>Circle chart for YTD cumulative $ by groups that you are in.</h3>
+        <div>
+          <h3>YTD cumulative $ personal</h3>
+          <p>$500.00</p>
+        </div>
+        <div>
+          <h3>YTD cumulative $ My Groups</h3>
+          <p>$5,000.00</p>
+        </div>
         <button>Big Green DONATE button</button>
         <section>
           <h3>My Stats</h3>
