@@ -6,14 +6,14 @@ export default function Group () {
     <div>
       <InnerNavbar />
       <div className='inner'>
-        <header>
+        <header className='group'>
           <h1>Bradenton Runner's Club</h1>
+        </header>
+        <div className='lower'>
           <h2>This week's dash cash.</h2>
           <p>$55.00</p>
           <h2>This year's dash cash.</h2>
           <p>$1,550.00</p>
-        </header>
-        <div>
           <table>
             <tbody>
               <tr>

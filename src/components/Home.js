@@ -3,7 +3,7 @@ import HomeNavbar from './HomeNavbar'
 import ScrollAnim from 'rc-scroll-anim'
 import { Link } from 'react-router'
 
-import posterURL from '../images/woman-running.jpg'
+import posterURL from '../images/runners-frame1.jpg'
 import videoURL from '../images/runners.mp4'
 import stravaButton from '../images/buttons/btn_strava_connectwith_orange.svg'
 
@@ -22,7 +22,7 @@ class Home extends Component {
           <HomeNavbar />
 
           <h1>Dash 4 Cash</h1>
-          <a className='stravabutton' href='https://www.strava.com/login' target='_blank'><img src={stravaButton} /></a>
+          <a className='stravabutton' href='/profile'><img src={stravaButton} /></a>
           <div className='explore'>
             <p>Explore</p>
             <ScrollAnimLink to='whatisD4C' className='chevron'>
@@ -33,7 +33,10 @@ class Home extends Component {
         </header>
 
         <div className='section big whatisD4C' id='whatisD4C'>
-          <h2>What is <br />Dash 4 Cash?</h2>
+          <h2>
+            What is <br />Dash 4 Cash<br />
+            <i className='fa fa-question-circle' aria-hidden='true' />
+          </h2>
         </div>
         <section>
           <div>
@@ -44,7 +47,10 @@ class Home extends Component {
         </section>
 
         <div className='section small header1' id='donate'>
-          <h3>Donate</h3>
+          <h3>
+            Donate<br />
+            <i className='fa fa-money' aria-hidden='true' />
+          </h3>
         </div>
         <section>
           <p>Choose a charity that your group would like to support. If you need help, here is a list of some great charities to get you started.”</p>
@@ -52,7 +58,10 @@ class Home extends Component {
         </section>
 
         <div className='section small header2' id='dash'>
-          <h3>Dash</h3>
+          <h3>
+            Dash<br />
+            <i className='fa fa-fast-forward' aria-hidden='true' />
+          </h3>
         </div>
         <section>
           <p>Now go for a run! Use your Strava app* to track and log your activity just like normal. When you finish and upload your workout, D4C will sync your Strava data automatically.</p>
@@ -60,14 +69,20 @@ class Home extends Component {
         </section>
 
         <div className='section small header3' id='track'>
-          <h3>Track</h3>
+          <h3>
+            Track<br />
+            <i className='fa fa-line-chart' aria-hidden='true' />
+          </h3>
         </div>
         <section>
           <p>Log into D4C and see personal stats as well as your group’s progress. Dashes can last for a day, a week, or a month and are based on either total distance or total moving time* during that period. You will feel great as you watch your fitness grow along with your dollars. Every run now has a purpose and the potential to change not only your life but also the life of someone in need.</p>
         </section>
 
         <div className='section big header4' id='ready'>
-          <h3>Ready to dash?</h3>
+          <h3>
+            Ready to get started?<br />
+            <i className='fa fa-play' aria-hidden='true' />
+          </h3>
         </div>
         <section>
           <p>We use your Strava data to keep track of your progress. Click the button below to get log into your Strava account and get connected.</p>

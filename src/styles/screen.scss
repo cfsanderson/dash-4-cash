@@ -28,7 +28,7 @@ body {
     height: auto;
     min-height: 100%;
     z-index: -100;
-    background: transparent url(../images/woman-running.jpg) no-repeat;
+    background: transparent url(../images/runners-frame1.jpg) no-repeat;
     background-size: contain;
   }
 
@@ -131,6 +131,7 @@ body {
   section {
     padding-left: 20vw;
     padding-right: 20vw;
+    min-height: 100vh;
 
     p {
       font-weight: lighter;
@@ -146,7 +147,13 @@ body {
 // HomeNavbar and InnerNavbar styling
 
 .navBar {
-  background-color: darken($color-steel, 0);
+  background-color: hsla(200, 42%, 17%, 0.75);
+
+  .homeNavUl {
+    i {
+      padding-left: 15px;
+    }
+  }
 
   button {
     background: transparent;
@@ -192,10 +199,11 @@ body {
     top: 0;
     left: 0;
     bottom: 0;
-    background-color: hsla(0, 0%, 20%, 0.8);
+    background-color: hsla(0, 0%, 20%, 0.9);
     transition: transform 250ms ease;
     width: 66vw;
     height: 100vh;
+    z-index: 1;
     transform: translateX(0);
 
     ul {
@@ -261,27 +269,67 @@ body {
 }
 
 .inner {
-  padding: 10vw;
+  header {
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
 
-  h1 {
-    font-family: $font-Raleway;
-    text-transform: uppercase;
-    margin: 0;
+    h1 {
+      padding: 40px;
+      font-family: $font-Raleway;
+      text-transform: uppercase;
+      margin: 0;
+    }
+
+    &.profile {
+      background-image: url(../images/runner-01.jpg);
+      color: $color-slime;
+    }
+
+    &.group {
+      background-image: url(../images/runner-04.jpg);
+      color: $color-vanilla;
+    }
+
+    &.myGroups {
+      background-image: url(../images/runner-02.jpg);
+      color: $color-mint;
+    }
+
+    &.help {
+      background-image: url(../images/runner-03.jpg);
+      color: $color-rose;
+    }
   }
 
-  h2 {
-    font-family: $font-Raleway;
-    font-weight: 400;
-  }
+  .lower {
+    padding: 20px;
 
-  th {
-    font-family: $font-Raleway;
-    font-weight: 400;
-  }
+    h1 {
+      font-family: $font-Raleway;
+      text-transform: uppercase;
+      margin: 0;
+    }
 
-  .fa-circle {
-    font-size: 0.75em;
-    padding: 0 10px 10px 0;
+    h2 {
+      font-family: $font-Raleway;
+      font-weight: 400;
+    }
+
+    th {
+      font-family: $font-Raleway;
+      font-weight: 400;
+    }
+
+    .fa-circle {
+      font-size: 0.75em;
+      padding: 0 10px 10px 0;
+    }
+
+    td {
+      // border: 2px solid $color-rose;
+    }
   }
 }
 
@@ -324,7 +372,7 @@ $transition: all #{$speed} cubic-bezier(0.310, -0.105, 0.430, 1.400);
       content: '';
       background-color: darken($color-slime, 20);
       width: 2px;
-      height: 70%;
+      height: 50%;
       position: absolute;
       top: 15%;
       right: -1px;
@@ -341,14 +389,6 @@ $transition: all #{$speed} cubic-bezier(0.310, -0.105, 0.430, 1.400);
       vertical-align: middle;
       transition: $transition, height #{$speed} ease;
       padding-top: 2px;
-    }
-
-    .fa-remove {
-      height: 36px;
-    }
-
-    .fa-check {
-      display: none;
     }
   }
 
@@ -367,31 +407,5 @@ $transition: all #{$speed} cubic-bezier(0.310, -0.105, 0.430, 1.400);
         font-size: 1.2em;
       }
     }
-  }
-
-  &.success {
-    // background-color: #27ae60;
-
-    .icon {
-      .fa-remove {
-        display: none;
-      }
-
-      .fa-check {
-        display: inline-block;
-      }
-    }
-  }
-
-  &:hover {
-    opacity: 0.9;
-
-    .icon .fa-remove {
-      height: 46px;
-    }
-  }
-
-  &:active {
-    opacity: 1;
   }
 }
