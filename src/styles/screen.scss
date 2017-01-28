@@ -261,11 +261,137 @@ body {
 }
 
 .inner {
-  padding: 30px;
+  padding: 10vw;
 
   h1 {
     font-family: $font-Raleway;
     text-transform: uppercase;
     margin: 0;
+  }
+
+  h2 {
+    font-family: $font-Raleway;
+    font-weight: 400;
+  }
+
+  th {
+    font-family: $font-Raleway;
+    font-weight: 400;
+  }
+
+  .fa-circle {
+    font-size: 0.75em;
+    padding: 0 10px 10px 0;
+  }
+}
+
+$speed: "0.25s";
+$transition: all #{$speed} cubic-bezier(0.310, -0.105, 0.430, 1.400);
+
+.add-members-button {
+  font-family: $font-Raleway;
+  display: block;
+  background-color: $color-slime;
+  width: 200px;
+  height: 25px;
+  color: lighten($color-slime, 30);
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: 5px;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.3);
+  transition: $transition;
+  padding-top: 2px;
+  margin-bottom: 20px;
+
+  span,
+  .icon {
+    display: block;
+    height: 100%;
+    text-align: center;
+    position: absolute;
+  }
+
+  span {
+    width: 72%;
+    font-size: 1em;
+    text-transform: uppercase;
+    left: 0;
+    transition: $transition;
+    padding-top: 2px;
+
+    &::after {
+      content: '';
+      background-color: darken($color-slime, 20);
+      width: 2px;
+      height: 70%;
+      position: absolute;
+      top: 15%;
+      right: -1px;
+    }
+  }
+
+  .icon {
+    width: 28%;
+    right: 0;
+    transition: $transition;
+
+    .fa {
+      font-size: 1em;
+      vertical-align: middle;
+      transition: $transition, height #{$speed} ease;
+      padding-top: 2px;
+    }
+
+    .fa-remove {
+      height: 36px;
+    }
+
+    .fa-check {
+      display: none;
+    }
+  }
+
+  &.success,
+  &:hover {
+    span {
+      left: -72%;
+      opacity: 0;
+      padding-top: 3px;
+    }
+
+    .icon {
+      width: 100%;
+
+      .fa {
+        font-size: 1.2em;
+      }
+    }
+  }
+
+  &.success {
+    // background-color: #27ae60;
+
+    .icon {
+      .fa-remove {
+        display: none;
+      }
+
+      .fa-check {
+        display: inline-block;
+      }
+    }
+  }
+
+  &:hover {
+    opacity: 0.9;
+
+    .icon .fa-remove {
+      height: 46px;
+    }
+  }
+
+  &:active {
+    opacity: 1;
   }
 }

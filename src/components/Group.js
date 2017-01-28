@@ -7,17 +7,21 @@ export default function Group () {
       <InnerNavbar />
       <div className='inner'>
         <header>
-          <h1>This is my Group</h1>
+          <h1>Bradenton Runner's Club</h1>
+          <h2>This week's dash cash.</h2>
+          <p>$55.00</p>
+          <h2>This year's dash cash.</h2>
+          <p>$1,550.00</p>
         </header>
         <div>
           <table>
             <tbody>
               <tr>
-                <th>My Groups</th>
+                <th>Leaderboard</th>
               </tr>
               <tr>
-                <td>Group name A</td>
-                <td><button>+ Members</button></td>
+                <td>Caleb Sanderson</td>
+                <td>progress bar here</td>
               </tr>
               <tr>
                 <td>Group name B</td>
