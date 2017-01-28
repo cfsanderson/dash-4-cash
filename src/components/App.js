@@ -10,19 +10,6 @@ function App ({ children }) {
   )
 }
 
-// class App extends Component {
-//
-//   render () {
-//     return (
-//       <div>
-//         <header>
-//           {this.props.children}
-//         </header>
-//       </div>
-//     )
-//   }
-// }
-
 App.defaultProps = {
   children: []
 }
