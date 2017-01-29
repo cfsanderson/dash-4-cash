@@ -1,5 +1,6 @@
 import React from 'react'
-import InnerNavbar from './InnerNavbar.js'
+import InnerNavbar from './InnerNavbar'
+import InnerFooter from './InnerFooter'
 
 export default function Group () {
   return (
@@ -35,6 +36,7 @@ export default function Group () {
           </table>
         </div>
       </div>
+      <InnerFooter />
     </div>
   )
 }

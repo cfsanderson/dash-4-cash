@@ -23,7 +23,7 @@ export default class InnerNavbar extends Component {
     // const ScrollAnimLink = ScrollAnim.Link
 
     return (
-      <div className='navBar'>
+      <div className='navBar innerNav'>
         <button className={`menu ${this.state.visible ? 'hidden' : ''}`} onClick={() => this.toggle()}>
           <i className='fa fa-bars' aria-hidden='true' />
         </button>
@@ -51,7 +51,10 @@ export default class InnerNavbar extends Component {
             </li>
           </ul>
         </nav>
-        <Link to='/profile'><p className='profilePic'>Strava profile pic</p></Link>
+        <Link to='/profile'>
+          {/* <h5>Caleb Sanderson</h5> */}
+          <p className='profilePic'>Strava profile pic</p>
+        </Link>
       </div>
     )
   }

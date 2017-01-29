@@ -11,15 +11,38 @@ export default function Profile () {
           <h1>My Profile</h1>
         </header>
         <div className='lower'>
-          <div>
-            <h3>YTD cumulative $ personal</h3>
+          <ul className='donations-ul'>
+            <li>
+              <h3>My Donations</h3>
+              <p>$500.00</p>
+            </li>
+            <li>
+              <h3>My Groups Donations</h3>
+              <p>$5,000.00</p>
+            </li>
+            <li>
+              <a className='donate-button' href='#' role='button'>
+                <span>Donate</span>
+                <div className='icon'>
+                  <i className='fa fa-money' />
+                </div>
+              </a>
+            </li>
+          </ul>
+          {/* <div>
+            <h3><i className='fa fa-money' /> My Donations</h3>
             <p>$500.00</p>
           </div>
           <div>
-            <h3>YTD cumulative $ My Groups</h3>
+            <h3><i className='fa fa-money' /> My Groups Donations</h3>
             <p>$5,000.00</p>
           </div>
-          <button>Big Green DONATE button</button>
+          <a className='donate-button' href='#' role='button'>
+            <span>Donate</span>
+            <div className='icon'>
+              <i className='fa fa-money' />
+            </div>
+          </a> */}
           <section>
             <h3>My Stats</h3>
             <table className='miles'>

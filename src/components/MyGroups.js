@@ -1,5 +1,6 @@
 import React from 'react'
 import InnerNavbar from './InnerNavbar.js'
+import InnerFooter from './InnerFooter'
 import { Link } from 'react-router'
 
 export default function MyGroups () {
@@ -11,10 +12,10 @@ export default function MyGroups () {
           <h1>My Groups</h1>
         </header>
         <div className='lower'>
-          <ul>
+          <ul className='myGroups-ul'>
             <li>
               <h3>Bradenton Runners Club</h3>
-              <p className='clubPic'>2 members</p>
+              <p>2 members</p>
               <a className='add-members-button' href='#' role='button'>
                 <span>Add Members</span>
                 <div className='icon'>
@@ -53,100 +54,101 @@ export default function MyGroups () {
               </a>
             </li>
           </ul>
-
-          <table>
-            <tbody>
-              {/* <tr>
-                <th colSpan='3'>My Groups</th>
-              </tr> */}
-              <tr>
-                <td><h3>Bradenton Runners Club</h3></td>
-                <td>10 members</td>
-              </tr>
-              <tr>
-                <td>
-                  <a className='add-members-button' href='#' role='button'>
-                    <span>Add Members</span>
-                    <div className='icon'>
-                      <i className='fa fa-plus' />
-                    </div>
-                  </a>
-                </td>
-              </tr>
-              <tr>
-                <td><h3>Sarasota Runners</h3></td>
-                <td>22 members</td>
-              </tr>
-              <tr>
-                <td>
-                  <a className='add-members-button' href='#' role='button'>
-                    <span>Add Members</span>
-                    <div className='icon'>
-                      <i className='fa fa-plus' />
-                    </div>
-                  </a>
-                </td>
-              </tr>
-              <tr>
-                <td><h3>WBBC Runners</h3></td>
-                <td>133 members</td>
-              </tr>
-              <tr>
-                <td>
-                  <a className='add-members-button' href='#' role='button'>
-                    <span>Add Members</span>
-                    <div className='icon'>
-                      <i className='fa fa-plus' />
-                    </div>
-                  </a>
-                </td>
-              </tr>
-              <tr>
-                <td><h3>WBBC Runners</h3></td>
-                <td>133 members</td>
-              </tr>
-              <tr>
-                <td>
-                  <a className='add-members-button' href='#' role='button'>
-                    <span>Add Members</span>
-                    <div className='icon'>
-                      <i className='fa fa-plus' />
-                    </div>
-                  </a>
-                </td>
-              </tr>
-              <tr>
-                <td><h3>WBBC Runners</h3></td>
-                <td>133 members</td>
-              </tr>
-              <tr>
-                <td>
-                  <a className='add-members-button' href='#' role='button'>
-                    <span>Add Members</span>
-                    <div className='icon'>
-                      <i className='fa fa-plus' />
-                    </div>
-                  </a>
-                </td>
-              </tr>
-              <tr>
-                <td><h3>WBBC Runners</h3></td>
-                <td>133 members</td>
-              </tr>
-              <tr>
-                <td>
-                  <a className='add-members-button' href='#' role='button'>
-                    <span>Add Members</span>
-                    <div className='icon'>
-                      <i className='fa fa-plus' />
-                    </div>
-                  </a>
-                </td>
-              </tr>
-            </tbody>
-          </table>
         </div>
       </div>
+      <InnerFooter />
     </div>
   )
 }
+
+/* <table>
+    <tbody>
+    <tr>
+        <th colSpan='3'>My Groups</th>
+      </tr>
+    <tr>
+        <td><h3>Bradenton Runners Club</h3></td>
+        <td>10 members</td>
+      </tr>
+    <tr>
+        <td>
+        <a className='add-members-button' href='#' role='button'>
+            <span>Add Members</span>
+            <div className='icon'>
+            <i className='fa fa-plus' />
+          </div>
+          </a>
+      </td>
+      </tr>
+    <tr>
+        <td><h3>Sarasota Runners</h3></td>
+        <td>22 members</td>
+      </tr>
+    <tr>
+        <td>
+        <a className='add-members-button' href='#' role='button'>
+            <span>Add Members</span>
+            <div className='icon'>
+            <i className='fa fa-plus' />
+          </div>
+          </a>
+      </td>
+      </tr>
+    <tr>
+        <td><h3>WBBC Runners</h3></td>
+        <td>133 members</td>
+      </tr>
+    <tr>
+        <td>
+        <a className='add-members-button' href='#' role='button'>
+            <span>Add Members</span>
+            <div className='icon'>
+            <i className='fa fa-plus' />
+          </div>
+          </a>
+      </td>
+      </tr>
+    <tr>
+        <td><h3>WBBC Runners</h3></td>
+        <td>133 members</td>
+      </tr>
+    <tr>
+        <td>
+        <a className='add-members-button' href='#' role='button'>
+            <span>Add Members</span>
+            <div className='icon'>
+            <i className='fa fa-plus' />
+          </div>
+          </a>
+      </td>
+      </tr>
+    <tr>
+        <td><h3>WBBC Runners</h3></td>
+        <td>133 members</td>
+      </tr>
+    <tr>
+        <td>
+        <a className='add-members-button' href='#' role='button'>
+            <span>Add Members</span>
+            <div className='icon'>
+            <i className='fa fa-plus' />
+          </div>
+          </a>
+      </td>
+      </tr>
+    <tr>
+        <td><h3>WBBC Runners</h3></td>
+        <td>133 members</td>
+      </tr>
+    <tr>
+        <td>
+        <a className='add-members-button' href='#' role='button'>
+            <span>Add Members</span>
+            <div className='icon'>
+            <i className='fa fa-plus' />
+          </div>
+          </a>
+      </td>
+      </tr>
+  </tbody>
+</table> */
