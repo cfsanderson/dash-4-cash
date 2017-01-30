@@ -1,6 +1,21 @@
 @import 'utility';
 @import '~font-awesome-animation/dist/font-awesome-animation.min';
 
+// @media (min-width: 450px) {
+//   padding-top: 1em;
+//   padding-bottom: 5em;
+// }
+//
+// @media (min-width: 760px) {
+//   padding-top: 1em;
+//   padding-bottom: 5em;
+// }
+//
+// @media (min-width: 900px) {
+//   padding-top: 1em;
+//   padding-bottom: 5em;
+// }
+
 html {
   text-size-adjust: 100%;
 }
@@ -42,10 +57,20 @@ body {
     h1 {
       font-family: $font-Raleway;
       font-size: 3em;
-      font-weight: 300;
+      font-weight: 400;
       text-align: center;
       text-transform: uppercase;
       padding-top: 20vh;
+
+      @media (min-width: 640px) {
+        padding-top: 0;
+      }
+
+      @media (min-width: 768px) {
+        padding-top: 15vh;
+        font-size: 5em;
+      }
+
     }
 
     .stravabutton {
@@ -87,14 +112,24 @@ body {
     font-size: 2em;
   }
 
-  .section {
+  .sections {
     background-position: bottom;
     background-repeat: no-repeat;
     background-size: cover;
     text-align: center;
 
+    @media (min-width: 640px) {
+      height: 100vh;
+      // background-color: $color-vanilla;
+    }
+
+    .small {
+      padding-top: 25px;
+      padding-bottom: 25px;
+    }
+
     &.big {
-      padding: 40px 10px 40px 10px;
+      padding: 40px 10px;
     }
 
     &.whatisD4C {
@@ -102,17 +137,12 @@ body {
       color: $color-slime;
     }
 
-    &.small {
-      padding-top: 25px;
-      padding-bottom: 25px;
-    }
-
     &.header1 {
       background-image: url(../images/runner-02.jpg);
       color: $color-mint;
     }
 
-    &.header2 {
+    &.header2, {
       background-image: url(../images/runner-03.jpg);
       color: $color-rose;
     }
@@ -136,7 +166,6 @@ body {
   section {
     padding-left: 20vw;
     padding-right: 20vw;
-    min-height: 100vh;
 
     p {
       font-weight: lighter;
@@ -211,6 +240,7 @@ body {
     background-color: hsla(0, 0%, 20%, 0.9);
     transition: transform 250ms ease;
     width: 66vw;
+    max-width: 256px;
     height: 100vh;
     z-index: 1;
     transform: translateX(0);
@@ -222,8 +252,7 @@ body {
       flex-direction: column;
       margin-top: 0;
       background-color: hsla(0, 0%, 69%, 0.75);
-      // padding-left: 20vw;
-      padding: 10px 10px 10px 20vw;
+      padding: 10px 10px 10px 0;
       text-align: right;
 
       li {
@@ -396,11 +425,11 @@ body {
   li {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    // justify-content: space-around;
     flex: 1;
     padding: 30px;
     align-items: center;
-    border: 2px solid $color-mint;
+    // border: 2px solid $color-mint;
     // margin: 20px;
   }
 
@@ -569,5 +598,69 @@ $button-transition: all #{$button-speed} cubic-bezier(0.31, -0.105, 0.43, 1.4);
         font-size: 2em;
       }
     }
+  }
+}
+
+.homeFooter {
+  // position: fixed;
+  // left: 0px;
+  // bottom: 0px;
+  // height: 1000px;
+  width: 100%;
+  background: darken($color-navy, 5);
+  padding: 10px;
+
+  h2 {
+    text-align: center;
+  }
+
+  footer {
+    display: flex;
+    flex-wrap: wrap;
+
+    ul {
+      list-style-type: none;
+      border: 2px solid $color-mint;
+      padding-left: 0;
+
+      li {
+        font-weight: 300;
+        font-family: $font-Roboto;
+        padding: 10px;
+      }
+
+      // .appleStore {
+      //   background-image: url(../images/appstore_button_iphone.png);
+      //   background-size: contain;
+      // }
+    }
+
+    div {
+      flex: 1;
+    }
+  }
+}
+
+.myStats {
+  background-color: $color-steel;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  // max-width: 1080px;
+  font-family: $font-Roboto;
+  font-weight: 300;
+  padding: 20px;
+  max-width: 1000px;
+  justify-content: space-around;
+
+  h4 {
+    font-family: $font-Raleway;
+    text-transform: uppercase;
+  }
+
+  .miles,
+  .minutes {
+    padding: 20px;
   }
 }

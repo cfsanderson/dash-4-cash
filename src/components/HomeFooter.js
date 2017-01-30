@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-// import { Link } from 'react-router'
+import { Link } from 'react-router'
 // import ScrollAnim from 'rc-scroll-anim'
 
 export default class HomeFooter extends Component {
@@ -18,8 +18,8 @@ export default class HomeFooter extends Component {
     // const ScrollAnimLink = ScrollAnim.Link
 
     return (
-      <div>
-        <h2>This is the Home Footer</h2>
+      <div className='homeFooter'>
+        <h2>Dash 4 Cash</h2>
         <footer>
           <div>
             <h4>Menu</h4>
@@ -45,9 +45,9 @@ export default class HomeFooter extends Component {
             <ul>
               <li>Sign Up</li>
               <li>Login</li>
-              <li>Help</li>
-              <li>Download on Apple App Store</li>
-              <li>Download on Google Play</li>
+              <li><Link to='/help' >Help</Link></li>
+              <li className='googlePlay'><img src='../images/googleplaybutton.png' alt='Google Play Store button' width='100px' height='30px' /></li>
+              <li className='appStore'><img src='../images/appstore_button_iphone.png' alt='App Store button image' width='100px' height='30px' /></li>
             </ul>
           </div>
         </footer>

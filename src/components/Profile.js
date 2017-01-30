@@ -1,5 +1,6 @@
 import React from 'react'
 import InnerNavbar from './InnerNavbar'
+import InnerFooter from './InnerFooter'
 // import ScrollAnim from 'rc-scroll-anim'
 import MyDonations from './MyDonations'
 import MyGroupsDonations from './MyGroupsDonations'
@@ -8,10 +9,13 @@ export default function Profile () {
   return (
     <div>
       <InnerNavbar />
+
       <div className='inner'>
+
         <header className='profile'>
           <h1>My Profile</h1>
         </header>
+
         <div className='lower'>
           <ul className='donations-ul'>
             <li className='donations' >
@@ -35,72 +39,67 @@ export default function Profile () {
               </a>
             </li>
           </ul>
-          {/* <div>
-            <h3><i className='fa fa-money' /> My Donations</h3>
-            <p>$500.00</p>
-          </div>
-          <div>
-            <h3><i className='fa fa-money' /> My Groups Donations</h3>
-            <p>$5,000.00</p>
-          </div>
-          <a className='donate-button' href='#' role='button'>
-            <span>Donate</span>
-            <div className='icon'>
-              <i className='fa fa-money' />
-            </div>
-          </a> */}
-          <section>
-            <h3>My Stats</h3>
-            <table className='miles'>
-              <tbody>
+
+          {/* My Stats section */}
+          <div className='myStats'>
+            <h2>My Stats</h2>
+            <section className='miles'>
+              <h4>Miles</h4>
+              <p>Today: 5 miles</p>
+              <table className='miles-week'>
                 <tr>
-                  <th colSpan='6'>Miles</th>
-                </tr>
-                <tr>
-                  <th>Today</th>
                   <th>This Week</th>
                   <th>Last Week</th>
+                </tr>
+                <tr>
+                  <td>25 miles</td>
+                  <td>30 miles</td>
+                </tr>
+                <tr />
+              </table>
+              <table className='miles-month'>
+                <tr>
                   <th>This Month</th>
                   <th>Last Month</th>
-                  <th>This Year</th>
                 </tr>
                 <tr>
-                  <td>Today bar</td>
-                  <td>This Week bar</td>
-                  <td>Last Week bar</td>
-                  <td>This Month bar</td>
-                  <td>Last Month bar</td>
-                  <td>This Year bar</td>
+                  <td>100 miles</td>
+                  <td>130 miles</td>
                 </tr>
-              </tbody>
-            </table>
-            <table className='minutes'>
-              <tbody>
+                <tr />
+              </table>
+            </section>
+            <section className='minutes'>
+              <h4>Minutes</h4>
+              <p>Today: 35 minutes</p>
+              <table className='minutes-week'>
                 <tr>
-                  <th colSpan='6'>Minutes</th>
-                </tr>
-                <tr>
-                  <th>Today</th>
                   <th>This Week</th>
                   <th>Last Week</th>
-                  <th>This Month</th>
-                  <th>Last Month</th>
-                  <th>This Year</th>
                 </tr>
                 <tr>
-                  <td>Today clock</td>
-                  <td>This Week clock</td>
-                  <td>Last Week clock</td>
-                  <td>This Month clock</td>
-                  <td>Last Month clock</td>
-                  <td>This Year clock</td>
+                  <td>105 minutes</td>
+                  <td>230 minutes</td>
                 </tr>
-              </tbody>
-            </table>
-          </section>
+                <tr />
+              </table>
+              <table className='minutes-month'>
+                <tr>
+                  <th>This Month</th>
+                  <th>Last Month</th>
+                </tr>
+                <tr>
+                  <td>1050 minutes</td>
+                  <td>1500 minutes</td>
+                </tr>
+                <tr />
+              </table>
+            </section>
+          </div>
           <button>+ NEW GROUP button</button>
         </div>
       </div>
+      <InnerFooter />
     </div>
   )
 }
