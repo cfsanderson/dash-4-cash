@@ -1,6 +1,8 @@
 import React from 'react'
 import InnerNavbar from './InnerNavbar'
-import ScrollAnim from 'rc-scroll-anim'
+// import ScrollAnim from 'rc-scroll-anim'
+import MyDonations from './MyDonations'
+import MyGroupsDonations from './MyGroupsDonations'
 
 export default function Profile () {
   return (
@@ -12,13 +14,17 @@ export default function Profile () {
         </header>
         <div className='lower'>
           <ul className='donations-ul'>
-            <li>
-              <h3>My Donations</h3>
-              <p>$500.00</p>
+            <li className='donations' >
+              <div>
+                <h3>Donations by Me</h3>
+                <MyDonations />
+              </div>
             </li>
-            <li>
-              <h3>My Groups Donations</h3>
-              <p>$5,000.00</p>
+            <li className='donations' >
+              <div>
+                <h3>Donations by My Groups</h3>
+                <MyGroupsDonations />
+              </div>
             </li>
             <li>
               <a className='donate-button' href='#' role='button'>
