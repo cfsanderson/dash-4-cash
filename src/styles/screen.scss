@@ -24,7 +24,9 @@ body {
   margin: 0;
   font: $font-base-text-size / 1 $font-Roboto;
   background-color: $color-navy;
-  color: hsl(0, 0%, 100%);
+  color: hsl(0, 2%, 84%);
+  // background-color: rgb(232, 227, 201);
+  // color: rgb(24, 25, 26);
 }
 
 // Home page
@@ -61,6 +63,8 @@ body {
       text-align: center;
       text-transform: uppercase;
       padding-top: 20vh;
+      color: white;
+      filter: drop-shadow(2px 1px 1px rgba(60, 62, 64, 0.75));
 
       @media (min-width: 640px) {
         padding-top: 0;
@@ -76,6 +80,7 @@ body {
     .stravabutton {
       width: auto;
       align-self: center;
+      filter: drop-shadow(2px 1px 1px rgba(60, 62, 64, 0.75));
     }
 
     .explore {
@@ -89,11 +94,13 @@ body {
       margin-right: auto;
       width: 100px;
       text-align: center;
+      color: white;
+      filter: drop-shadow(1px 1px 1px rgba(60, 62, 64, 0.75));
 
       a.chevron {
         color: inherit;
         font-size: 1.5em;
-        filter: drop-shadow(1px 1px 2px $color-navy);
+        // filter: drop-shadow(1px 1px 2px black);
       }
     }
   }
@@ -101,7 +108,7 @@ body {
   h2 {
     text-transform: uppercase;
     font-family: $font-Raleway;
-    // font-weight: 200;
+    margin: 0;
     font-size: 2em;
   }
 
@@ -110,66 +117,241 @@ body {
     font-family: $font-Raleway;
     font-weight: bold;
     font-size: 2em;
+    margin: 0;
   }
 
   .sections {
     background-position: bottom;
     background-repeat: no-repeat;
     background-size: cover;
-    text-align: center;
+    // text-align: center;
+
+    .chevron {
+      text-align: center;
+      // padding-top: 20px;
+    }
+
+    img {
+      padding: 20px;
+      // display: flex;
+    }
+
+    @media (max-width: 360px) {
+      height: 100vh;
+    }
 
     @media (min-width: 640px) {
-      height: 100vh;
-      // background-color: $color-vanilla;
+      // height: 100vh;
     }
 
+    .big,
     .small {
-      padding-top: 25px;
-      padding-bottom: 25px;
+      i {
+        font-size: 2.5em;
+      }
     }
 
-    &.big {
-      padding: 40px 10px;
-    }
-
-    &.whatisD4C {
+    .whatisD4C {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background-position: bottom;
+      background-repeat: no-repeat;
+      background-size: cover;
       background-image: url(../images/runner-01.jpg);
       color: $color-slime;
+      padding: 30px;
+
+      .chevron {
+        p {
+          color: $color-slime;
+        }
+      }
+
+      i {
+        padding-top: 30px;
+      }
+
+      @media (min-width: 640px) {
+        flex-direction: row;
+        justify-content: space-around;
+        padding: 100px;
+
+        h2 {
+          font-size: 3em;
+        }
+
+        i {
+          padding: 0;
+          font-size: 4em;
+        }
+      }
     }
 
-    &.header1 {
+    .header1 {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      background-position: bottom;
+      background-repeat: no-repeat;
+      background-size: cover;
       background-image: url(../images/runner-02.jpg);
       color: $color-mint;
+      padding: 30px;
+
+      i {
+        padding-top: 30px;
+      }
+
+      @media (min-width: 640px) {
+        flex-direction: row;
+        justify-content: space-around;
+        padding: 80px;
+
+        h3 {
+          font-size: 3em;
+        }
+
+        i {
+          padding: 0;
+          font-size: 4em;
+        }
+      }
     }
 
-    &.header2, {
+    .header2, {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      background-position: bottom;
+      background-repeat: no-repeat;
+      background-size: cover;
       background-image: url(../images/runner-03.jpg);
       color: $color-rose;
+      padding: 30px;
+
+      i {
+        padding-top: 30px;
+      }
+
+      @media (min-width: 640px) {
+        flex-direction: row;
+        justify-content: space-around;
+        padding: 80px;
+
+        h3 {
+          font-size: 3em;
+        }
+
+        i {
+          padding: 0;
+          font-size: 4em;
+        }
+      }
     }
 
-    &.header3 {
+    .header3 {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      background-position: bottom;
+      background-repeat: no-repeat;
+      background-size: cover;
       background-image: url(../images/runner-04.jpg);
       color: $color-vanilla;
+      padding: 30px;
+
+      i {
+        padding-top: 30px;
+      }
+
+      @media (min-width: 640px) {
+        flex-direction: row;
+        justify-content: space-around;
+        padding: 80px;
+
+        h3 {
+          font-size: 3em;
+        }
+
+        i {
+          padding: 0;
+          font-size: 4em;
+        }
+      }
     }
 
-    &.header4 {
+    .header4 {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      background-position: bottom;
+      background-repeat: no-repeat;
+      background-size: cover;
       background-image: url(../images/runner-01.jpg);
       color: $color-slime;
+      padding: 30px;
+
+      i {
+        padding-top: 30px;
+      }
+
+      @media (min-width: 640px) {
+        flex-direction: row;
+        justify-content: space-around;
+        padding: 80px;
+
+        h3 {
+          font-size: 3em;
+        }
+
+        i {
+          padding: 0;
+          font-size: 4em;
+        }
+      }
     }
 
-    i {
-      padding-top: 20px;
-      // font-size: 1.5em;
+    .continue {
+      display: flex;
+      flex-direction: column;
+      text-transform: uppercase;
+      font-size: 1.25em;
+      padding: 40px;
+
+      p {
+        margin: 0;
+        text-align: center;
+      }
+
+      a.chevron {
+        font-size: 1.5em;
+        filter: drop-shadow(1px 1px 2px $color-navy);
+      }
     }
   }
 
   section {
-    padding-left: 20vw;
-    padding-right: 20vw;
+    // padding-left: 30px;
+    // padding-right: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: left;
+    padding: 20px;
 
     p {
       font-weight: lighter;
       line-height: 1.5em;
+      text-align: left;
+      max-width: 500px;
+      font-size: 1.20em;
     }
   }
 
@@ -318,10 +500,11 @@ body {
     text-align: center;
 
     h1 {
-      padding: 40px;
+      padding: 60px;
       font-family: $font-Raleway;
       text-transform: uppercase;
       margin: 0;
+      font-size: 2.5em;
     }
 
     &.profile {
@@ -425,17 +608,13 @@ body {
   li {
     display: flex;
     flex-direction: column;
-    // justify-content: space-around;
     flex: 1;
     padding: 30px;
     align-items: center;
-    // border: 2px solid $color-mint;
-    // margin: 20px;
   }
 
   .custom-count {
     font-size: 2.25em;
-    // padding: 30px;
   }
 
   h3 {
@@ -606,7 +785,7 @@ $button-transition: all #{$button-speed} cubic-bezier(0.31, -0.105, 0.43, 1.4);
   // left: 0px;
   // bottom: 0px;
   // height: 1000px;
-  width: 100%;
+  // width: 100vw;
   background: darken($color-navy, 5);
   padding: 10px;
 
@@ -620,7 +799,6 @@ $button-transition: all #{$button-speed} cubic-bezier(0.31, -0.105, 0.43, 1.4);
 
     ul {
       list-style-type: none;
-      border: 2px solid $color-mint;
       padding-left: 0;
 
       li {
@@ -644,23 +822,26 @@ $button-transition: all #{$button-speed} cubic-bezier(0.31, -0.105, 0.43, 1.4);
 .myStats {
   background-color: $color-steel;
   border-radius: 5px;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  // max-width: 1080px;
   font-family: $font-Roboto;
   font-weight: 300;
   padding: 20px;
   max-width: 1000px;
-  justify-content: space-around;
+  display: flex;
+  flex-wrap: wrap;
+  list-style-type: none;
+  // padding-left: 0;
+  // justify-content: space-around;
 
   h4 {
     font-family: $font-Raleway;
     text-transform: uppercase;
+    // flex: 1;
   }
 
   .miles,
   .minutes {
     padding: 20px;
+    text-align: left;
+    flex: 1;
   }
 }
