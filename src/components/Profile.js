@@ -20,13 +20,13 @@ export default function Profile () {
           <ul className='donations-ul'>
             <li className='donations' >
               <div>
-                <h3>Donations by Me</h3>
+                <h3>My Donations</h3>
                 <MyDonations />
               </div>
             </li>
             <li className='donations' >
               <div>
-                <h3>Donations by My Groups</h3>
+                <h3>Group Donations</h3>
                 <MyGroupsDonations />
               </div>
             </li>

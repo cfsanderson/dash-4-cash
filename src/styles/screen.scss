@@ -23,8 +23,8 @@ html {
 body {
   margin: 0;
   font: $font-base-text-size / 1 $font-Roboto;
-  background-color: $color-navy;
-  color: hsl(0, 2%, 84%);
+  background-color: darken($color-navy, 5);
+  color: hsla(0, 0%, 84%, 1);
   // background-color: rgb(232, 227, 201);
   // color: rgb(24, 25, 26);
 }
@@ -137,7 +137,7 @@ body {
     }
 
     @media (max-width: 360px) {
-      height: 100vh;
+      min-height: 100vh;
     }
 
     @media (min-width: 640px) {
@@ -345,6 +345,8 @@ body {
     align-items: center;
     text-align: left;
     padding: 20px;
+    // height: 1000px;
+    // background-image: radial-gradient(darken($color-navy, 4), darken($color-navy, 8));
 
     p {
       font-weight: lighter;
@@ -360,6 +362,54 @@ body {
   }
 }
 
+.whatisD4C-words {
+  display: flex;
+  flex-direction: row;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url(../images/BG-runner-01.jpg);
+}
+
+.donate-words {
+  display: flex;
+  flex-direction: row;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url(../images/BG-runner-02.jpg);
+}
+
+.dash-words {
+  display: flex;
+  flex-direction: row;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url(../images/BG-runner-03.jpg);
+}
+
+.track-words {
+  display: flex;
+  flex-direction: row;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url(../images/BG-runner-04.jpg);
+}
+
+.ready-words {
+  color: darken($color-navy, 20);
+  display: flex;
+  flex-direction: row;
+  background-color: hsla(0, 2%, 84%, 0.9);
+  // background-position: bottom;
+  // background-repeat: no-repeat;
+  // background-size: cover;
+  // background-image: url(../images/BG-runner-04.jpg);
+}
+
+
 // HomeNavbar and InnerNavbar styling
 
 .navBar {
@@ -370,6 +420,8 @@ body {
   }
 
   .homeNavUl {
+    color: white;
+
     i {
       padding-left: 15px;
     }
@@ -614,7 +666,7 @@ body {
   }
 
   .custom-count {
-    font-size: 2.25em;
+    font-size: 3em;
   }
 
   h3 {
@@ -624,6 +676,10 @@ body {
     font-size: 1.5em;
     text-transform: uppercase;
     // padding: 0 30px 30px 0;
+  }
+
+  .donations {
+    text-align: center;
   }
 }
 
@@ -781,21 +837,33 @@ $button-transition: all #{$button-speed} cubic-bezier(0.31, -0.105, 0.43, 1.4);
 }
 
 .homeFooter {
-  // position: fixed;
-  // left: 0px;
-  // bottom: 0px;
-  // height: 1000px;
-  // width: 100vw;
   background: darken($color-navy, 5);
-  padding: 10px;
+  padding: 30px;
+  color: white;
 
   h2 {
-    text-align: center;
+    // text-align: center;
+    // padding: 10px;
+  }
+
+  h5 {
+    font-weight: 300;
   }
 
   footer {
     display: flex;
     flex-wrap: wrap;
+    flex-direction: column;
+    // align-items: center;
+
+    @media (min-width: 640px) {
+      flex-direction: row;
+      // align-items: center;
+    }
+
+    .footer-list {
+      padding-left: 10px;
+    }
 
     ul {
       list-style-type: none;
@@ -804,13 +872,17 @@ $button-transition: all #{$button-speed} cubic-bezier(0.31, -0.105, 0.43, 1.4);
       li {
         font-weight: 300;
         font-family: $font-Roboto;
-        padding: 10px;
+        line-height: 2em;
+
+        a {
+          text-decoration: none;
+        }
       }
 
-      // .appleStore {
-      //   background-image: url(../images/appstore_button_iphone.png);
-      //   background-size: contain;
-      // }
+      .store-buttons {
+        margin: 0;
+        padding: 0;
+      }
     }
 
     div {
