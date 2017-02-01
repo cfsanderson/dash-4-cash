@@ -31,7 +31,7 @@ export default class InnerNavbar extends Component {
           <ul>
             <li>
               <button className='menu' onClick={() => this.toggle()}>
-                <i className='fa fa-window-close-o' aria-hidden='true' />
+                <i className='fa fa-times' aria-hidden='true' />
               </button>
             </li>
             <li>
@@ -51,10 +51,12 @@ export default class InnerNavbar extends Component {
             </li>
           </ul>
         </nav>
-        <Link to='/profile'>
-          {/* <h5>Caleb Sanderson</h5> */}
-          <p className='profilePic'>Strava profile pic</p>
-        </Link>
+        <div className='profilePic'>
+          <h5><Link to='/profile'>Caleb Sanderson</Link></h5>
+          <Link to='/profile'>
+            <img src={require('../images/Caleb-copy.jpg')} height={30} width={30} />
+          </Link>
+        </div>
       </div>
     )
   }

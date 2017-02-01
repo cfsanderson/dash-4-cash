@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
-// import { Link } from 'react-router'
+import { Link } from 'react-router'
 // import ScrollAnim from 'rc-scroll-anim'
+import googleButton from '../images/buttons/googleplaybutton.png'
+import appleButton from '../images/buttons/appstore_button_iphone.gif'
 
 export default class InnerFooter extends Component {
 
@@ -18,8 +20,8 @@ export default class InnerFooter extends Component {
     // const ScrollAnimLink = ScrollAnim.Link
 
     return (
-      <div>
-        <h2>This is the Inner Footer</h2>
+      <div className='homeFooter'>
+        {/* <h2>This is the Inner Footer</h2> */}
         <footer>
           <div>
             <h4>Menu</h4>
@@ -43,11 +45,9 @@ export default class InnerFooter extends Component {
           <div>
             <h4>Get Started</h4>
             <ul>
-              <li>Sign Up</li>
-              <li>Login</li>
-              <li>Help</li>
-              <li>Download on Apple App Store</li>
-              <li>Download on Google Play</li>
+              <li><Link to='/help' >Help</Link></li>
+              <li className='store-buttons'><img src={googleButton} alt='Google Play Store button' width='100px' height='30px' /></li>
+              <li className='store-buttons'><img src={appleButton} alt='App Store button image' width='100px' height='30px' /></li>
             </ul>
           </div>
         </footer>

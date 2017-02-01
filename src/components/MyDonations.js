@@ -11,13 +11,13 @@ class MyDonations extends Component {
       <CountUp
         className='custom-count'
         start={0}
-        end={500}
+        end={150}
         duration={2}
         // useEasing={true}
         separator=' '
         decimal=','
         prefix='$ '
-        suffix='.00'
+        suffix=''
         // callback={onComplete}
         />
     )

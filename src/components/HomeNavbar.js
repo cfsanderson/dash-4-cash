@@ -19,6 +19,11 @@ export default class HomeNavbar extends Component {
     console.log('toggle')
   }
 
+  // toggle () {
+  //   this.setState({ visible: !this.state.visible })
+  //   console.log('toggle')
+  // }  onBlur={() => this.toggle()}
+
   render () {
     const ScrollAnimLink = ScrollAnim.Link
 
@@ -31,7 +36,7 @@ export default class HomeNavbar extends Component {
           <ul className='homeNavUl'>
             <li>
               <button className='menu' onClick={() => this.toggle()}>
-                <i className='fa fa-window-close-o' aria-hidden='true' />
+                <i className='fa fa-times' aria-hidden='true' />
               </button>
             </li>
             <li>

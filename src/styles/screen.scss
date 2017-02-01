@@ -74,7 +74,6 @@ body {
         padding-top: 15vh;
         font-size: 5em;
       }
-
     }
 
     .stravabutton {
@@ -353,7 +352,7 @@ body {
       line-height: 1.5em;
       text-align: left;
       max-width: 500px;
-      font-size: 1.20em;
+      font-size: 1.2em;
     }
   }
 
@@ -377,7 +376,8 @@ body {
   background-position: bottom;
   background-repeat: no-repeat;
   background-size: cover;
-  background-image: url(../images/BG-runner-02.jpg);
+  background-image: url(../images/BG-runner-03.1.jpg);
+  color: darken($color-navy, 8);
 }
 
 .dash-words {
@@ -399,21 +399,22 @@ body {
 }
 
 .ready-words {
-  color: darken($color-navy, 20);
+  color: darken($color-navy, 5);
   display: flex;
   flex-direction: row;
   background-color: hsla(0, 2%, 84%, 0.9);
-  // background-position: bottom;
-  // background-repeat: no-repeat;
-  // background-size: cover;
-  // background-image: url(../images/BG-runner-04.jpg);
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url(../images/BG-runner-02.1.jpg);
 }
-
 
 // HomeNavbar and InnerNavbar styling
 
 .navBar {
-  background-color: hsla(196, 44%, 12%, 0.75);
+  filter: drop-shadow(2px 1px 1px rgba(60, 62, 64, 0.75));
+  color: white;
+  z-index: 10000;
 
   .innerNav {
     background-color: hsla(196, 44%, 12%, 1);
@@ -425,6 +426,11 @@ body {
     i {
       padding-left: 15px;
     }
+  }
+
+  > button.menu {
+    position: fixed;
+    top: 0;
   }
 
   button {
@@ -439,7 +445,7 @@ body {
       color: white;
     }
 
-    i.fa-window-close-o::before {
+    i.fa-times::before {
       font-size: 2.75em;
       color: white;
       background: transparent;
@@ -499,7 +505,7 @@ body {
         }
       }
 
-    .icon {
+      .icon {
         font-size: 1.5em;
         padding: 5px 7px 0 10px;
         vertical-align: inherit;
@@ -524,20 +530,23 @@ body {
 
   .profilePic {
     position: absolute;
-    right: 15px;
-    top: -7px;
-    background-image: url(../images/Caleb-copy.jpg);
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    border-radius: 50%;
+    right: 20px;
+    top: 0;
+    display: flex;
+    align-items: center;
     color: transparent;
-    height: 30px;
-    width: 30px;
 
-    h5 {
-      text-decoration: none;
-      color: inherit;
+    img {
+      border-radius: 50%;
+      margin-left: 10px;
+    }
+
+    h5 a {
+      &:link,
+      &:visited {
+        text-decoration: none;
+        color: white;
+      }
     }
   }
 }
@@ -545,6 +554,8 @@ body {
 // Basic styling for inner pages
 
 .inner {
+  // position: relative;
+
   header {
     background-position: bottom;
     background-repeat: no-repeat;
@@ -580,14 +591,18 @@ body {
     }
   }
 
-//  Styling for lower sections of inner pages
+  // Styling for lower sections of inner pages
 
   .lower {
     display: flex;
     flex-direction: column;
     // justify-content: space-around;
-    padding: 20px;
+    padding: 0 45px;
     align-items: center;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url(../images/BG-runner-01.jpg);
 
     h1 {
       font-family: $font-Raleway;
@@ -618,6 +633,10 @@ body {
     td {
       // border: 2px solid $color-rose;
     }
+
+    .profile-main {
+
+    }
   }
 }
 
@@ -626,12 +645,12 @@ body {
 .myGroups-ul {
   list-style-type: none;
   padding: 10px;
-  margin: 0;
+  margin-top: 20px;
   display: flex;
   flex-wrap: wrap;
   border-radius: 5px;
   background-color: $color-steel;
-  max-width: 75vw;
+  max-width: 1000px;
 
   li {
     padding-left: 30px;
@@ -837,13 +856,12 @@ $button-transition: all #{$button-speed} cubic-bezier(0.31, -0.105, 0.43, 1.4);
 }
 
 .homeFooter {
-  background: darken($color-navy, 5);
-  padding: 30px;
+  background: darken($color-navy, 8);
+  padding: 45px;
   color: white;
 
-  h2 {
-    // text-align: center;
-    // padding: 10px;
+  h4 {
+    margin-top: 0;
   }
 
   h5 {
@@ -896,24 +914,41 @@ $button-transition: all #{$button-speed} cubic-bezier(0.31, -0.105, 0.43, 1.4);
   border-radius: 5px;
   font-family: $font-Roboto;
   font-weight: 300;
-  padding: 20px;
-  max-width: 1000px;
-  display: flex;
-  flex-wrap: wrap;
-  list-style-type: none;
-  // padding-left: 0;
-  // justify-content: space-around;
+  // padding: 45px;
+  // max-width: 1000px;
+
+  .tables {
+    display: flex;
+    // flex-direction: column;
+    flex-wrap: wrap;
+    list-style-type: none;
+    // padding-left: 0;
+    justify-content: center;
+  }
+
+  h3 {
+    color: $color-rose;
+    margin: 0;
+    font-size: 1.5em;
+    text-transform: uppercase;
+    // flex: 2;
+    padding: 35px;
+    text-align: center;
+  }
 
   h4 {
     font-family: $font-Raleway;
     text-transform: uppercase;
+    margin: 0;
+    color: $color-slime;
+    text-align: center;
     // flex: 1;
   }
 
   .miles,
   .minutes {
-    padding: 20px;
-    text-align: left;
-    flex: 1;
+    padding: 30px;
+    // text-align: left;
+    // flex: 1;
   }
 }

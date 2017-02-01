@@ -6,7 +6,6 @@ import { Link } from 'react-router'
 export default function MyGroups () {
   return (
     <div>
-      <InnerNavbar />
       <div className='inner'>
         <header className='myGroups'>
           <h1>My Groups</h1>
@@ -57,6 +56,7 @@ export default function MyGroups () {
         </div>
       </div>
       <InnerFooter />
+      <InnerNavbar />
     </div>
   )
 }
