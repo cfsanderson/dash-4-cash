@@ -16,7 +16,7 @@ class MyDonations extends Component {
         // useEasing={true}
         separator=' '
         decimal=','
-        prefix='$ '
+        prefix='$'
         suffix=''
         // callback={onComplete}
         />
