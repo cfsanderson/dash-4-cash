@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { AppContainer } from 'react-hot-loader'
-import routes from './routes'
+import App from './components/App'
 
 import './styles/screen.scss'
 
@@ -14,7 +14,7 @@ const render = (app) => {
   )
 }
 
-render(routes)
+render(<App />)
 
 if (module.hot) {
   module.hot.accept('./components/App', () => {
