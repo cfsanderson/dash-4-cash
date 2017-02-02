@@ -74,7 +74,7 @@ export default class InnerFooter extends Component {
           </div>
           <div>
             <div className='footer-list'>
-              <h3>Get Started</h3>
+              <h3>Go Mobile</h3>
               <ul>
                 <li className='store-buttons'><img src={googleButton} alt='Google Play Store button' width='100px' height='30px' /></li>
                 <li><img src={appleButton} alt='App Store button image' width='100px' height='30px' /></li>

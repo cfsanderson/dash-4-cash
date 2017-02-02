@@ -15,7 +15,6 @@ export default class InnerNavbar extends Component {
 
   toggle () {
     this.setState({ visible: !this.state.visible })
-    console.log('toggle')
   }
 
   render () {
@@ -26,6 +25,9 @@ export default class InnerNavbar extends Component {
         </button>
         <nav className={this.state.visible ? '' : 'hidden'}>
           <ul>
+            {/* <button className='menu' onClick={() => this.toggle()}>
+              <i className='fa fa-times' aria-hidden='true' />
+            </button> */}
             <li>
               <button className='menu' onClick={() => this.toggle()}>
                 <i className='fa fa-times' aria-hidden='true' />
@@ -37,20 +39,21 @@ export default class InnerNavbar extends Component {
             </li>
             <li>
               <Link to='/mygroups'>My Groups</Link>
-              <i className='icon fa fa-users' aria-hidden='true' /></li>
-            <li>
-              <Link to='/help'>Help</Link>
-              <i className='icon fa fa-question-circle' aria-hidden='true' />
+              <i className='icon fa fa-users' aria-hidden='true' />
             </li>
-            <li>
-              <Link to='/contact'>Contact</Link>
-              <i className='icon fa fa-envelope' aria-hidden='true' />
-            </li>
-            <li>
+            <li className='small-items'>
               <Link to='/about'>About</Link>
               <i className='icon fa fa-commenting' aria-hidden='true' />
             </li>
-            <li>
+            <li className='small-items'>
+              <Link to='/contact'>Contact</Link>
+              <i className='icon fa fa-envelope' aria-hidden='true' />
+            </li>
+            <li className='small-items'>
+              <Link to='/help'>Help</Link>
+              <i className='icon fa fa-question-circle' aria-hidden='true' />
+            </li>
+            <li className='small-items'>
               <Link to='/'>Log Out</Link>
               <i className='icon fa fa-sign-out' aria-hidden='true' />
             </li>

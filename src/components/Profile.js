@@ -4,6 +4,7 @@ import InnerFooter from './InnerFooter'
 import MyDonations from './MyDonations'
 import MyGroupsDonations from './MyGroupsDonations'
 import MyStats from './MyStats'
+import Counter from './Counter'
 
 export default class Profile extends Component {
 
@@ -31,6 +32,7 @@ export default class Profile extends Component {
                   <div>
                     <h3>My Donations</h3>
                     <MyDonations />
+                    <Counter />
                   </div>
                 </li>
                 <li className='donations' >
@@ -56,7 +58,7 @@ export default class Profile extends Component {
           </div>
         </div>
 
-        <div className={`donateModal ${this.state.visible ? 'overlay' : 'hidden'}`}>
+        {/* <div className={`donateModal ${this.state.visible ? 'overlay' : 'hidden'}`}>
           <div className='donateScroll'>
             <div className='donate-div'>
               <h2>Donate!</h2>
@@ -89,7 +91,7 @@ export default class Profile extends Component {
               </form>
             </div>
           </div>
-        </div>
+        </div> */}
 
         <InnerFooter />
 

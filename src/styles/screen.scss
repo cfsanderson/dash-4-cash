@@ -400,16 +400,18 @@ body {
 // HomeNavbar and InnerNavbar styling
 
 .navBar {
-  filter: drop-shadow(2px 1px 1px rgba(60, 62, 64, 0.75));
+  // filter: drop-shadow(2px 1px 1px rgba(60, 62, 64, 0.75));
   color: white;
   z-index: 10000;
 
-  .innerNav {
-    background-color: hsla(196, 44%, 12%, 1);
-  }
-
   .homeNavUl {
     color: white;
+    font-size: 1.25em;
+    padding: 10px 25px 35px 0;
+
+    li {
+      padding-bottom: 25px;
+    }
 
     i {
       padding-left: 15px;
@@ -438,6 +440,7 @@ body {
       color: white;
       background: transparent;
       border-width: 0;
+      // padding: 10px;
     }
 
     &.menu {
@@ -465,7 +468,8 @@ body {
     top: 0;
     left: 0;
     bottom: 0;
-    background-color: hsla(0, 0%, 20%, 0.9);
+    // background-color: hsla(0, 0%, 20%, 0.9);
+    background-color: darken(hsla(196, 44%, 12%, 0.9), 8);
     transition: transform 250ms ease;
     width: 66vw;
     max-width: 256px;
@@ -479,14 +483,20 @@ body {
       justify-content: space-around;
       flex-direction: column;
       margin-top: 0;
-      background-color: hsla(0, 0%, 69%, 0.75);
-      padding: 10px 10px 10px 0;
+      background-color: darken(hsla(196, 44%, 12%, 1), 8);
+      padding: 10px 25px 10px 0;
       text-align: right;
+      font-size: 1.25em;
 
       li {
-        padding-bottom: 20px;
+        padding-bottom: 25px;
         font-family: $font-Raleway;
         text-transform: uppercase;
+
+        &.small-items {
+          font-size: 0.65em;
+          // padding: 10px 0;
+        }
 
         &:hover {
           cursor: pointer;
@@ -494,7 +504,7 @@ body {
       }
 
       .icon {
-        font-size: 1.5em;
+        font-size: 1em;
         padding: 5px 7px 0 10px;
         vertical-align: inherit;
       }
@@ -675,6 +685,7 @@ body {
 
   .custom-count {
     font-size: 3em;
+    color: $color-vanilla
   }
 
   h3 {
@@ -1199,7 +1210,7 @@ $button-transition: all #{$button-speed} cubic-bezier(0.31, -0.105, 0.43, 1.4);
 
       th,
       td {
-        border: 1px solid $color-slime;
+        // border: 1px solid $color-slime;
         padding: 15px;
       }
     }
@@ -1211,17 +1222,23 @@ $button-transition: all #{$button-speed} cubic-bezier(0.31, -0.105, 0.43, 1.4);
     font-size: 1.5em;
     text-transform: uppercase;
     // flex: 2;
-    padding: 35px;
+    padding: 15px;
     text-align: center;
   }
 
   h4 {
     font-family: $font-Raleway;
     text-transform: uppercase;
+    padding-bottom: 15px;
     margin: 0;
     color: $color-slime;
     text-align: center;
     // flex: 1;
+  }
+
+  h5 {
+    margin: 0;
+    color: $color-vanilla;
   }
 
   a {
