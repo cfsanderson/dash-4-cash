@@ -7,6 +7,8 @@ import Profile from './components/Profile'
 import Group from './components/Group'
 import MyGroups from './components/MyGroups'
 import Help from './components/Help'
+import Contact from './components/Contact'
+import About from './components/About'
 
 const routes = (
   <Router history={browserHistory}>
@@ -16,6 +18,8 @@ const routes = (
       <Route path='mygroups' component={MyGroups} />
       <Route path='mygroups/:slug' component={Group} />
       <Route path='help' component={Help} />
+      <Route path='contact' component={Contact} />
+      <Route path='about' component={About} />
     </Route>
   </Router>
 )

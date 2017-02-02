@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router'
-// import ScrollAnim from 'rc-scroll-anim'
 import googleButton from '../images/buttons/googleplaybutton.png'
 import appleButton from '../images/buttons/appstore_button_iphone.gif'
 
@@ -9,18 +8,9 @@ export default class HomeFooter extends Component {
   static PropTypes = {
   }
 
-  // constructor () {
-  //   super()
-  //   this.state = {
-  //     visible: false
-  //   }
-  // }
-
   render () {
-    // const ScrollAnimLink = ScrollAnim.Link
-
     return (
-      <div className='homeFooter'>
+      <div className='footerStyle'>
         <footer>
           <div className='footer-list'>
             <h2>Dash 4 Cash</h2>
@@ -28,36 +18,65 @@ export default class HomeFooter extends Component {
           </div>
           <div>
             <div className='footer-list'>
-              <h4>Menu</h4>
+              <h3>Menu</h3>
               <ul>
-                <li>About</li>
-                <li>Blog</li>
-                <li>Support</li>
-                <li>Contact Us</li>
-              </ul>
-            </div>
-          </div>
-          <div>
-            <div className='footer-list'>
-              <h4>Follow</h4>
-              <ul>
-                <li><a href='https://www.facebook.com/caleb.f.sanderson' target='_blank'>Facebook</a></li>
-                <li><a href='https://twitter.com/cfsanderson' target='_blank'>Twitter</a></li>
-                <li><a href='https://www.instagram.com/cfsanderson/' target='_blank'>Instagram</a></li>
-                <li><a href='https://www.linkedin.com/in/calebsanderson/' target='_blank'>LinkedIn</a></li>
-                <li><a href='https://github.com/cfsanderson' target='_blank'>GitHub</a></li>
-              </ul>
-            </div>
-          </div>
-          <div>
-            <div className='footer-list'>
-              <h4>Get Started</h4>
-              <ul>
-                <li>Sign Up</li>
-                <li>Login</li>
                 <li><Link to='/help' >Help</Link></li>
+                <li><Link to='/about' >About</Link></li>
+                <li><Link to='/contact' >Contact</Link></li>
+              </ul>
+            </div>
+          </div>
+          <div>
+            <div className='footer-list'>
+              <h3>Follow</h3>
+              <ul>
+                <li>
+                  <a href='https://www.facebook.com/caleb.f.sanderson' target='_blank'>
+                    <i className='fa fa-facebook' aria-hidden='true' />
+                  Facebook
+                  </a>
+                </li>
+                <li>
+                  <a href='https://twitter.com/cfsanderson' target='_blank'>
+                    <i className='fa fa-twitter' aria-hidden='true' />
+                  Twitter
+                  </a>
+                </li>
+                <li>
+                  <a href='https://www.instagram.com/cfsanderson/' target='_blank'>
+                    <i className='fa fa-instagram' aria-hidden='true' />
+                  Instagram
+                  </a>
+                </li>
+                <li>
+                  <a href='https://www.linkedin.com/in/calebsanderson/' target='_blank'>
+                    <i className='fa fa-linkedin' aria-hidden='true' />
+                  LinkedIn
+                  </a>
+                </li>
+                <li>
+                  <a href='https://github.com/cfsanderson' target='_blank'>
+                    <i className='fa fa-github' aria-hidden='true' />
+                  GitHub
+                  </a>
+                </li>
+                <li>
+                  <a href='https://medium.com/@cfsanderson' target='_blank'>
+                    <i className='fa fa-medium' aria-hidden='true' />
+                  Blog
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div>
+            <div className='footer-list'>
+              <h3>Get Started</h3>
+              <ul>
+                <li><Link to='/profile'>Sign Up</Link></li>
+                <li><Link to='/profile'>Login</Link></li>
                 <li className='store-buttons'><img src={googleButton} alt='Google Play Store button' width='100px' height='30px' /></li>
-                <li className='store-buttons'><img src={appleButton} alt='App Store button image' width='100px' height='30px' /></li>
+                <li><img src={appleButton} alt='App Store button image' width='100px' height='30px' /></li>
               </ul>
             </div>
           </div>

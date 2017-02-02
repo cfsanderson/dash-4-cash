@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router'
-import ScrollAnim from 'rc-scroll-anim'
 
 export default class InnerNavbar extends Component {
 
@@ -20,8 +19,6 @@ export default class InnerNavbar extends Component {
   }
 
   render () {
-    // const ScrollAnimLink = ScrollAnim.Link
-
     return (
       <div className='navBar innerNav'>
         <button className={`menu ${this.state.visible ? 'hidden' : ''}`} onClick={() => this.toggle()}>
@@ -44,6 +41,14 @@ export default class InnerNavbar extends Component {
             <li>
               <Link to='/help'>Help</Link>
               <i className='icon fa fa-question-circle' aria-hidden='true' />
+            </li>
+            <li>
+              <Link to='/contact'>Contact</Link>
+              <i className='icon fa fa-envelope' aria-hidden='true' />
+            </li>
+            <li>
+              <Link to='/about'>About</Link>
+              <i className='icon fa fa-commenting' aria-hidden='true' />
             </li>
             <li>
               <Link to='/'>Log Out</Link>

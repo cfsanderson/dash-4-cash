@@ -1,21 +1,6 @@
 @import 'utility';
 @import '~font-awesome-animation/dist/font-awesome-animation.min';
 
-// @media (min-width: 450px) {
-//   padding-top: 1em;
-//   padding-bottom: 5em;
-// }
-//
-// @media (min-width: 760px) {
-//   padding-top: 1em;
-//   padding-bottom: 5em;
-// }
-//
-// @media (min-width: 900px) {
-//   padding-top: 1em;
-//   padding-bottom: 5em;
-// }
-
 html {
   text-size-adjust: 100%;
 }
@@ -25,8 +10,6 @@ body {
   font: $font-base-text-size / 1 $font-Roboto;
   background-color: darken($color-navy, 5);
   color: hsla(0, 0%, 84%, 1);
-  // background-color: rgb(232, 227, 201);
-  // color: rgb(24, 25, 26);
 }
 
 // Home page
@@ -1114,13 +1097,42 @@ $button-transition: all #{$button-speed} cubic-bezier(0.31, -0.105, 0.43, 1.4);
   display: none;
 }
 
-.homeFooter {
+.footerStyle {
   background: darken($color-navy, 8);
   padding: 45px;
   color: white;
 
-  h4 {
+  h2 {
+    text-transform: uppercase;
+    font-family: $font-Raleway;
+    margin: 0;
+    font-size: 2em;
+  }
+
+  h3 {
+    text-transform: uppercase;
+    font-family: $font-Raleway;
+    font-weight: bold;
+    font-size: 2em;
+    margin: 0;
+  }
+
+  a {
+    text-decoration: none;
+
+    &:visited {
+      color: white;
+    }
+
+    &:hover {
+      cursor: pointer;
+      color: lighten($color-slime, 15);
+    }
+  }
+
+  h3 {
     margin-top: 0;
+    font-size: 1.1em;
   }
 
   h5 {
@@ -1131,15 +1143,12 @@ $button-transition: all #{$button-speed} cubic-bezier(0.31, -0.105, 0.43, 1.4);
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
+    text-align: center;
     // align-items: center;
 
     @media (min-width: 640px) {
       flex-direction: row;
-      // align-items: center;
-    }
-
-    .footer-list {
-      padding-left: 10px;
+      text-align: left;
     }
 
     ul {
@@ -1151,14 +1160,13 @@ $button-transition: all #{$button-speed} cubic-bezier(0.31, -0.105, 0.43, 1.4);
         font-family: $font-Roboto;
         line-height: 2em;
 
-        a {
-          text-decoration: none;
+        i {
+          padding-right: 15px;
         }
       }
 
       .store-buttons {
-        margin: 0;
-        padding: 0;
+        margin-top: 15px;
       }
     }
 
@@ -1177,11 +1185,24 @@ $button-transition: all #{$button-speed} cubic-bezier(0.31, -0.105, 0.43, 1.4);
 
   .tables {
     display: flex;
-    // flex-direction: column;
     flex-wrap: wrap;
     list-style-type: none;
-    // padding-left: 0;
     justify-content: center;
+
+    table {
+      border: 1px solid $color-salmon;
+      text-align: left;
+
+      tr {
+        width: 100%;
+      }
+
+      th,
+      td {
+        border: 1px solid $color-slime;
+        padding: 15px;
+      }
+    }
   }
 
   h3 {
