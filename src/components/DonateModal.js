@@ -1,14 +1,12 @@
 import React, { Component } from 'react'
 
-class Counter extends Component {
+class DonateModal extends Component {
 
-  state = {
-  }
   // <div className={`donateModal ${this.state.visible ? 'overlay' : 'hidden'}`}>
 
   render () {
     return (
-      <div className={`donateModal ${this.state.visible ? 'overlay' : 'hidden'}`}>
+      <div className={`donateModal ${this.props.visible ? 'overlay' : 'hidden'}`}>
         <div className='donateScroll'>
           <div className='donate-div'>
             <h2>Donate!</h2>
@@ -32,7 +30,7 @@ class Counter extends Component {
               </div>
               <a className='submit-button'
                 role='button'
-                onClick={this.donateModalToggle}>
+                onClick={this.props.toggle}>
                 <span>Submit</span>
                 <div className='icon'>
                   <i className='fa fa-play' />
@@ -46,4 +44,4 @@ class Counter extends Component {
   }
 }
 
-export default Counter
+export default DonateModal

@@ -5,6 +5,7 @@ import MyDonations from './MyDonations'
 import MyGroupsDonations from './MyGroupsDonations'
 import MyStats from './MyStats'
 import Counter from './Counter'
+import DonateModal from './DonateModal'
 
 export default class Profile extends Component {
 
@@ -31,14 +32,13 @@ export default class Profile extends Component {
                 <li className='donations' >
                   <div>
                     <h3>My Donations</h3>
-                    <MyDonations />
-                    <Counter />
+                    <Counter end={150} />
                   </div>
                 </li>
                 <li className='donations' >
                   <div>
                     <h3>Group Donations</h3>
-                    <MyGroupsDonations />
+                    <Counter end={1227} />
                   </div>
                 </li>
                 <li>
@@ -57,8 +57,9 @@ export default class Profile extends Component {
             </div>
           </div>
         </div>
+        <DonateModal visible={this.state.visible} toggle={this.donateModalToggle} />
 
-        {/* <div className={`donateModal ${this.state.visible ? 'overlay' : 'hidden'}`}>
+        <div className={`donateModal ${this.state.visible ? 'overlay' : 'hidden'}`}>
           <div className='donateScroll'>
             <div className='donate-div'>
               <h2>Donate!</h2>
@@ -91,7 +92,7 @@ export default class Profile extends Component {
               </form>
             </div>
           </div>
-        </div> */}
+        </div>
 
         <InnerFooter />
 
@@ -100,43 +101,3 @@ export default class Profile extends Component {
     )
   }
 }
-
-/* <p><input type='submit' className='checkout-btn' value='Purchase' /></p>
-<div>
-  <span>Group</span>
-  <select name='group-select'>
-    <option value='bradenton'>Bradenton Runners Club</option>
-    <option value='stpete'>St. Pete Runners Club</option>
-    <option value='tiy'>The Iron Yard Runners</option>
-    <option value='sarasota'>Sarasota Runners Club</option>
-  </select>
-</div>
-<div className='form-row'>
-  <label>
-    <span>Card Number</span>
-    <input type='text' size='20' />
-  </label>
-</div>
-
-<div className='form-row'>
-  <label>
-    <span>Expiration (MM/YY)</span>
-    <input type='text' size='2' />
-  </label>
-  <span> / </span>
-  <input type='text' size='2' />
-</div>
-
-<div className='form-row'>
-  <label>
-    <span>CVC</span>
-    <input type='text' size='4' />
-  </label>
-</div>
-
-<div className='form-row'>
-  <label>
-    <span>Billing Postal Code</span>
-    <input type='text' size='6' />
-  </label>
-</div> */
