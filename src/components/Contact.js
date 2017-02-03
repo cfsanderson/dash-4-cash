@@ -1,5 +1,5 @@
 import React from 'react'
-import InnerNavbar from './InnerNavbar.js'
+import InnerNavbar from './InnerNavbar'
 import InnerFooter from './InnerFooter'
 
 export default function Contact () {

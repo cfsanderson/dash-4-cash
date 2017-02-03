@@ -1,0 +1,6 @@
+mutation CreateGroup ($ownerId: ID!, $name: String!) {
+  createGroup(ownerId: $ownerId, name: $name) {
+    id
+    name
+  }
+}

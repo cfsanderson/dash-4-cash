@@ -1,0 +1,9 @@
+query UserOwnedGroups {
+  user {
+    id
+    ownedGroups {
+      id
+      name
+    }
+  }
+}

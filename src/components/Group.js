@@ -3,6 +3,7 @@ import InnerNavbar from './InnerNavbar'
 import InnerFooter from './InnerFooter'
 import MyDonations from './MyDonations'
 import MyGroupsDonations from './MyGroupsDonations'
+import DonateModal from './DonateModal'
 
 export default class Group extends Component {
 
@@ -71,8 +72,7 @@ export default class Group extends Component {
             </table>
           </div>
         </div>
-
-        <div className={`modal ${this.state.visible ? 'overlay' : 'hidden'}`}>
+        {/* <div className={`modal ${this.state.visible ? 'overlay' : 'hidden'}`}>
           <h2>Donate!</h2>
           <ul>
             <li>Amount</li>
@@ -80,7 +80,8 @@ export default class Group extends Component {
             <li>Payment Info</li>
             <li>Submit Button</li>
           </ul>
-        </div>
+        </div> */}
+        <DonateModal />
         <InnerFooter />
       </div>
     )

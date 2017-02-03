@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { observer } from 'mobx-react'
 import auth from './auth'
-// import client from './client'
+import client from './client'
 
 const withAuth = (ComposedComponent) => {
   const Observed = observer(ComposedComponent)
@@ -11,7 +11,7 @@ const withAuth = (ComposedComponent) => {
       return <Observed
         {...this.props}
         auth={auth}
-        // client={client}
+        client={client}
       />
     }
   }

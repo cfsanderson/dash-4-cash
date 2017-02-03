@@ -3,10 +3,10 @@ import HomeNavbar from './HomeNavbar'
 import HomeFooter from './HomeFooter'
 import ScrollAnim from 'rc-scroll-anim'
 import { Link } from 'react-router'
+import SessionButton from './SessionButton'
 
 import posterURL from '../images/runners-frame1.jpg'
 import videoURL from '../images/runners.mp4'
-import stravaButton from '../images/buttons/btn_strava_connectwith_orange.svg'
 
 class Home extends Component {
 
@@ -23,7 +23,7 @@ class Home extends Component {
           <HomeNavbar />
 
           <h1>Dash 4 Cash</h1>
-          <a className='stravabutton' href='/profile'><img src={stravaButton} /></a>
+          <SessionButton />
           <div className='explore'>
             <p>Explore</p>
             <ScrollAnimLink to='whatisD4C' className='chevron'>
@@ -117,7 +117,7 @@ class Home extends Component {
             <div>
               <p>We use your Strava data to keep track of your progress. Click the button below to get log into your Strava account and get connected.</p>
             </div>
-            <Link to='/profile'><img src={stravaButton} /></Link>
+            <SessionButton />
             <p>Having trouble? Click here for our <Link to='/help'>Help Section</Link></p>
           </section>
         </div>

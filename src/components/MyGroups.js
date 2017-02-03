@@ -1,8 +1,14 @@
 import React, { Component } from 'react'
 import InnerNavbar from './InnerNavbar.js'
 import InnerFooter from './InnerFooter'
-import { Link } from 'react-router'
+import GroupNew from './GroupNew'
 
+import { Link } from 'react-router'
+import { graphql } from 'react-apollo'
+
+import UserOwnedGroups from '../graphql/query/UserOwnedGroups.gql'
+
+@graphql(UserOwnedGroups, { name: 'userOwnedGroups' })
 export default class MyGroups extends Component {
 
   state = {
@@ -12,6 +18,26 @@ export default class MyGroups extends Component {
   groupModalToggle = () => {
     this.setState({ visible: !this.state.visible })
     console.log('modal')
+  }
+
+  groups () {
+    if (this.props.userOwnedGroups.loading) return <li>loading</li>
+    return this.props.userOwnedGroups.user.ownedGroups.map((group, i) => {
+      return (
+        <li key={i}>
+          <h3>{group.name}</h3>
+          <p># members</p>
+          <a className='add-members-button'
+            role='button'
+            onClick={this.groupModalToggle}>
+            <span>Add Members</span>
+            <div className='icon'>
+              <i className='fa fa-plus' />
+            </div>
+          </a>
+        </li>
+      )
+    })
   }
 
   render () {
@@ -24,54 +50,7 @@ export default class MyGroups extends Component {
           <div className='lower'>
             <div className='container'>
               <ul className='myGroups-ul'>
-                <li>
-                  <h3>Bradenton Runners Club</h3>
-                  <p>2 members</p>
-                  <a className='add-members-button'
-                    role='button'
-                    onClick={this.groupModalToggle}>
-                    <span>Add Members</span>
-                    <div className='icon'>
-                      <i className='fa fa-plus' />
-                    </div>
-                  </a>
-                </li>
-                <li>
-                  <h3>St. Pete Runners Club</h3>
-                  <p className='clubPic'>69 members</p>
-                  <a className='add-members-button'
-                    role='button'
-                    onClick={this.groupModalToggle}>
-                    <span>Add Members</span>
-                    <div className='icon'>
-                      <i className='fa fa-plus' />
-                    </div>
-                  </a>
-                </li>
-                <li>
-                  <h3>The Iron Yard Runners</h3>
-                  <p className='clubPic'>42 members</p>
-                  <a className='add-members-button'
-                    role='button'
-                    onClick={this.groupModalToggle}>
-                    <span>Add Members</span>
-                    <div className='icon'>
-                      <i className='fa fa-plus' />
-                    </div>
-                  </a>
-                </li>
-                <li>
-                  <h3>Sarasota Runners Club</h3>
-                  <p className='clubPic'>144 members</p>
-                  <a className='add-members-button'
-                    role='button'
-                    onClick={this.groupModalToggle}>
-                    <span>Add Members</span>
-                    <div className='icon'>
-                      <i className='fa fa-plus' />
-                    </div>
-                  </a>
-                </li>
+                {this.groups()}
               </ul>
             </div>
           </div>
@@ -102,101 +81,10 @@ export default class MyGroups extends Component {
           </div>
         </div>
 
+        <GroupNew />
         <InnerFooter />
         <InnerNavbar />
       </div>
     )
   }
 }
-
-/* <table>
-    <tbody>
-    <tr>
-        <th colSpan='3'>My Groups</th>
-      </tr>
-    <tr>
-        <td><h3>Bradenton Runners Club</h3></td>
-        <td>10 members</td>
-      </tr>
-    <tr>
-        <td>
-        <a className='add-members-button' href='#' role='button'>
-            <span>Add Members</span>
-            <div className='icon'>
-            <i className='fa fa-plus' />
-          </div>
-          </a>
-      </td>
-      </tr>
-    <tr>
-        <td><h3>Sarasota Runners</h3></td>
-        <td>22 members</td>
-      </tr>
-    <tr>
-        <td>
-        <a className='add-members-button' href='#' role='button'>
-            <span>Add Members</span>
-            <div className='icon'>
-            <i className='fa fa-plus' />
-          </div>
-          </a>
-      </td>
-      </tr>
-    <tr>
-        <td><h3>WBBC Runners</h3></td>
-        <td>133 members</td>
-      </tr>
-    <tr>
-        <td>
-        <a className='add-members-button' href='#' role='button'>
-            <span>Add Members</span>
-            <div className='icon'>
-            <i className='fa fa-plus' />
-          </div>
-          </a>
-      </td>
-      </tr>
-    <tr>
-        <td><h3>WBBC Runners</h3></td>
-        <td>133 members</td>
-      </tr>
-    <tr>
-        <td>
-        <a className='add-members-button' href='#' role='button'>
-            <span>Add Members</span>
-            <div className='icon'>
-            <i className='fa fa-plus' />
-          </div>
-          </a>
-      </td>
-      </tr>
-    <tr>
-        <td><h3>WBBC Runners</h3></td>
-        <td>133 members</td>
-      </tr>
-    <tr>
-        <td>
-        <a className='add-members-button' href='#' role='button'>
-            <span>Add Members</span>
-            <div className='icon'>
-            <i className='fa fa-plus' />
-          </div>
-          </a>
-      </td>
-      </tr>
-    <tr>
-        <td><h3>WBBC Runners</h3></td>
-        <td>133 members</td>
-      </tr>
-    <tr>
-        <td>
-        <a className='add-members-button' href='#' role='button'>
-            <span>Add Members</span>
-            <div className='icon'>
-            <i className='fa fa-plus' />
-          </div>
-          </a>
-      </td>
-      </tr>
-  </tbody>
-</table> */
