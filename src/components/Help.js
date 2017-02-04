@@ -4,7 +4,7 @@ import InnerFooter from './InnerFooter'
 
 export default function Help () {
   return (
-    <div>
+    <div className='wrapper'>
       <InnerNavbar />
 
       <div className='inner'>

@@ -3,6 +3,7 @@
 
 html {
   text-size-adjust: 100%;
+  height: 100%;
 }
 
 body {
@@ -10,8 +11,19 @@ body {
   font: $font-base-text-size / 1 $font-Roboto;
   background-color: darken($color-navy, 5);
   color: hsla(0, 0%, 84%, 1);
+  min-height: 100vh;
 }
 
+#root,
+.layout,
+.wrapper {
+  min-height: 100vh;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+}
 // Home page
 
 .homePage {
@@ -552,7 +564,9 @@ body {
 // Basic styling for inner pages
 
 .inner {
-  // position: relative;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 
   header {
     background-position: bottom;
@@ -566,6 +580,11 @@ body {
       text-transform: uppercase;
       margin: 0;
       font-size: 2.5em;
+
+      @media (min-width: 650px) {
+        font-size: 4em;
+        padding: 100px;
+      }
     }
 
     &.profile {
@@ -581,6 +600,7 @@ body {
     &.myGroups {
       background-image: url(../images/runner-02.jpg);
       color: $color-mint;
+      box-shadow: 0px 9px 35px -8px rgba(0, 0, 0, 0.49);
     }
 
     &.help {
@@ -597,10 +617,13 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     background-image: url(../images/BG-runner-01.jpg);
+    flex: 1;
+    // min-height: 100vh;
 
     .container {
       max-width: 960px;
       margin: 0 auto;
+      justify-content: center;
     }
 
     h1 {
@@ -632,32 +655,91 @@ body {
     td {
       // border: 2px solid $color-salmon;
     }
-
-    .profile-main {
-      // max-width: 960px;
-    }
   }
 }
 
 // Styling for "My Groups" page
 
-.myGroups-ul {
-  list-style-type: none;
-  padding: 10px;
-  margin-top: 20px;
-  display: flex;
-  flex-wrap: wrap;
-  border-radius: 5px;
-  background-color: $color-steel;
-  max-width: 1000px;
+.myGroups-container {
 
-  li {
-    padding-left: 30px;
-    margin: 0;
-    flex: 1;
+  .createGroupInput {
+    display: flex;
+    flex-direction: column;
+    // flex: 1;
+    align-items: center;
+    text-align: center;
 
-    h3 {
-      color: $color-salmon;
+    form {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      justify-content: space-between;
+      // padding: 15px;
+      width: auto;
+
+      input {
+        border-radius: 5px;
+        border-style: none;
+        padding: 5px;
+        height: 25px;
+        font-size: 1em;
+        margin-bottom: 15px;
+      }
+
+      button {
+        font-family: $font-Raleway;
+        color: $color-steel;
+        background-color: $color-slime;
+        border-radius: 5px;
+        border-style: none;
+        padding: 5px 20px;
+        margin: 5px;
+        font-size: 1em;
+        text-transform: uppercase;
+
+        &:hover {
+          transition: all 250ms ease;
+          cursor: pointer;
+          color: lighten($color-slime, 25);
+          background-color: $color-mint;
+        }
+      }
+    }
+  }
+
+  .myGroups-ul {
+    list-style-type: none;
+    padding: 10px;
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: 5px;
+    background-color: $color-steel;
+    max-width: 1000px;
+    box-shadow: 0px 9px 35px -8px rgba(0,0,0,0.49);
+
+    li {
+      padding-left: 30px;
+      margin: 0;
+      flex: 1;
+
+      a {
+        text-decoration: none;
+
+        &:visited {
+          color: $color-salmon;
+        }
+
+        &:hover {
+          cursor: pointer;
+          color: lighten($color-slime, 25);
+          // background-color: $color-mint;
+        }
+      }
+
+      .groupNameH3 {
+        color: $color-salmon;
+      }
     }
   }
 }
@@ -1112,6 +1194,7 @@ $button-transition: all #{$button-speed} cubic-bezier(0.31, -0.105, 0.43, 1.4);
   background: darken($color-navy, 8);
   padding: 45px;
   color: white;
+  margin: 0;
 
   h2 {
     text-transform: uppercase;
@@ -1193,6 +1276,7 @@ $button-transition: all #{$button-speed} cubic-bezier(0.31, -0.105, 0.43, 1.4);
   font-family: $font-Roboto;
   font-weight: 300;
   max-width: 960px;
+  // border: 1px solid #bada55;
 
   .tables {
     display: flex;
@@ -1250,5 +1334,91 @@ $button-transition: all #{$button-speed} cubic-bezier(0.31, -0.105, 0.43, 1.4);
     padding: 30px;
     // text-align: left;
     // flex: 1;
+  }
+
+  .leaderboard {
+    padding: 30px;
+    width: 100%;
+
+    h3 {
+      padding: 0;
+      margin-bottom: 15px;
+    }
+
+    h5 {
+      font-size: 1em;
+    }
+
+    p {
+      color: $color-steel;
+      font-weight: normal;
+    }
+
+    .leaderboard-image {
+      vertical-align: bottom;
+    }
+
+    .leaderboard-name {
+      vertical-align: bottom;
+      padding-bottom: 10px;
+      padding-left: 20px;
+    }
+
+    .leaderboard-member {
+      padding-top: 35px;
+      height: 50px;
+    }
+
+    .leaderboard-bar {
+      width: 100%;
+
+      .bar {
+        background-color: $color-salmon;
+        border-radius: 5px;
+        // border-style: inset;
+        // border-width: 1px;
+        // border-color: hsla(40, 85%, 76%, 0.9);
+        // border-top: none;
+        // border-left: none;
+
+        // &:hover {
+        //   // background-color: $color-mint;
+        //   transition: $button-transition;
+        // }
+
+        .meter {
+          background-color: $color-mint;
+          height: 2em;
+          border-radius: 5px;
+
+          p {
+            margin: 0;
+            padding: 5px 0 0 10px;
+            vertical-align: bottom;
+            text-align: left;
+          }
+
+          &:hover {
+            background-color: darken($color-mint, 15);
+            transition: $button-transition;
+
+            p {
+              color: white;
+              font-size: 1.2em;
+              padding: 2px 0 0 15px;
+            }
+          }
+        }
+      }
+    }
+
+    .leaderboard-name {
+      width: 100%;
+    }
+
+    .leaderboard-image img {
+      border-radius: 50%;
+      // padding-right: 10px;
+    }
   }
 }

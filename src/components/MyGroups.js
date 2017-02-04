@@ -6,9 +6,9 @@ import GroupNew from './GroupNew'
 import { Link } from 'react-router'
 import { graphql } from 'react-apollo'
 
-import UserOwnedGroups from '../graphql/query/UserOwnedGroups.gql'
+import { queryUserOwnedGroups } from '../graphql'
 
-@graphql(UserOwnedGroups, { name: 'userOwnedGroups' })
+@graphql(...queryUserOwnedGroups())
 export default class MyGroups extends Component {
 
   state = {
@@ -20,13 +20,17 @@ export default class MyGroups extends Component {
     console.log('modal')
   }
 
+  addMembersToGroup = () => {
+    console.log('add member form submitted')
+  }
+
   groups () {
-    if (this.props.userOwnedGroups.loading) return <li>loading</li>
-    return this.props.userOwnedGroups.user.ownedGroups.map((group, i) => {
+    if (this.props.queryUserOwnedGroups.loading) return <li>loading</li>
+    return this.props.queryUserOwnedGroups.user.ownedGroups.map((group, i) => {
       return (
         <li key={i}>
-          <h3>{group.name}</h3>
-          <p># members</p>
+          <h3><Link className='groupNameH3' to={`/mygroups/${group.id}`}>{group.name}</Link></h3>
+          <p># members ?</p>
           <a className='add-members-button'
             role='button'
             onClick={this.groupModalToggle}>
@@ -42,20 +46,26 @@ export default class MyGroups extends Component {
 
   render () {
     return (
-      <div>
+      <div className='wrapper'>
+
+        {/* Basic page layout */}
         <div className='inner'>
           <header className='myGroups'>
             <h1>My Groups</h1>
           </header>
           <div className='lower'>
             <div className='container'>
-              <ul className='myGroups-ul'>
-                {this.groups()}
-              </ul>
+              <div className='myGroups-container'>
+                <GroupNew />
+                <ul className='myGroups-ul'>
+                  {this.groups()}
+                </ul>
+              </div>
             </div>
           </div>
         </div>
 
+        {/* Add Members modal */}
         <div className={`add-members-modal ${this.state.visible ? 'overlay' : 'hidden'}`}>
           <div className='add-members-scroll'>
             <div className='add-members-div'>
@@ -66,11 +76,18 @@ export default class MyGroups extends Component {
                   <h3>Personal Info</h3>
                   <p><input type='text' className='checkout-input checkout-name' placeholder='Name' /></p>
                   <p><input type='text' className='checkout-input checkout-name' placeholder='Email' /></p>
-                  <textarea className='message' name='message' rows='10' cols='30'>Join our group on Dash 4 Cash and start running with purpose.</textarea>
+                  <textarea
+                    value=''
+                    className='message'
+                    name='message'
+                    rows='10'
+                    cols='30'
+                    onChange={console.log('?')}
+                  />
                 </div>
                 <a className='submit-button'
                   role='button'
-                  onClick={this.groupModalToggle}>
+                  onClick={this.addMembersToGroup}>
                   <span>Submit</span>
                   <div className='icon'>
                     <i className='fa fa-play' />
@@ -81,7 +98,6 @@ export default class MyGroups extends Component {
           </div>
         </div>
 
-        <GroupNew />
         <InnerFooter />
         <InnerNavbar />
       </div>

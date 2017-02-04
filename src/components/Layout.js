@@ -2,10 +2,8 @@ import React from 'react'
 
 function Layout ({ children }) {
   return (
-    <div>
-      <header>
-        {children}
-      </header>
+    <div className='layout'>
+      {children}
     </div>
   )
 }

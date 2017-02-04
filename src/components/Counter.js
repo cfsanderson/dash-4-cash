@@ -4,7 +4,7 @@ import CountUp from 'react-countup'
 class Counter extends Component {
 
   onComplete = () => {
-    console.log('wat')
+    console.log('get a cool effect happening here on Counter complete')
   }
   // <div className={`donateModal ${this.state.visible ? 'overlay' : 'hidden'}`}>
 

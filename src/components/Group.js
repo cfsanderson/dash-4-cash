@@ -2,86 +2,48 @@ import React, { Component } from 'react'
 import InnerNavbar from './InnerNavbar'
 import InnerFooter from './InnerFooter'
 import MyDonations from './MyDonations'
-import MyGroupsDonations from './MyGroupsDonations'
 import DonateModal from './DonateModal'
+import LeaderBoard from './LeaderBoard'
+import { graphql } from 'react-apollo'
 
+import UserOwnedGroups from '../graphql/query/UserOwnedGroups.gql'
+
+@graphql(UserOwnedGroups, { name: 'userOwnedGroups' })
 export default class Group extends Component {
 
   state = {
-    visible: false
+    donateVisible: false
   }
 
-  modalToggle = () => {
-    this.setState({ visible: !this.state.visible })
-    console.log('modal')
+  donateModalToggle = () => {
+    this.setState({
+      donateVisible: !this.state.donateVisible
+    })
+  }
+
+  groupHeader () {
+    if (this.props.userOwnedGroups.loading) return <li>loading</li>
+    return this.props.userOwnedGroups.user.ownedGroups.map((group, i) => {
+      return (
+        <div>{group.name}</div>
+      )
+    })
   }
 
   render () {
     return (
-      <div>
+      <div className='container'>
         <InnerNavbar />
         <div className='inner'>
           <header className='group'>
-            <h1>Bradenton Runner's Club</h1>
+            <h1>{this.groupHeader()}</h1>
           </header>
-
           <div className='lower'>
-            <ul className='donations-ul'>
-              <li className='donations' >
-                <div>
-                  <h3>My Donations</h3>
-                  <MyDonations />
-                </div>
-              </li>
-              <li className='donations' >
-                <div>
-                  <h3>Group Donations</h3>
-                  <MyGroupsDonations />
-                </div>
-              </li>
-              <li>
-                <a className='donate-button'
-                  role='button'
-                  onClick={this.modalToggle}>
-                  <span>Donate</span>
-                  <div className='icon'>
-                    <i className='fa fa-money' />
-                  </div>
-                </a>
-              </li>
-            </ul>
-
-            <table>
-              <tbody>
-                <tr>
-                  <th>Leaderboard</th>
-                </tr>
-                <tr>
-                  <td>Caleb Sanderson</td>
-                  <td>progress bar here</td>
-                </tr>
-                <tr>
-                  <td>Group name B</td>
-                  <td><button>+ Members</button></td>
-                </tr>
-                <tr>
-                  <td>Group name C</td>
-                  <td><button>+ Members</button></td>
-                </tr>
-              </tbody>
-            </table>
+            <MyDonations toggle={this.donateModalToggle} />
+            <LeaderBoard />
           </div>
         </div>
-        {/* <div className={`modal ${this.state.visible ? 'overlay' : 'hidden'}`}>
-          <h2>Donate!</h2>
-          <ul>
-            <li>Amount</li>
-            <li>My Groups</li>
-            <li>Payment Info</li>
-            <li>Submit Button</li>
-          </ul>
-        </div> */}
-        <DonateModal />
+        <DonateModal visible={this.state.donateVisible} toggle={this.donateModalToggle} />
         <InnerFooter />
       </div>
     )

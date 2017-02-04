@@ -2,14 +2,16 @@ import React, { Component } from 'react'
 
 class DonateModal extends Component {
 
-  // <div className={`donateModal ${this.state.visible ? 'overlay' : 'hidden'}`}>
+  submitDonation = () => {
+    this.props.toggle()
+  }
 
   render () {
     return (
       <div className={`donateModal ${this.props.visible ? 'overlay' : 'hidden'}`}>
         <div className='donateScroll'>
           <div className='donate-div'>
-            <h2>Donate!</h2>
+            <h2>Donate NOW!</h2>
             <form className='donate-form'>
               <div className='donate-fields'>
                 <h3>Billing Info</h3>
@@ -21,16 +23,13 @@ class DonateModal extends Component {
                 <h3>Group</h3>
                 <p>
                   <select name='checkout-input group-select'>
-                    <option value='bradenton'>Bradenton Runners Club</option>
-                    <option value='stpete'>St. Pete Runners Club</option>
-                    <option value='tiy'>The Iron Yard Runners</option>
-                    <option value='sarasota'>Sarasota Runners Club</option>
+                    <option value='?'>this.groupsI'veCreated</option>
                   </select>
                 </p>
               </div>
               <a className='submit-button'
                 role='button'
-                onClick={this.props.toggle}>
+                onClick={this.submitDonation}>
                 <span>Submit</span>
                 <div className='icon'>
                   <i className='fa fa-play' />

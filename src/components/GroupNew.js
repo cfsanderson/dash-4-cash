@@ -1,11 +1,10 @@
 import React, { Component } from 'react'
 import { graphql } from 'react-apollo'
 import withAuth from '../utils/withAuth'
-import update from 'immutability-helper'
-import CreateGroup from '../graphql/mutation/CreateGroup.gql'
+import { mutationCreateGroup, queryUserOwnedGroups } from '../graphql'
 
 @withAuth
-@graphql(CreateGroup, { name: 'createGroup' })
+@graphql(...mutationCreateGroup())
 class GroupNew extends Component {
 
   state = {
@@ -14,17 +13,12 @@ class GroupNew extends Component {
 
   _createGroup = (e) => {
     e.preventDefault()
-    this.props.createGroup({
+    this.props.mutationCreateGroup({
       variables: {
         ownerId: this.props.client.userId,
         name: this.state.newGroupName
       },
-      updateQueries: {
-        UserOwnedGroups: (prev, { mutationResult }) => {
-          const group = mutationResult.data.createGroup
-          return update(prev, { user: { ownedGroups: { $push: [group] } } })
-        }
-      }
+      refetchQueries: [{query: queryUserOwnedGroups(false)}]
     })
     console.log('creating a group')
   }
@@ -35,7 +29,9 @@ class GroupNew extends Component {
 
   render () {
     return (
-      <div>
+      <div className='createGroupInput'>
+        <h2>Ready to start a new group?</h2>
+        <p>Start here.</p>
         <form onSubmit={this._createGroup}>
           <input
             type='text'
