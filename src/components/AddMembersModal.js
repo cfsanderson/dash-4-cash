@@ -1,7 +1,12 @@
 import React, { Component } from 'react'
 import { graphql } from 'react-apollo'
 import withAuth from '../utils/withAuth'
-import { mutationCreateMembership, queryUserOwnedGroups } from '../graphql'
+import ui from '../ui'
+
+import {
+  mutationCreateMembership,
+  queryUserOwnedGroups
+} from '../graphql'
 
 @withAuth
 @graphql(...mutationCreateMembership())
@@ -16,17 +21,20 @@ class AddMembersModal extends Component {
     e.preventDefault()
     this.props.mutationCreateMembership({
       variables: {
-        ownerId: this.props.client.userId,
-        name: this.state.newGroupName
+        groupId: this.props.id,
+        name: this.state.newMemberName,
+        email: this.state.newMemberEmail
       },
       refetchQueries: [{query: queryUserOwnedGroups(false)}]
+    }).then(() => {
+      ui.dismissModal()
     })
     console.log('creating a new member')
   }
 
-  _newMemberNameChange = (e) => {
+  _changed = (e) => {
     this.setState({
-      newMemberName: e.target.value
+      [e.target.name]: e.target.value
     })
   }
 
@@ -34,16 +42,18 @@ class AddMembersModal extends Component {
     return (
       <div className='add-members-div'>
         <h2>Let's Dash!</h2>
-        <form className='add-members-form'>
+        <form className='add-members-form' onSubmit={this._addMember}>
           <div className='add-members-fields'>
             <h3>Personal Info</h3>
-            {this.props.id}
+            {/* {this.props.id} */}
             <p>
               <input
                 type='text'
                 className='checkout-input checkout-name'
                 placeholder='Name'
-                name=''
+                value={this.state.newMemberName}
+                name='newMemberName'
+                onChange={this._changed}
               />
             </p>
             <p>
@@ -51,10 +61,12 @@ class AddMembersModal extends Component {
                 type='text'
                 className='checkout-input checkout-name'
                 placeholder='Email'
+                value={this.state.newMemberEmail}
+                name='newMemberEmail'
+                onChange={this._changed}
               />
             </p>
             <textarea
-              value=''
               className='message'
               name='message'
               rows='10'
@@ -62,9 +74,10 @@ class AddMembersModal extends Component {
               onChange={console.log('?')}
             />
           </div>
-          <a className='submit-button'
+          <a
+            className='submit-button'
             role='button'
-            onClick={this.groupModalToggle}>
+            onClick={this._addMember}>
             <span>Submit</span>
             <div className='icon'>
               <i className='fa fa-play' />

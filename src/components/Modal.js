@@ -14,7 +14,9 @@ class Modal extends Component {
       return <div className='modal'>
         <div className='card'>
           <header>
-            <button onClick={this._dismiss}>&times;</button>
+            <button onClick={this._dismiss}>
+              <i className='fa fa-times' aria-hidden='true' />
+            </button>
           </header>
           <div className='content'>
             {ui.modal}

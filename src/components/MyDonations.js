@@ -1,11 +1,13 @@
 import React, { Component } from 'react'
 import Counter from './Counter'
+import DonateModal from './DonateModal'
+import ui from '../ui'
 
 class MyDonations extends Component {
 
-  // const onComplete = () => {
-  //   className='custom-count booya'
-  // }
+  _displayDonate = () => {
+    ui.displayModal(<DonateModal />)
+  }
 
   render () {
     return (
@@ -30,7 +32,7 @@ class MyDonations extends Component {
           <li>
             <a className='donate-button'
               role='button'
-              onClick={this.props.toggle}>
+              onClick={this._displayDonate}>
               <span>Donate</span>
               <div className='icon'>
                 <i className='fa fa-money' />

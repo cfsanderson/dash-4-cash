@@ -3,16 +3,37 @@ import React, { Component } from 'react'
 class LeaderBoard extends Component {
 
   render () {
+    const members = this.props.members.map((member, i) => {
+      return (
+        <tbody>
+          <tr className='leaderboard-member'>
+            <td className='leaderboard-image'><img src={require('../images/bru.png')} height={30} width={30} /></td>
+            <td className='leaderboard-name'><h5>{member.name}</h5></td>
+          </tr>
+          <tr>
+            <td className='leaderboard-bar' colSpan='3'>
+              <div className='bar'>
+                <div className='meter' style={{width: '100%'}}>
+                  <p>35 miles</p>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      )
+    })
+
     return (
       <div className='myStats'>
         <table className='leaderboard'>
+          {members}
 
           {/* leaderboard header */}
-          <tbody>
+          <thead>
             <tr>
               <th colSpan='3'><h3>Leaderboard</h3></th>
             </tr>
-          </tbody>
+          </thead>
 
           {/* leaderboard members */}
           <tbody>

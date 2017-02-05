@@ -46,7 +46,6 @@ class DonateModal extends Component {
                   <option value='save-the-children'>Save The Children</option>
                   <option value='unicef'>United States Fund for UNICEF</option>
                   <option value='aclu'>American Civil Liberties Union Foundation</option>
-                  <option value='aspca'>American Society for the Prevention of Cruelty to Animals</option>
                   <option value='oxfam'>Oxfam American</option>
                   <option value='environmental-defense-fund'>Environmental Defense Fund</option>
                 </select>
@@ -64,9 +63,6 @@ class DonateModal extends Component {
           </form>
         </div>
       </div>
-      // <div className={`donateModal ${this.props.visible ? 'overlay' : 'hidden'}`}>
-      //
-      // </div>
     )
   }
 }

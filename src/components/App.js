@@ -29,7 +29,7 @@ class App extends Component {
             <IndexRoute component={Home} />
             <Route path='profile' component={Profile} />
             <Route path='mygroups' component={MyGroups} />
-            <Route path='mygroups/:slug' component={Group} />
+            <Route path='mygroups/:id' component={Group} />
             <Route path='help' component={Help} />
             <Route path='contact' component={Contact} />
             <Route path='about' component={About} />

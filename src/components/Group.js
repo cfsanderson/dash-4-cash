@@ -2,32 +2,30 @@ import React, { Component } from 'react'
 import InnerNavbar from './InnerNavbar'
 import InnerFooter from './InnerFooter'
 import MyDonations from './MyDonations'
-import DonateModal from './DonateModal'
+
 import LeaderBoard from './LeaderBoard'
 import { graphql } from 'react-apollo'
 
-import UserOwnedGroups from '../graphql/query/UserOwnedGroups.gql'
+import { queryGroup } from '../graphql'
 
-@graphql(UserOwnedGroups, { name: 'userOwnedGroups' })
+@graphql(...queryGroup({
+  options: props => ({ variables: { id: props.params.id } })
+}))
 export default class Group extends Component {
 
-  state = {
-    donateVisible: false
-  }
-
-  donateModalToggle = () => {
-    this.setState({
-      donateVisible: !this.state.donateVisible
-    })
-  }
-
   groupHeader () {
-    if (this.props.userOwnedGroups.loading) return <li>loading</li>
-    return this.props.userOwnedGroups.user.ownedGroups.map((group, i) => {
-      return (
-        <div>{group.name}</div>
-      )
-    })
+    if (this.props.queryGroup.loading) return '...'
+    return this.props.queryGroup.Group.name
+  }
+
+  leaderboard () {
+    const { loading, Group } = this.props.queryGroup
+
+    if (loading) {
+      return <h1>Loading...</h1>
+    } else {
+      return <LeaderBoard members={Group.memberships} />
+    }
   }
 
   render () {
@@ -39,11 +37,10 @@ export default class Group extends Component {
             <h1>{this.groupHeader()}</h1>
           </header>
           <div className='lower'>
-            <MyDonations toggle={this.donateModalToggle} />
-            <LeaderBoard />
+            <MyDonations />
+            {this.leaderboard()}
           </div>
         </div>
-        <DonateModal visible={this.state.donateVisible} toggle={this.donateModalToggle} />
         <InnerFooter />
       </div>
     )

@@ -1,0 +1,10 @@
+query Group ($id: ID!) {
+  Group(id: $id) {
+    id
+    name
+    memberships {
+      name
+      email
+    }
+  }
+}

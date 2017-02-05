@@ -953,7 +953,7 @@ $button-transition: all #{$button-speed} cubic-bezier(0.31, -0.105, 0.43, 1.4);
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.3);
   transition: $button-transition;
   padding-top: 2px;
-  // margin-bottom: 20px;
+  margin-bottom: 45px;
 
   span,
   .icon {
@@ -961,6 +961,7 @@ $button-transition: all #{$button-speed} cubic-bezier(0.31, -0.105, 0.43, 1.4);
     height: 90%;
     text-align: center;
     position: absolute;
+    color: lighten($color-steel, 5);
   }
 
   span {
@@ -1027,11 +1028,30 @@ $button-transition: all #{$button-speed} cubic-bezier(0.31, -0.105, 0.43, 1.4);
   padding: 45px;
   filter: drop-shadow(2px 2px 2px rgba(60, 62, 64, 0.9));
 
+  header {
+    display: flex;
+    flex-direction: row-reverse;
+    padding-top: 25px;
+
+    button {
+      background-color: transparent;
+      border: none;
+    }
+  }
+
+  i {
+    color: white;
+    font-size: 2em;
+    text-align: right;
+  }
+
   .card {
     background-color: darken($color-navy, 3);
     border-radius: 5px;
-    padding: 45px;
-    max-width: 80vw;
+    padding: 0 45px 45px;
+    max-width: 60vw;
+    max-height: 80vh;
+    overflow: hidden;
 
     > .content {
       overflow: scroll;
@@ -1056,7 +1076,7 @@ $button-transition: all #{$button-speed} cubic-bezier(0.31, -0.105, 0.43, 1.4);
     text-transform: uppercase;
     text-align: center;
     margin: 0;
-    padding-bottom: 15px;
+    padding: 15px 0;
     font-size: 2em;
   }
 
@@ -1085,13 +1105,12 @@ $button-transition: all #{$button-speed} cubic-bezier(0.31, -0.105, 0.43, 1.4);
     .credit-cards {
       display: flex;
       flex-direction: row;
-      font-size: 2em;
+      font-size: 1em;
       color: $color-vanilla;
 
       p {
         padding: 5px;
       }
-      // justify-content: space-between;
     }
 
     input {
@@ -1167,7 +1186,6 @@ $button-transition: all #{$button-speed} cubic-bezier(0.31, -0.105, 0.43, 1.4);
 .add-members-div {
   background-color: darken($color-navy, 3);
   border-radius: 5px;
-  padding: 30px;
 
   h2 {
     color: $color-salmon;
