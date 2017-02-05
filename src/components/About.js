@@ -13,7 +13,8 @@ export default function About () {
         </header>
         <div className='lower'>
           <h2>Why Dash 4 Cash?</h2>
-          <p>I created Dash 4 Cash as a final project for my Front-End Engineering course at <a href='https://www.theironyard.com/' target='_blank'>The Iron Yard</a>.</p>
+          <p>Hi, I'm Caleb <img src='../images/Caleb-copy.jpg' height='50px' width='50px' /></p>
+          <p>AmonI am a runner and front-end web developer, created Dash 4 Cash as a final project for my Front-End Engineering course at <a href='https://www.theironyard.com/' target='_blank'>The Iron Yard</a>.</p>
         </div>
       </div>
 

@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
 import InnerNavbar from './InnerNavbar.js'
 import InnerFooter from './InnerFooter'
-import GroupNew from './GroupNew'
+import CreateNewGroup from './CreateNewGroup'
+import AddMembersModal from './AddMembersModal'
+import ui from '../ui'
 
 import { Link } from 'react-router'
 import { graphql } from 'react-apollo'
@@ -11,12 +13,8 @@ import { queryUserOwnedGroups } from '../graphql'
 @graphql(...queryUserOwnedGroups())
 export default class MyGroups extends Component {
 
-  state = {
-    visible: false
-  }
-
-  groupModalToggle = () => {
-    this.setState({ visible: !this.state.visible })
+  groupModalToggle = (id) => {
+    ui.displayModal(<AddMembersModal id={id} />)
     console.log('modal')
   }
 
@@ -30,10 +28,18 @@ export default class MyGroups extends Component {
       return (
         <li key={i}>
           <h3><Link className='groupNameH3' to={`/mygroups/${group.id}`}>{group.name}</Link></h3>
-          <p># members ?</p>
+          <div>
+            <h2>Members</h2>
+            <ul>
+              {group.memberships.map((member, i) => {
+                return <li key={i}>{member.name}</li>
+              })}
+            </ul>
+          </div>
+          <p>{group.memberships.length} Member(s)</p>
           <a className='add-members-button'
             role='button'
-            onClick={this.groupModalToggle}>
+            onClick={() => this.groupModalToggle(group.id)}>
             <span>Add Members</span>
             <div className='icon'>
               <i className='fa fa-plus' />
@@ -56,7 +62,7 @@ export default class MyGroups extends Component {
           <div className='lower'>
             <div className='container'>
               <div className='myGroups-container'>
-                <GroupNew />
+                <CreateNewGroup />
                 <ul className='myGroups-ul'>
                   {this.groups()}
                 </ul>
@@ -66,11 +72,10 @@ export default class MyGroups extends Component {
         </div>
 
         {/* Add Members modal */}
-        <div className={`add-members-modal ${this.state.visible ? 'overlay' : 'hidden'}`}>
+        {/* <div className={`add-members-modal ${this.state.visible ? 'overlay' : 'hidden'}`}>
           <div className='add-members-scroll'>
             <div className='add-members-div'>
               <h2>Let's Dash!</h2>
-              <p>Add members to the ______ group using the form below.</p>
               <form className='add-members-form'>
                 <div className='add-members-fields'>
                   <h3>Personal Info</h3>
@@ -87,7 +92,7 @@ export default class MyGroups extends Component {
                 </div>
                 <a className='submit-button'
                   role='button'
-                  onClick={this.addMembersToGroup}>
+                  onClick={this.groupModalToggle}>
                   <span>Submit</span>
                   <div className='icon'>
                     <i className='fa fa-play' />
@@ -96,8 +101,7 @@ export default class MyGroups extends Component {
               </form>
             </div>
           </div>
-        </div>
-
+        </div> */}
         <InnerFooter />
         <InnerNavbar />
       </div>

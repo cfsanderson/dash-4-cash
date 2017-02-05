@@ -5,7 +5,7 @@ import { mutationCreateGroup, queryUserOwnedGroups } from '../graphql'
 
 @withAuth
 @graphql(...mutationCreateGroup())
-class GroupNew extends Component {
+class CreateNewGroup extends Component {
 
   state = {
     newGroupName: ''
@@ -31,7 +31,7 @@ class GroupNew extends Component {
     return (
       <div className='createGroupInput'>
         <h2>Ready to start a new group?</h2>
-        <p>Start here.</p>
+        <p>Enter the name of your group here and click "Create Group".</p>
         <form onSubmit={this._createGroup}>
           <input
             type='text'
@@ -45,4 +45,4 @@ class GroupNew extends Component {
   }
 }
 
-export default GroupNew
+export default CreateNewGroup

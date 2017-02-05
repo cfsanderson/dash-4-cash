@@ -2,19 +2,14 @@ import React, { Component } from 'react'
 import InnerNavbar from './InnerNavbar'
 import InnerFooter from './InnerFooter'
 import MyDonations from './MyDonations'
-import MyStats from './MyStats'
+import ProfileStats from './ProfileStats'
 import DonateModal from './DonateModal'
+import ui from '../ui'
 
 export default class Profile extends Component {
 
-  state = {
-    donateVisible: false
-  }
-
-  donateModalToggle = () => {
-    this.setState({
-      donateVisible: !this.state.donateVisible
-    })
+  _showDonateModal = () => {
+    ui.displayModal(<DonateModal />)
   }
 
   render () {
@@ -27,14 +22,11 @@ export default class Profile extends Component {
 
           <div className='lower profile-main'>
             <div className='container'>
-              <MyDonations toggle={this.donateModalToggle} />
-              <MyStats />
+              <MyDonations toggle={this._showDonateModal} />
+              <ProfileStats />
             </div>
           </div>
         </div>
-
-        <DonateModal visible={this.state.donateVisible} toggle={this.donateModalToggle} />
-
         <InnerFooter />
 
         <InnerNavbar />

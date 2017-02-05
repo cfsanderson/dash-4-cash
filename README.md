@@ -14,7 +14,6 @@ Stretch Goals...
 - add progress indicators (dots?)
 - Parallax effect?
 
-###Inner Pages
 Profile Pages
 - style for displaying MyStats
 - Donate button needs to bring up DonateModal
