@@ -7,6 +7,8 @@ class LeaderBoard extends Component {
       return (
         <tbody>
           <tr className='leaderboard-member'>
+            {/* if no picture display <i class="fa fa-user-o" aria-hidden="true"></i>
+ */}
             <td className='leaderboard-image'><img src={require('../images/bru.png')} height={30} width={30} /></td>
             <td className='leaderboard-name'><h5>{member.name}</h5></td>
           </tr>

@@ -4,7 +4,7 @@ This app was created as the final project for my course in Front-End Engineering
 ##TODO / Task List
 
 ###General
-- [x] get page to automatically scroll to the top of a page when changing pages
+- [x] page automatically scrolls to the top of a page when changing pages
 - [ ] close navbar with click anywhere OUTSIDE the nav.
 
 ###Home Page
@@ -35,7 +35,7 @@ This app was created as the final project for my course in Front-End Engineering
 - [x] basic style for leaderboard and make as a component
 - [ ] add Members button
 - [x] Group name in header
-- [ ] profile pics in leaderboard
+- [ ] profile pics in leaderboard, if no pic then display "fa-user-o"
 
 ###Add Members modal
 - [ ] better text
@@ -64,9 +64,9 @@ This app was created as the final project for my course in Front-End Engineering
 ###Help
 - [ ] compelling content text
 - [ ] breadcrumbs for
-  - [ ] create a groups
+  - [ ] create a group
+  - [ ] delete a group
   - [ ] make a donation
-  - [ ]
 
 ###Database schema
 - [x] users can start groups
