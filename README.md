@@ -6,7 +6,7 @@ This app was created as the final project for my course in Front-End Engineering
 - separate donation modules for
   - profile page (showing my TOTAL donations & my group's TOTAL donations)
   - group page (showing my total donations TO THAT GROUP and the TOTAL DONATIONS OF THAT GROUP - sorry for shouting)
-- get page to automatically scroll to the top of a page when changing pages
+[x] get page to automatically scroll to the top of a page when changing pages
 
 
 ###Home Page

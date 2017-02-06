@@ -24,7 +24,10 @@ class App extends Component {
   render () {
     return (
       <ApolloProvider client={this.props.client.apollo}>
-        <Router history={browserHistory}>
+        <Router
+          onUpdate={() => window.scrollTo(0, 0)}
+          history={browserHistory}>
+
           <Route path='/' component={Layout}>
             <IndexRoute component={Home} />
             <Route path='profile' component={Profile} />
