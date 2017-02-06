@@ -28,14 +28,14 @@ export default class MyGroups extends Component {
       return (
         <li key={i}>
           <h3><Link className='groupNameH3' to={`/mygroups/${group.id}`}>{group.name}</Link></h3>
-          <div>
+          {/* <div>
             <h2>Members</h2>
             <ul>
               {group.memberships.map((member, i) => {
                 return <li key={i}>{member.name}</li>
               })}
             </ul>
-          </div>
+          </div> */}
           <p>{group.memberships.length} Member(s)</p>
           <a className='add-members-button'
             role='button'

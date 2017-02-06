@@ -1,11 +1,13 @@
 # Dash 4 Cash
 This app was created as the final project for my course in Front-End Engineering at The Iron Yard in St. Petersburg, FL.
 
-##To-Dos
+##TODO
 - track donations
 - separate donation modules for
   - profile page (showing my TOTAL donations & my group's TOTAL donations)
   - group page (showing my total donations TO THAT GROUP and the TOTAL DONATIONS OF THAT GROUP - sorry for shouting)
+- get page to automatically scroll to the top of a page when changing pages
+
 
 ###Home Page
 - backdoor for people who don't have Strava or maybe some other type of login? (especially for Demo Day)
