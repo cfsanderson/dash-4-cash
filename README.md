@@ -1,20 +1,20 @@
 # Dash 4 Cash
 This app was created as the final project for my course in Front-End Engineering at The Iron Yard in St. Petersburg, FL.
 
-##TODO
-- track donations
-- separate donation modules for
-  - profile page (showing my TOTAL donations & my group's TOTAL donations)
-  - group page (showing my total donations TO THAT GROUP and the TOTAL DONATIONS OF THAT GROUP - sorry for shouting)
-[x] get page to automatically scroll to the top of a page when changing pages
+##TODO / Task List
+- [x] get page to automatically scroll to the top of a page when changing pages- []track donations
+- [ ] close navbar with click anywhere OUTSIDE the nav.
+- [] separate donation modules for
+  - [] profile page (showing my TOTAL donations & my group's TOTAL donations)
+  - [] group page (showing my total donations TO THAT GROUP and the TOTAL DONATIONS OF THAT GROUP - sorry for shouting)
+-
 
+Stretch Goals...
+- [] add progress indicators (dots?)
+- [] Parallax effect on home page?
 
 ###Home Page
 - backdoor for people who don't have Strava or maybe some other type of login? (especially for Demo Day)
-
-Stretch Goals...
-- add progress indicators (dots?)
-- Parallax effect?
 
 Profile Pages
 - style for displaying MyStats
