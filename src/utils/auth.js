@@ -59,6 +59,10 @@ class Auth {
     browserHistory.push('/')
   }
 
+  get stravaToken () {
+    return this.isSignedIn && auth.profile.strava_token
+  }
+
   @computed get isSignedIn () { return !!this.token }
 }
 

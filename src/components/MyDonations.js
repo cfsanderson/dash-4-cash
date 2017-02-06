@@ -9,6 +9,11 @@ class MyDonations extends Component {
     ui.displayModal(<DonateModal />)
   }
 
+  static defaultProps = {
+    mine: 0,
+    group: 0
+  }
+
   render () {
     return (
       <div>
@@ -18,7 +23,7 @@ class MyDonations extends Component {
               <h3>My Donations</h3>
 
               {/* Need to input counter from user donations */}
-              <Counter end={150} />
+              <Counter end={this.props.mine} />
             </div>
           </li>
           <li className='donations' >
@@ -26,7 +31,7 @@ class MyDonations extends Component {
               <h3>Group Donations</h3>
 
               {/* Need to input counter from user donations */}
-              <Counter end={1227} />
+              <Counter end={this.props.group} />
             </div>
           </li>
           <li>

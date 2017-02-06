@@ -1,6 +1,10 @@
 import React, { Component } from 'react'
 import ui from '../ui'
+import { graphql } from 'react-apollo'
 
+import { queryUserProfile } from '../graphql'
+
+@graphql(...queryUserProfile())
 class DonateModal extends Component {
 
   submitDonation = () => {

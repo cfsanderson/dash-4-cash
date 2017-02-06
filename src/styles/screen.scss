@@ -556,6 +556,10 @@ body {
       margin-left: 10px;
     }
 
+    h5 {
+      width: auto;
+    }
+
     h5 a {
       &:link,
       &:visited {
@@ -707,6 +711,12 @@ body {
           cursor: pointer;
           color: lighten($color-slime, 25);
           background-color: $color-mint;
+        }
+
+        &:focus {
+          color: $color-steel;
+          background-color: $color-slime;
+          outline: none;
         }
       }
     }
@@ -1374,10 +1384,11 @@ $button-transition: all #{$button-speed} cubic-bezier(0.31, -0.105, 0.43, 1.4);
   h4 {
     font-family: $font-Raleway;
     text-transform: uppercase;
-    padding-bottom: 15px;
+    padding-bottom: 35px;
     margin: 0;
     color: $color-slime;
     text-align: center;
+    font-size: 1.5em;
     // flex: 1;
   }
 
@@ -1489,4 +1500,11 @@ $button-transition: all #{$button-speed} cubic-bezier(0.31, -0.105, 0.43, 1.4);
       // padding-right: 10px;
     }
   }
+}
+
+tbody {
+  border: solid 1px $color-navy;
+  border-radius: 5px;
+  box-shadow: 0 9px 15px -8px rgba(0, 0, 0, 0.49);
+  padding: 15px 0;
 }

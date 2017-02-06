@@ -4,12 +4,12 @@ import withAuth from '../utils/withAuth'
 import ui from '../ui'
 
 import {
-  mutationCreateMembership,
+  mutationCreateInvitation,
   queryUserOwnedGroups
 } from '../graphql'
 
 @withAuth
-@graphql(...mutationCreateMembership())
+@graphql(...mutationCreateInvitation())
 class AddMembersModal extends Component {
 
   state = {
@@ -19,7 +19,7 @@ class AddMembersModal extends Component {
 
   _addMember = (e) => {
     e.preventDefault()
-    this.props.mutationCreateMembership({
+    this.props.mutationCreateInvitation({
       variables: {
         groupId: this.props.id,
         name: this.state.newMemberName,

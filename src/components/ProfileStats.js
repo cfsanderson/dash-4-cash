@@ -1,26 +1,36 @@
 import React, { Component } from 'react'
+import strava from '../utils/strava'
 
 export default class ProfileStats extends Component {
 
+  state = {
+    activities: []
+  }
+
+  componentDidMount () {
+    strava.get('/athlete/activities?per_page=60').then(activities => this.setState({ activities }))
+  }
+
   render () {
+    // console.log(this.state)
     return (
       <div className='myStats tables'>
         <h3>My Stats</h3>
 
         {/* MILES */}
         <table className='leaderboard'>
-          <tbody>
+          <thead>
             <tr>
               <th colSpan='3'><h4>Miles</h4></th>
             </tr>
-          </tbody>
-          <tbody>
+          </thead>
+          <tbody className='myStats-section'>
             <tr className='leaderboard-member'>
               <td><h5>Today</h5></td>
               <td>3 miles</td>
             </tr>
           </tbody>
-          <tbody>
+          <tbody className='myStats-section'>
             <tr className='leaderboard-member'>
               <td><h5>This Week</h5></td>
             </tr>
@@ -46,7 +56,7 @@ export default class ProfileStats extends Component {
               </td>
             </tr>
           </tbody>
-          <tbody>
+          <tbody className='myStats-section'>
             <tr className='leaderboard-member'>
               <td><h5>This Month</h5></td>
             </tr>
@@ -76,11 +86,11 @@ export default class ProfileStats extends Component {
 
         {/* MINUTES */}
         <table className='leaderboard'>
-          <tbody>
+          <thead>
             <tr>
               <th colSpan='3'><h4>Minutes</h4></th>
             </tr>
-          </tbody>
+          </thead>
           <tbody>
             <tr className='leaderboard-member'>
               <td><h5>Today</h5></td>
@@ -141,7 +151,7 @@ export default class ProfileStats extends Component {
           </tbody>
         </table>
 
-        <div className='tables'>
+        {/* <div className='tables'>
           <div className='miles'>
             <h4>Miles</h4>
             <table className='miles-table'>
@@ -197,7 +207,7 @@ export default class ProfileStats extends Component {
               </tbody>
             </table>
           </div>
-        </div>
+        </div> */}
       </div>
     )
   }

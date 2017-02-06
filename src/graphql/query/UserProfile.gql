@@ -1,0 +1,17 @@
+query UserProfile {
+  user {
+    id
+    name
+    donations {
+      id
+      amount
+    }
+    groups {
+      id
+      donations {
+        id
+        amount
+      }
+    }
+  }
+}

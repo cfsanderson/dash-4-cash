@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router'
+import withAuth from '../utils/withAuth'
 
+@withAuth
 export default class InnerNavbar extends Component {
 
   static PropTypes = {
@@ -15,6 +17,29 @@ export default class InnerNavbar extends Component {
 
   toggle () {
     this.setState({ visible: !this.state.visible })
+  }
+
+  profileInfo = () => {
+    if (this.props.auth.isSignedIn) {
+      return (
+        <div className='profilePic'>
+          <h5><Link to='/profile'>{this.props.auth.profile.name}</Link></h5>
+          <Link to='/profile'><img src={this.props.auth.profile.picture} height={30} width={30} /></Link>
+        </div>
+      )
+    } return (
+      <div
+        className='profilePic sign-in'
+        onClick={() => this.props.auth.signIn()}>
+        <h5>Sign in</h5>
+        <i className='icon fa fa-user' aria-hidden='true' />
+      </div>
+    )
+  }
+
+  _signOut = (event) => {
+    event.preventDefault()
+    this.props.auth.signOut()
   }
 
   render () {
@@ -54,17 +79,14 @@ export default class InnerNavbar extends Component {
               <i className='icon fa fa-question-circle' aria-hidden='true' />
             </li>
             <li className='small-items'>
-              <Link to='/'>Log Out</Link>
+              <a onClick={this._signOut}>Log Out</a>
               <i className='icon fa fa-sign-out' aria-hidden='true' />
             </li>
           </ul>
         </nav>
-        <div className='profilePic'>
-          <h5><Link to='/profile'>Caleb Sanderson</Link></h5>
-          <Link to='/profile'>
-            <img src={require('../images/Caleb-copy.jpg')} height={30} width={30} />
-          </Link>
-        </div>
+        {/* <div> */}
+        {this.profileInfo()}
+        {/* </div> */}
       </div>
     )
   }

@@ -1,0 +1,7 @@
+mutation CreateInvitation ($email: String!, $name: String!, $groupId: ID!) {
+  createInvitation(email: $email, name: $name, groupId: $groupId) {
+    id
+    name
+    email
+  }
+}

@@ -13,14 +13,20 @@ class CreateNewGroup extends Component {
 
   _createGroup = (e) => {
     e.preventDefault()
+    if (this.state.newGroupName.length === 0) return
     this.props.mutationCreateGroup({
       variables: {
         ownerId: this.props.client.userId,
         name: this.state.newGroupName
       },
       refetchQueries: [{query: queryUserOwnedGroups(false)}]
+    }).then(() => {
+      this.setState({ newGroupName: '' }) // <-- reset value
     })
-    console.log('creating a group')
+    // console.log('creating a group')
+    // if (value) {
+    //   console.log(value)
+    // }
   }
 
   _newGroupNameChange = (e) => {
@@ -31,7 +37,7 @@ class CreateNewGroup extends Component {
     return (
       <div className='createGroupInput'>
         <h2>Ready to start a new group?</h2>
-        <p>Enter the name of your group here and click "Create Group".</p>
+        <p>Enter the name of your group and click "Create a Group".</p>
         <form onSubmit={this._createGroup}>
           <input
             type='text'

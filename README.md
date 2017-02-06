@@ -29,11 +29,12 @@ This app was created as the final project for my course in Front-End Engineering
 - [x] style input field to create new Groups
 - [ ] better instruction text for how to start a new group.
 - [ ] style group links
-- [ ] make the number of members go up
+- [ ] increment the number of members as they are added
 
-###Group Pages
+###Individual Group Pages
 - [x] basic style for leaderboard and make as a component
-- [ ] add Members button
+- [ ] button to delete a group.
+- [ ] add Members button.
 - [x] Group name in header
 - [ ] profile pics in leaderboard, if no pic then display "fa-user-o"
 
@@ -46,6 +47,10 @@ This app was created as the final project for my course in Front-End Engineering
   - [ ] First name
   - [ ] Last name
 - [ ] Styling for the group drop-down selector
+
+###CreateNewGroup modal
+- [ ] empty form after creating a group
+- [ ] prevent yellow active glow
 
 ###InnerFooter
 - [x] style similar to main footer

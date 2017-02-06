@@ -27,7 +27,6 @@ class App extends Component {
         <Router
           onUpdate={() => window.scrollTo(0, 0)}
           history={browserHistory}>
-
           <Route path='/' component={Layout}>
             <IndexRoute component={Home} />
             <Route path='profile' component={Profile} />
