@@ -1535,6 +1535,23 @@ tbody {
   // display: flex;
   // flex-direction: column;
 
+  ul {
+    list-style-type: none;
+    padding-left: 0;
+
+    li {
+      padding: 10px 0;
+
+    }
+  }
+
+  .help-question {
+    font-weight: bold;
+    font-style: italic;
+    color: $color-mint;
+    font-size: 1.15em;
+  }
+
   p {
     margin-top: 0;
   }
@@ -1570,7 +1587,7 @@ tbody {
 
     @media (min-width: 640px) {
       column-count: 1;
-      padding: 45px 80px;
+      padding: 45px 60px;
     }
 
     @media (min-width: 768px) {
@@ -1584,7 +1601,6 @@ tbody {
     @media (min-width: 900px) {
       column-count: 3;
       line-height: 1.4em;
-
     }
   }
 }

@@ -12,22 +12,17 @@ export default function Help () {
           <h1>Help Me</h1>
         </header>
         <div className='lower'>
-          <h2>FAQs and How-to-dos</h2>
-          <p>It would be nice to have some cool breadcrumbs and how-to docs here.</p>
           <div className='content-style'>
-            <h2>Why <span className='about-title'>Dash 4 Cash</span>?</h2>
+            <div className='helpme subtitle'><h2>FAQs and How-to-dos</h2></div>
             <div className='content-style-body'>
-              {/* <p>Hi, I'm Caleb <img src={ProfilePic} className='about-profile' height='100px' width='100px' /></p> */}
-              <p>You need to The message is clear, you need to take care of yourself.</p>
-              <p><span className='about-title'>Dash 4 Cash</span> integrates
-              - Most people would either like to get in shape or stay in shape.
-              - Most people would rather be doing something good for others than just for themselves.
-              - Many times those goals are mutually exclusive and you are forced to make a choice.
-              - Finding motivation and accountability that doesn't come with a heavy time tax is difficult.
-              - Let's face it, you are busy. Maybe it's not convenient to meet when your local runner's group meets.
-              - leverage social media as a way to provide group accountability along with a healthy dose of competition. And what better than to be competing for a worthy cause.
-              - I believe that peopleI am a runner and front-end web developer, created Dash 4 Cash as a final project for my Front-End Engineering course at            <a href='https://www.theironyard.com/' target='_blank'>The Iron Yard</a>.
-              </p>
+              <h3>FAQs</h3>
+              <ul>
+                <li className='help-question'>What is a Dash?</li>
+                <li className='help-answer'>A "dash" is the time frame that your group has chosen for the competition to take place. Dashes can be set for 1 day, 1 week, or 1 month. At the end of the dash the person with the most miles or minutes wins the dash. The sum total of all the donations made to the group goes to the winner's designated charity.</li>
+              </ul>
+              <h3>How-to-dos</h3>
+              <p>How do I start a group?</p>
+              <p>What </p>
             </div>
           </div>
         </div>
