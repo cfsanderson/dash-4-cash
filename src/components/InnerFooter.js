@@ -2,10 +2,14 @@ import React, { Component } from 'react'
 import { Link } from 'react-router'
 import googleButton from '../images/buttons/googleplaybutton.png'
 import appleButton from '../images/buttons/appstore_button_iphone.gif'
+import withAuth from '../utils/withAuth'
 
+@withAuth
 export default class InnerFooter extends Component {
 
-  static PropTypes = {
+  _signOut = (event) => {
+    event.preventDefault()
+    this.props.auth.signOut()
   }
 
   render () {
@@ -25,7 +29,7 @@ export default class InnerFooter extends Component {
                 <li><Link to='/help' >Help</Link></li>
                 <li><Link to='/contact' >Contact</Link></li>
                 <li><Link to='/about' >About</Link></li>
-                <li><Link to='/' >Log Out</Link></li>
+                <li onClick={this._signOut}><Link to='/' >Log Out</Link></li>
               </ul>
             </div>
           </div>

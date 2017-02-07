@@ -549,7 +549,7 @@ body {
     top: 0;
     display: flex;
     align-items: center;
-    color: transparent;
+    // color: transparent;
 
     img {
       border-radius: 50%;
@@ -1122,10 +1122,14 @@ $button-transition: all #{$button-speed} cubic-bezier(0.31, -0.105, 0.43, 1.4);
       display: flex;
       flex-direction: row;
       font-size: 1em;
-      color: $color-vanilla;
+      padding-left: 10px;
 
       p {
-        padding: 5px;
+        padding-right: 10px;
+
+        i {
+          color: $color-vanilla;
+        }
       }
     }
 
@@ -1365,7 +1369,7 @@ $button-transition: all #{$button-speed} cubic-bezier(0.31, -0.105, 0.43, 1.4);
 
       th,
       td {
-        // border: 1px solid $color-slime;
+        border: 1px solid $color-slime;
         padding: 15px;
       }
     }
@@ -1374,10 +1378,9 @@ $button-transition: all #{$button-speed} cubic-bezier(0.31, -0.105, 0.43, 1.4);
   h3 {
     color: $color-salmon;
     margin: 0;
-    font-size: 1.5em;
+    font-size: 2em;
     text-transform: uppercase;
-    // flex: 2;
-    padding: 15px;
+    padding: 35px 0 0;
     text-align: center;
   }
 
@@ -1389,7 +1392,6 @@ $button-transition: all #{$button-speed} cubic-bezier(0.31, -0.105, 0.43, 1.4);
     color: $color-slime;
     text-align: center;
     font-size: 1.5em;
-    // flex: 1;
   }
 
   h5 {

@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-// import { Link } from 'react-router'
 import ScrollAnim from 'rc-scroll-anim'
 
 export default class HomeNavbar extends Component {
@@ -18,11 +17,6 @@ export default class HomeNavbar extends Component {
     this.setState({ visible: !this.state.visible })
     console.log('toggle')
   }
-
-  // toggle () {
-  //   this.setState({ visible: !this.state.visible })
-  //   console.log('toggle')
-  // }  onBlur={() => this.toggle()}
 
   render () {
     const ScrollAnimLink = ScrollAnim.Link

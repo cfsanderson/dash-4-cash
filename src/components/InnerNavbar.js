@@ -27,14 +27,15 @@ export default class InnerNavbar extends Component {
           <Link to='/profile'><img src={this.props.auth.profile.picture} height={30} width={30} /></Link>
         </div>
       )
-    } return (
-      <div
-        className='profilePic sign-in'
-        onClick={() => this.props.auth.signIn()}>
-        <h5>Sign in</h5>
-        <i className='icon fa fa-user' aria-hidden='true' />
-      </div>
-    )
+    }
+    //  return (
+    //   <div
+    //     className='profilePic sign-in'
+    //     onClick={() => this.props.auth.signIn()}>
+    //     <h5>Sign in</h5>
+    //     <i className='icon fa fa-user' aria-hidden='true' />
+    //   </div>
+    // )
   }
 
   _signOut = (event) => {
@@ -50,9 +51,6 @@ export default class InnerNavbar extends Component {
         </button>
         <nav className={this.state.visible ? '' : 'hidden'}>
           <ul>
-            {/* <button className='menu' onClick={() => this.toggle()}>
-              <i className='fa fa-times' aria-hidden='true' />
-            </button> */}
             <li>
               <button className='menu' onClick={() => this.toggle()}>
                 <i className='fa fa-times' aria-hidden='true' />
@@ -84,9 +82,7 @@ export default class InnerNavbar extends Component {
             </li>
           </ul>
         </nav>
-        {/* <div> */}
         {this.profileInfo()}
-        {/* </div> */}
       </div>
     )
   }

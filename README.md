@@ -9,7 +9,7 @@ This app was created as the final project for my course in Front-End Engineering
 
 ###Home Page
 - [ ] backdoor for people who don't have Strava or maybe some other type of login? (especially for Demo Day)
-- [ ] after login with Strava direct users to Profile page.
+- [x] after login with Strava direct users to Profile page.
 
 ####Home Page Stretch Goals...
 - [ ] add progress indicators (dots?)
@@ -45,14 +45,13 @@ This app was created as the final project for my course in Front-End Engineering
 - [ ] functional?
 
 ###Donate modal
-- [ ] needs to include fields for
-  - [ ] First name
-  - [ ] Last name
-- [ ] Styling for the group drop-down selector
+- [ ] populate "Choose a Group" drop-down selector with groups that the user is in
+- [ ] Styling for the group drop-down selector (not showing up on iPad or mobile)
 
 ###CreateNewGroup modal
-- [ ] empty form after creating a group
-- [ ] prevent yellow active glow
+- [x] empty form after creating a group
+- [x] prevent yellow active glow
+- [ ] option to delete a group?
 
 ###InnerFooter
 - [x] style similar to main footer
@@ -77,9 +76,9 @@ This app was created as the final project for my course in Front-End Engineering
 
 ###Database schema
 - [x] users can start groups
-- [ ] users can own groups
-- [ ] each group has one owner
-- [ ] each owner can have many groups
+- [x] users can own groups
+- [x] each group has one owner
+- [x] each owner can have many groups
 - [ ] each group has many users
 - [ ] each user can have many groups
 - [ ] users can make donations
