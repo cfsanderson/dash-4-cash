@@ -1517,21 +1517,42 @@ tbody {
   font-weight: bolder;
 }
 
-.about-subtitle {
+.subtitle {
   font-size: 1.5em;
   text-align: center;
 
-  .logo {
-    color: $color-salmon;
+  &.about {
+    // font-size: 1.5em;
+    text-align: center;
+
+    .logo {
+      color: $color-salmon;
+    }
   }
 }
 
 .content-style {
-  display: flex;
-  flex-direction: column;
+  // display: flex;
+  // flex-direction: column;
+
+  p {
+    margin-top: 0;
+  }
+
+  a {
+    text-decoration: none;
+    color: $color-vanilla;
+    font-weight: bolder;
+    white-space: nowrap;
+  }
 
   .logo {
     color: $color-salmon;
+    white-space: nowrap;
+  }
+
+  .quotes {
+    font-style: italic;
   }
 
   .content-style-body {
@@ -1555,7 +1576,7 @@ tbody {
     @media (min-width: 768px) {
       column-count: 2;
 
-      .content-style h2 {
+      h2 &.subtitle {
         font-size: 5em;
       }
     }

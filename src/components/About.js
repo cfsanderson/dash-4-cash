@@ -12,9 +12,10 @@ export default function About () {
         <header className='profile'>
           <h1>About</h1>
         </header>
+
         <div className='lower'>
           <div className='content-style'>
-            <div className='about-subtitle'>
+            <div className='about subtitle'>
               <h2>Why <span className='logo'>Dash 4 Cash</span>?</h2>
             </div>
 
@@ -31,9 +32,10 @@ export default function About () {
                 - I believe that peopleI am a runner and front-end web developer, created Dash 4 Cash as a final project for my Front-End Engineering course at <a href='https://www.theironyard.com/' target='_blank'>The Iron Yard</a>.
               </p>
             </div>
-          </div>
 
+          </div>
         </div>
+
       </div>
       <InnerFooter />
     </div>
