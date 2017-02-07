@@ -12,7 +12,7 @@ export default class ProfileStats extends Component {
   }
 
   render () {
-    // console.log(this.state)
+    console.log(this.state)
     return (
       <div className='myStats tables'>
         <h3>My Stats</h3>

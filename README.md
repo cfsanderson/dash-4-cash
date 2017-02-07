@@ -17,6 +17,8 @@ This app was created as the final project for my course in Front-End Engineering
 
 ###Profile Pages
 - [ ] style for displaying MyStats
+  - [ ] separate/distinguish the info groups
+  - [ ] style "today" stats bigger/better
 - [x] Donate button that brings up DonateModal
 - [ ] Add a button to go to MyGroups?
 - [ ] separate donation modules for
@@ -27,15 +29,15 @@ This app was created as the final project for my course in Front-End Engineering
 - [x] # of current members displayed in each segment
 - [x] Add members button
 - [x] style input field to create new Groups
+- [x] increment the number of members as they are added
 - [ ] better instruction text for how to start a new group.
 - [ ] style group links
-- [ ] increment the number of members as they are added
 
 ###Individual Group Pages
 - [x] basic style for leaderboard and make as a component
+- [x] Group name in header
 - [ ] button to delete a group.
 - [ ] add Members button.
-- [x] Group name in header
 - [ ] profile pics in leaderboard, if no pic then display "fa-user-o"
 
 ###Add Members modal

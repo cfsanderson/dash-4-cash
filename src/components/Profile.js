@@ -16,9 +16,6 @@ export default class Profile extends Component {
     ui.displayModal(<DonateModal />)
   }
 
-// auth.js "compare"
-// app.js router "unauthed"
-
   get mine () {
     const { loading, user } = this.props.queryUserProfile
     if (loading) return 0

@@ -21,6 +21,12 @@ class App extends Component {
     }
   }
 
+  unAuthed = (nextState, replace) => {
+    if (this.props.auth.isSignedIn) {
+      replace({pathname: '/profile'})
+    }
+  }
+
   render () {
     return (
       <ApolloProvider client={this.props.client.apollo}>
@@ -28,8 +34,8 @@ class App extends Component {
           onUpdate={() => window.scrollTo(0, 0)}
           history={browserHistory}>
           <Route path='/' component={Layout}>
-            <IndexRoute component={Home} />
-            <Route path='profile' component={Profile} />
+            <IndexRoute component={Home} onEnter={this.unAuthed} />
+            <Route path='profile' component={Profile} onEnter={this.requireAuth} />
             <Route path='mygroups' component={MyGroups} />
             <Route path='mygroups/:id' component={Group} />
             <Route path='help' component={Help} />

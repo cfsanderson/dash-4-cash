@@ -1,9 +1,14 @@
 import React, { Component } from 'react'
-import ui from '../ui'
 import { graphql } from 'react-apollo'
+import ui from '../ui'
+import withAuth from '../utils/withAuth'
 
-import { queryUserProfile } from '../graphql'
+import {
+  mutationCreateDonation,
+  queryUserProfile
+} from '../graphql'
 
+@withAuth
 @graphql(...queryUserProfile())
 class DonateModal extends Component {
 
