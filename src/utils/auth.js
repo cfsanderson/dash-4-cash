@@ -27,13 +27,13 @@ class Auth {
         if (error) console.warn(error)
         this.profile = profile
       })
-
+      browserHistory.push('/profile')
       // Return to the URL they were on before authenticating.
-      const returnTo = window.localStorage.getItem('auth:returnTo')
-      if (returnTo) {
-        browserHistory.push(returnTo)
-        window.localStorage.removeItem('auth:returnTo')
-      }
+      // const returnTo = window.localStorage.getItem('auth:returnTo')
+      // if (returnTo) {
+      //   browserHistory.push(returnTo)
+      //   window.localStorage.removeItem('auth:returnTo')
+      // }
     })
 
     autorun(() => {
@@ -49,7 +49,7 @@ class Auth {
 
   signIn () {
     // Save the current URL so we can return to it after authenticating.
-    window.localStorage.setItem('auth:returnTo', window.location.pathname)
+    // window.localStorage.setItem('auth:returnTo', window.location.pathname)
     this.lock.show()
   }
 
