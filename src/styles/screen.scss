@@ -1471,6 +1471,8 @@ $button-transition: all #{$button-speed} cubic-bezier(0.31, -0.105, 0.43, 1.4);
           background-color: $color-mint;
           height: 2em;
           border-radius: 5px;
+          overflow: visible;
+          white-space: nowrap;
 
           p {
             margin: 0;
