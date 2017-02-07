@@ -1510,3 +1510,60 @@ tbody {
   box-shadow: 0 9px 15px -8px rgba(0, 0, 0, 0.49);
   padding: 15px 0;
 }
+
+.logo {
+  font-family: $font-Raleway;
+  text-transform: uppercase;
+  font-weight: bolder;
+}
+
+.about-subtitle {
+  font-size: 1.5em;
+  text-align: center;
+
+  .logo {
+    color: $color-salmon;
+  }
+}
+
+.content-style {
+  display: flex;
+  flex-direction: column;
+
+  .logo {
+    color: $color-salmon;
+  }
+
+  .content-style-body {
+    padding: 45px;
+    column-gap: 45px;
+
+    @media (min-width: 320px) {
+      column-count: 1;
+      font-weight: 300;
+      font-size: 1.15em;
+      line-height: 1.5em;
+      // font-size: 2em;
+      // line-height: 2em;
+    }
+
+    @media (min-width: 640px) {
+      column-count: 1;
+      padding: 45px 80px;
+    }
+
+    @media (min-width: 768px) {
+      column-count: 2;
+
+      .content-style h2 {
+        font-size: 5em;
+      }
+    }
+
+    @media (min-width: 900px) {
+      column-count: 3;
+      line-height: 1.4em;
+
+    }
+  }
+}
