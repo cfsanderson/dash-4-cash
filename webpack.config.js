@@ -67,16 +67,16 @@ const development = {
     'webpack/hot/only-dev-server'
   ],
   output: {
-    devtoolModuleFilenameTemplate: '[resource-path]'
+    devtoolModuleFilenameTemplate: '[absolute-resource-path]'
   },
   devServer: {
     historyApiFallback: true,
     hot: true,
     stats: { colors: true, chunks: false }
   },
+  devtool: 'eval',
   plugins: [
     new webpack.HotModuleReplacementPlugin({ multiStep: true }),
-    new webpack.SourceMapDevToolPlugin(),
     new BrowserSyncPlugin({ proxy: 'http://localhost:8080/' }, { reload: false })
   ],
   module: {

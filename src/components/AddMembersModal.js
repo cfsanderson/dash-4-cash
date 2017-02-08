@@ -29,7 +29,6 @@ class AddMembersModal extends Component {
     }).then(() => {
       ui.dismissModal()
     })
-    console.log('creating a new member')
   }
 
   _changed = (e) => {

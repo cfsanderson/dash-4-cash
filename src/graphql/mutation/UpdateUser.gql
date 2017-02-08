@@ -1,0 +1,13 @@
+mutation UpdateUser(
+  $id: ID!, $today: BigDecimal!,
+  $thisWeek: BigDecimal!, $lastWeek: BigDecimal!,
+  $thisMonth: BigDecimal!, $lastMonth: BigDecimal!
+) {
+  updateUser(
+    id: $id, milesToday: $today,
+    milesThisWeek: $thisWeek, milesLastWeek: $lastWeek,
+    milesThisMonth: $thisMonth, milesLastMonth: $lastMonth
+  ) {
+    id
+  }
+}

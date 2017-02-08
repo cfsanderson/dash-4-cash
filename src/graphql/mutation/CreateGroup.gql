@@ -1,5 +1,5 @@
 mutation CreateGroup ($ownerId: ID!, $name: String!) {
-  createGroup(ownerId: $ownerId, name: $name) {
+  createGroup(ownerId: $ownerId, name: $name, usersIds: [$ownerId]) {
     id
     name
   }

@@ -8,6 +8,7 @@ query UserProfile {
     }
     groups {
       id
+      name
       donations {
         id
         amount

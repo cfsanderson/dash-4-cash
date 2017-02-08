@@ -6,10 +6,20 @@ import ProfileStats from './ProfileStats'
 import DonateModal from './DonateModal'
 import ui from '../ui'
 import { graphql } from 'react-apollo'
+import withAuth from '../utils/withAuth'
 
-import { queryUserProfile } from '../graphql'
+import {
+  queryUserProfile,
+  queryInvitations,
+  mutationAcceptInvitation
+} from '../graphql'
 
+@withAuth
+@graphql(...mutationAcceptInvitation())
 @graphql(...queryUserProfile())
+@graphql(...queryInvitations({
+  options: props => ({ variables: { email: props.auth.profile.email } })
+}))
 export default class Profile extends Component {
 
   _showDonateModal = () => {
@@ -18,14 +28,32 @@ export default class Profile extends Component {
 
   get mine () {
     const { loading, user } = this.props.queryUserProfile
-    if (loading) return 0
+    if (loading || !user) return 0
     return user.donations.reduce((amount, donation) => amount + donation.amount, 0)
   }
 
   get group () {
     const { loading, user } = this.props.queryUserProfile
-    if (loading) return 0
+    if (loading || !user) return 0
     return user.groups.reduce((amount, group) => amount + group.donations.reduce((amount, donation) => amount + donation.amount, 0), 0)
+  }
+
+  componentWillReceiveProps (nextProps) {
+    const { loading, allInvitations } = nextProps.queryInvitations
+    if (!loading) {
+      allInvitations.forEach((invitation) => {
+        this.props.mutationAcceptInvitation({
+          variables: {
+            userId: this.props.client.userId,
+            invitationId: invitation.id,
+            groupId: invitation.group.id
+          },
+          refetchQueries: [
+            { query: queryUserProfile(false) }
+          ]
+        })
+      })
+    }
   }
 
   render () {

@@ -24,7 +24,7 @@ export default class MyGroups extends Component {
 
   groups () {
     if (this.props.queryUserOwnedGroups.loading) return <li>loading...</li>
-    if (this.props.queryUserOwnedGroups.user.ownedGroups < 1) {
+    if (this.props.queryUserOwnedGroups.user.groups < 1) {
       return (
         <li>
           <h3 className='groupNameH3'>No groups :(</h3>
@@ -34,7 +34,7 @@ export default class MyGroups extends Component {
           </p>
         </li>
       )
-    } return this.props.queryUserOwnedGroups.user.ownedGroups.map((group, i) => {
+    } return this.props.queryUserOwnedGroups.user.groups.map((group, i) => {
       return (
         <li key={i}>
           <h3><Link className='groupNameH3' to={`/mygroups/${group.id}`}>{group.name}</Link></h3>
@@ -46,7 +46,7 @@ export default class MyGroups extends Component {
               })}
             </ul>
           </div> */}
-          <p>{group.memberships.length} Member(s)</p>
+          <p>{group.users.length} Member(s)</p>
           <a className='add-members-button'
             role='button'
             onClick={() => this.groupModalToggle(group.id)}>

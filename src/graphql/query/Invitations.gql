@@ -1,0 +1,8 @@
+query Invitations ($email: String!) {
+  allInvitations(filter: {email: $email}) {
+    id
+    group {
+      id
+    }
+  }
+}

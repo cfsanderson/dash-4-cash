@@ -1,0 +1,10 @@
+mutation AcceptInvitation ($userId: ID!, $groupId: ID!, $invitationId: ID!) {
+  addToMemberships(usersUserId: $userId, groupsGroupId: $groupId) {
+    groupsGroup {
+      id
+    }
+  }
+  deleteInvitation(id: $invitationId) {
+    id
+  }
+}

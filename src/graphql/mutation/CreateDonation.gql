@@ -1,8 +1,7 @@
 # given a group id, charity, amount, and user id - it creates a donation in app
 
-mutation CreateDonation ($ownerId: ID!, $name: String!) {
-  createGroup(ownerId: $ownerId, name: $name) {
+mutation CreateDonation ($userId: ID!, $groupId: ID!, $amount: Int!, $charity: String!) {
+  createDonation(userId: $userId, groupId: $groupId, amount: $amount, charity: $charity) {
     id
-    name
   }
 }

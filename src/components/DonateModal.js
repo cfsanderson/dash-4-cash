@@ -1,20 +1,48 @@
 import React, { Component } from 'react'
 import { graphql } from 'react-apollo'
+import { withRouter } from 'react-router'
 import ui from '../ui'
 import withAuth from '../utils/withAuth'
 
 import {
   mutationCreateDonation,
+  queryGroup,
   queryUserProfile
 } from '../graphql'
 
 @withAuth
+@withRouter
 @graphql(...queryUserProfile())
+@graphql(...mutationCreateDonation())
 class DonateModal extends Component {
 
   submitDonation = () => {
-    // TODO: MAKE QUERY, _THEN_ dismissModal
-    ui.dismissModal()
+    const { params } = this.props
+    const refetchQueries = [
+      params && params.id
+        ? { query: queryGroup(false), variables: { id: params.id } }
+        : { query: queryUserProfile(false) }
+    ]
+
+    this.props.mutationCreateDonation({
+      variables: {
+        userId: this.props.client.userId,
+        groupId: this.refs.group.value,
+        amount: parseInt(this.refs.amount.value),
+        charity: this.refs.charity.value
+      },
+      refetchQueries
+    }).then(() => {
+      ui.dismissModal()
+    })
+  }
+
+  get groupOptions () {
+    const { loading, user } = this.props.queryUserProfile
+    if (loading) return []
+    return user.groups.map((group, i) => {
+      return <option key={i} value={group.id}>{group.name}</option>
+    })
   }
 
   render () {
@@ -36,18 +64,24 @@ class DonateModal extends Component {
               <p><input type='text' className='checkout-input checkout-card' placeholder='4111 1111 1111 1111' /></p>
               <p><input type='text' className='checkout-input checkout-cvc' placeholder='CVC' /></p>
             </div>
+            <h3>Amount</h3>
+            <div className='donate-fields'>
+              <p>
+                <input ref='amount' type='text' className='checkout-input checkout-amount' placeholder='How much?' />
+              </p>
+            </div>
             <h3>Choose a Group</h3>
             <div className='donate-fields'>
               <p>
-                <select name='checkout-input group-select'>
-                  <option value='?'>this.groupsI'veCreated</option>
+                <select ref='group' name='checkout-input group-select'>
+                  {this.groupOptions}
                 </select>
               </p>
             </div>
             <h3>Choose a Charity</h3>
             <div className='donate-fields'>
               <p>
-                <select name='checkout-input group-select'>
+                <select ref='charity' name='checkout-input group-select'>
                   <option value='st-jude'>Donate to St. Jude</option>
                   <option value='wounded-warrior'>Wounded Warrior Project</option>
                   <option value='syrian-refugees'>Support Syrian Refugees</option>

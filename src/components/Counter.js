@@ -6,7 +6,6 @@ class Counter extends Component {
   onComplete = () => {
     console.log('get a cool effect happening here on Counter complete')
   }
-  // <div className={`donateModal ${this.state.visible ? 'overlay' : 'hidden'}`}>
 
   render () {
     return (

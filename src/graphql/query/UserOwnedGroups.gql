@@ -1,10 +1,17 @@
 query UserOwnedGroups {
   user {
     id
+    groups {
+      id
+      name
+      users {
+        id
+      }
+    }
     ownedGroups {
       id
       name
-      memberships {
+      invitations {
         id
         email
         name

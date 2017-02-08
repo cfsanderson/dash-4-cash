@@ -63,7 +63,7 @@ class Auth {
     return this.isSignedIn && auth.profile.strava_token
   }
 
-  @computed get isSignedIn () { return !!this.token }
+  @computed get isSignedIn () { return this.token && this.profile }
 }
 
 const auth = new Auth()
