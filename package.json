@@ -3,7 +3,7 @@
   "scripts": {
     "deploy": "npm run build && surge ./public --domain dash-4-cash.cfsanderson.surge.sh",
     "start": "webpack-dev-server",
-    "build": "rm -rf public && NODE_ENV=production webpack --optimize-minimize --progress --profile --colors"
+    "build": "rm -rf public && NODE_ENV=production webpack --optimize-minimize --progress --profile --colors && cp public/index.html public/200.html"
   },
   "dependencies": {
     "apollo-client": "^0.8.1",

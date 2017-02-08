@@ -12,16 +12,15 @@ const MM = 0.000621371 // Miles per meter
 
 window.moment = moment
 
-// Hard-coded goals for bar graph, adjust as needed
-// TODO: (Base this on something less arbitrary, e.g. personal best)
+// TODO: (Base this on something less arbitrary, e.g. 10% more than fullest bar)
 const GOALS = {
   MILES: {
-    WEEK: 10,
-    MONTH: 50
+    WEEK: 25,
+    MONTH: 100
   },
   MINUTES: {
-    WEEK: 60,
-    MONTH: 300
+    WEEK: 250,
+    MONTH: 1000
   }
 }
 
@@ -88,82 +87,6 @@ export default class ProfileStats extends Component {
   render () {
     const { miles, minutes } = this.state.stats
     return (
-
-      // <div className='myStats tables'>
-      //   <h3>My Stats</h3>
-      //
-      //   {/* MILES */}
-      //   <table className='leaderboard'>
-      //     <thead>
-      //       <tr>
-      //         <th colSpan='3'><h4>Miles</h4></th>
-      //       </tr>
-      //     </thead>
-      //     <tbody className='myStats-section today'>
-      //       <tr className='leaderboard-member'>
-      //         <td><h5>Today</h5></td>
-      //         <td>3 miles</td>
-      //       </tr>
-      //     </tbody>
-      //   </table>
-      //   <table>
-      //     <tbody className='myStats-section weekly'>
-      //       <tr className='leaderboard-member'>
-      //         <td><h5>This Week</h5></td>
-      //       </tr>
-      //       <tr>
-      //         <td className='leaderboard-bar' colSpan='3'>
-      //           <div className='bar'>
-      //             <div className='meter' style={{width: '85%'}}>
-      //               <p>29.75 miles</p>
-      //             </div>
-      //           </div>
-      //         </td>
-      //       </tr>
-      //       <tr className='leaderboard-member'>
-      //         <td><h5>Last Week</h5></td>
-      //       </tr>
-      //       <tr>
-      //         <td className='leaderboard-bar' colSpan='3'>
-      //           <div className='bar'>
-      //             <div className='meter' style={{width: '60%'}}>
-      //               <p>21 miles</p>
-      //             </div>
-      //           </div>
-      //         </td>
-      //       </tr>
-      //     </tbody>
-      //   </table>
-      //   <table>
-      //     <tbody className='myStats-section monthly'>
-      //       <tr className='leaderboard-member'>
-      //         <td><h5>This Month</h5></td>
-      //       </tr>
-      //       <tr>
-      //         <td className='leaderboard-bar' colSpan='3'>
-      //           <div className='bar'>
-      //             <div className='meter' style={{width: '85%'}}>
-      //               <p>29.75 miles</p>
-      //             </div>
-      //           </div>
-      //         </td>
-      //       </tr>
-      //       <tr className='leaderboard-member'>
-      //         <td><h5>Last Month</h5></td>
-      //       </tr>
-      //       <tr>
-      //         <td className='leaderboard-bar' colSpan='3'>
-      //           <div className='bar'>
-      //             <div className='meter' style={{width: '60%'}}>
-      //               <p>21 miles</p>
-      //             </div>
-      //           </div>
-      //         </td>
-      //       </tr>
-      //     </tbody>
-      //   </table>
-      // </div>
-
       <div className='myStats tables'>
         <h3>My Stats</h3>
 
@@ -175,9 +98,9 @@ export default class ProfileStats extends Component {
             </tr>
           </thead>
           <tbody className='myStats-section'>
-            <tr className='leaderboard-member'>
-              <td><h5>Today</h5></td>
-              <td>{miles.today} miles</td>
+            <tr className='leaderboard-member today'>
+              <td colSpan='3' className='today-text'><span><h5>Today:</h5></span>{miles.today} miles</td>
+              {/* <td className='today-miles'>{miles.today} miles</td> */}
             </tr>
           </tbody>
           <tbody className='myStats-section'>
@@ -242,9 +165,8 @@ export default class ProfileStats extends Component {
             </tr>
           </thead>
           <tbody>
-            <tr className='leaderboard-member'>
-              <td><h5>Today</h5></td>
-              <td>{minutes.today} minutes</td>
+            <tr className='leaderboard-member today'>
+              <td colSpan='3' className='today-text'><span><h5>Today:</h5></span>{minutes.today} minutes</td>
             </tr>
           </tbody>
           <tbody>
@@ -304,61 +226,3 @@ export default class ProfileStats extends Component {
     )
   }
 }
-
-/* <div className='tables'>
-  <div className='miles'>
-    <h4>Miles</h4>
-    <table className='miles-table'>
-      <tbody>
-        <tr>
-          <td><h5>Today</h5></td>
-          <td>3 miles</td>
-        </tr>
-        <tr>
-          <th><h5>This Week</h5></th>
-          <th><h5>Last Week</h5></th>
-        </tr>
-        <tr>
-          <td>25 miles</td>
-          <td>30 miles</td>
-        </tr>
-        <tr>
-          <th><h5>This Month</h5></th>
-          <th><h5>Last Month</h5></th>
-        </tr>
-        <tr>
-          <td>100 miles</td>
-          <td>130 miles</td>
-        </tr>
-        <tr />
-      </tbody>
-    </table>
-  </div>
-  <div className='minutes'>
-    <h4>Minutes</h4>
-    <table className='minutes-table'>
-      <tbody>
-        <tr>
-          <td><h5>Today</h5></td>
-          <td>30 minutes</td>
-        </tr>
-        <tr>
-          <th><h5>This Week</h5></th>
-          <th><h5>Last Week</h5></th>
-        </tr>
-        <tr>
-          <td>315 minutes</td>
-          <td>405 minutes</td>
-        </tr>
-        <tr>
-          <th><h5>This Month</h5></th>
-          <th><h5>Last Month</h5></th>
-        </tr>
-        <tr>
-          <td>1563 minutes</td>
-          <td>1629 minutes</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-</div> */

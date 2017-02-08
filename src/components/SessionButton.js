@@ -12,7 +12,7 @@ class SessionButton extends Component {
   render () {
     return (
       <a className='stravabutton' onClick={this.handleClick}>
-        <img src={stravaButton} />
+        <img className='stravalogo' src={stravaButton} />
       </a>
     )
   }
