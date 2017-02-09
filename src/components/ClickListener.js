@@ -33,10 +33,3 @@ export default class ClickListener extends Component {
     )
   }
 }
-
-// http://stackoverflow.com/questions/32553158/detect-click-outside-react-component
-
-// add this to main:
-
-// window.__myapp_container = document.getElementById('app')
-// React.render(<App/>, window.__myapp_container)

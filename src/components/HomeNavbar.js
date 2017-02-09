@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import ScrollAnim from 'rc-scroll-anim'
+// import ui from '../ui'
 
 export default class HomeNavbar extends Component {
 
@@ -15,13 +16,23 @@ export default class HomeNavbar extends Component {
 
   toggle () {
     this.setState({ visible: !this.state.visible })
-    console.log('toggle')
   }
+
+  // _dismissBg = (event) => {
+  //   if (event.target === event.currentTarget) {
+  //     ui.dismissMenu()
+  //   }
+  // }
+  //
+  // _dismiss = () => {
+  //   ui.dismissMenu()
+  // }
 
   render () {
     const ScrollAnimLink = ScrollAnim.Link
 
     return (
+      // <div className={('Menu', { open: ui.menu })} onClick={this._dismissBg}>
       <div className='navBar'>
         <button className={`menu ${this.state.visible ? 'hidden' : ''}`} onClick={() => this.toggle()}>
           <i className='fa fa-bars' aria-hidden='true' />
@@ -34,28 +45,34 @@ export default class HomeNavbar extends Component {
               </button>
             </li>
             <li>
-              <ScrollAnimLink to='whatisD4C'>What is D4C<i className='fa fa-question-circle' aria-hidden='true' />
+              <ScrollAnimLink to='whatisD4C' onClick={() => this.toggle()}>What is D4C
+                <i className='fa fa-question-circle' aria-hidden='true' />
               </ScrollAnimLink>
             </li>
             <li>
-              <ScrollAnimLink to='donate'>Donate<i className='fa fa-money' aria-hidden='true' />
+              <ScrollAnimLink to='donate' onClick={() => this.toggle()}>Donate
+                <i className='fa fa-money' aria-hidden='true' />
               </ScrollAnimLink>
             </li>
             <li>
-              <ScrollAnimLink to='dash'>Dash<i className='fa fa-fast-forward' aria-hidden='true' />
+              <ScrollAnimLink to='dash' onClick={() => this.toggle()}>Dash
+                <i className='fa fa-fast-forward' aria-hidden='true' />
               </ScrollAnimLink>
             </li>
             <li>
-              <ScrollAnimLink to='track'>Track<i className='fa fa-line-chart' aria-hidden='true' />
+              <ScrollAnimLink to='track' onClick={() => this.toggle()}>Track
+                <i className='fa fa-line-chart' aria-hidden='true' />
               </ScrollAnimLink>
             </li>
             <li>
-              <ScrollAnimLink to='ready'>Get Started<i className='fa fa-play' aria-hidden='true' />
+              <ScrollAnimLink to='ready' onClick={() => this.toggle()}>Get Started
+                <i className='fa fa-play' aria-hidden='true' />
               </ScrollAnimLink>
             </li>
           </ul>
         </nav>
       </div>
+      // </div>
     )
   }
 }

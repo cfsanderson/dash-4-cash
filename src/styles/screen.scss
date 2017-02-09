@@ -29,6 +29,7 @@ body {
   display: flex;
   flex-direction: column;
 }
+
 // Home page
 
 .homePage {
@@ -57,7 +58,6 @@ body {
     flex-direction: column;
 
     h1 {
-      // font-family: $font-Racing-Sans-One;
       font-family: $font-Raleway;
       font-size: 3em;
       font-weight: 600;
@@ -108,7 +108,6 @@ body {
       a.chevron {
         color: inherit;
         font-size: 1.5em;
-        // filter: drop-shadow(1px 1px 2px black);
       }
     }
   }
@@ -134,7 +133,6 @@ body {
     background-size: cover;
     display: flex;
     flex-direction: column;
-    // text-align: center;
 
     section {
       flex: 1;
@@ -142,20 +140,14 @@ body {
 
     .chevron {
       text-align: center;
-      // padding-top: 20px;
     }
 
     img {
       padding: 20px;
-      // display: flex;
     }
 
     @media (max-width: 360px) {
       min-height: 100vh;
-    }
-
-    @media (min-width: 640px) {
-      // height: 100vh;
     }
 
     .big,
@@ -352,15 +344,11 @@ body {
   }
 
   section {
-    // padding-left: 30px;
-    // padding-right: 30px;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: left;
     padding: 20px;
-    // height: 1000px;
-    // background-image: radial-gradient(darken($color-navy, 4), darken($color-navy, 8));
 
     p {
       font-weight: lighter;
@@ -425,7 +413,6 @@ body {
 // HomeNavbar and InnerNavbar styling
 
 .navBar {
-  // filter: drop-shadow(2px 1px 1px rgba(60, 62, 64, 0.75));
   color: white;
   z-index: 10000;
 
@@ -465,12 +452,11 @@ body {
       color: white;
       background: transparent;
       border-width: 0;
-      // padding: 10px;
     }
 
     &.menu {
       opacity: 1;
-      transition: opacity 250ms ease;
+      transition: opacity 500ms ease;
 
       &.hidden {
         opacity: 0;
@@ -493,9 +479,8 @@ body {
     top: 0;
     left: 0;
     bottom: 0;
-    // background-color: hsla(0, 0%, 20%, 0.9);
     background-color: darken(hsla(196, 44%, 12%, 0.9), 8);
-    transition: transform 250ms ease;
+    transition: transform 400ms ease;
     width: 66vw;
     max-width: 256px;
     height: 100vh;
@@ -520,7 +505,6 @@ body {
 
         &.small-items {
           font-size: 0.65em;
-          // padding: 10px 0;
         }
 
         &:hover {
@@ -557,7 +541,6 @@ body {
     top: 0;
     display: flex;
     align-items: center;
-    // color: transparent;
 
     img {
       border-radius: 50%;
@@ -617,7 +600,6 @@ body {
     &.myGroups {
       background-image: url(../images/runner-02.jpg);
       color: $color-mint;
-      box-shadow: 0px 9px 35px -8px rgba(0, 0, 0, 0.49);
     }
 
     &.help {
@@ -633,9 +615,7 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    background-image: url(../images/BG-runner-01.jpg);
     flex: 1;
-    // min-height: 100vh;
 
     .container {
       max-width: 960px;
@@ -668,21 +648,15 @@ body {
       font-size: 0.75em;
       padding: 0 10px 10px 0;
     }
-
-    td {
-      // border: 2px solid $color-salmon;
-    }
   }
 }
 
 // Styling for "My Groups" page
 
 .myGroups-container {
-
   .createGroupInput {
     display: flex;
     flex-direction: column;
-    // flex: 1;
     align-items: center;
     text-align: center;
 
@@ -691,7 +665,6 @@ body {
       align-items: center;
       flex-direction: column;
       justify-content: space-between;
-      // padding: 15px;
       width: auto;
 
       input {
@@ -759,7 +732,6 @@ body {
         &:hover {
           cursor: pointer;
           color: lighten($color-slime, 25);
-          // background-color: $color-mint;
         }
       }
 
@@ -798,11 +770,9 @@ body {
 
   h3 {
     color: $color-salmon;
-    // text-align: left;
     margin: 0;
     font-size: 1.5em;
     text-transform: uppercase;
-    // padding: 0 30px 30px 0;
   }
 
   .donations {
@@ -903,7 +873,6 @@ $button-transition: all #{$button-speed} cubic-bezier(0.31, -0.105, 0.43, 1.4);
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.3);
   transition: $button-transition;
   padding-top: 2px;
-  // margin-bottom: 20px;
 
   span,
   .icon {
@@ -1114,7 +1083,6 @@ $button-transition: all #{$button-speed} cubic-bezier(0.31, -0.105, 0.43, 1.4);
   }
 
   .donate-form {
-    // padding: 45px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -1149,12 +1117,9 @@ $button-transition: all #{$button-speed} cubic-bezier(0.31, -0.105, 0.43, 1.4);
     }
 
     .donate-fields {
-      // display: flex;
-      // flex-direction: column;
       display: flex;
       flex-wrap: wrap;
       flex-direction: row;
-      // justify-content: space-around;
       align-content: center;
 
       p {
@@ -1186,30 +1151,6 @@ $button-transition: all #{$button-speed} cubic-bezier(0.31, -0.105, 0.43, 1.4);
     }
   }
 }
-
-// .add-members-modal.overlay {
-//   position: fixed;
-//   top: 0;
-//   left: 0;
-//   right: 0;
-//   bottom: 0;
-//   display: flex;
-//   flex-direction: column;
-//   justify-content: center;
-//   align-items: center;
-//   background-color: darken(hsla(200, 42%, 17%, 0.7), 5);
-//   padding: 45px;
-//   filter: drop-shadow(2px 2px 2px rgba(60, 62, 64, 0.9));
-//
-//   .add-members-scroll {
-//     overflow: scroll;
-//   }
-//
-//   p {
-//     color: white;
-//     font-weight: 300;
-//   }
-// }
 
 .add-members-div {
   background-color: darken($color-navy, 3);
@@ -1317,13 +1258,14 @@ $button-transition: all #{$button-speed} cubic-bezier(0.31, -0.105, 0.43, 1.4);
   footer {
     display: flex;
     flex-wrap: wrap;
-    flex-direction: column;
-    text-align: center;
-    // align-items: center;
 
-    @media (min-width: 640px) {
-      flex-direction: row;
-      text-align: left;
+    @media (max-width: 640px) {
+      flex-direction: column;
+      text-align: center;
+
+      h3 {
+        font-size: 1.5em;
+      }
     }
 
     ul {
@@ -1358,8 +1300,6 @@ $button-transition: all #{$button-speed} cubic-bezier(0.31, -0.105, 0.43, 1.4);
   font-weight: 300;
   max-width: 960px;
   margin: auto;
-
-  // border: 1px solid #bada55;
 
   .tables {
     display: flex;
@@ -1418,18 +1358,11 @@ $button-transition: all #{$button-speed} cubic-bezier(0.31, -0.105, 0.43, 1.4);
     padding: 30px;
     width: 100%;
     flex: 1;
-    // text-align: left;
-    // flex: 1;
   }
 
   .leaderboard {
     padding: 30px;
     width: 100%;
-    // margin: auto;
-
-    table {
-      border: 2px solid $color-salmon;
-    }
 
     h3 {
       padding: 0;
@@ -1437,12 +1370,11 @@ $button-transition: all #{$button-speed} cubic-bezier(0.31, -0.105, 0.43, 1.4);
     }
 
     h5 {
-      font-size: 1em;
+      font-size: 1.2em;
     }
 
     p {
       color: $color-steel;
-      // color: white;
       font-weight: normal;
     }
 
@@ -1502,9 +1434,7 @@ $button-transition: all #{$button-speed} cubic-bezier(0.31, -0.105, 0.43, 1.4);
             transition: $button-transition;
 
             p {
-              // color: white;
-              // font-size: 1.2em;
-              // padding: 2px 0 0 15px;
+              color: white;
             }
           }
         }
@@ -1517,7 +1447,6 @@ $button-transition: all #{$button-speed} cubic-bezier(0.31, -0.105, 0.43, 1.4);
 
     .leaderboard-image img {
       border-radius: 50%;
-      // padding-right: 10px;
     }
   }
 }
@@ -1525,7 +1454,6 @@ $button-transition: all #{$button-speed} cubic-bezier(0.31, -0.105, 0.43, 1.4);
 tbody {
   border: solid 1px $color-navy;
   border-radius: 5px;
-  // box-shadow: 0 9px 15px -8px rgba(0, 0, 0, 0.49);
   padding: 15px 0;
 
   .myStats-section {
@@ -1545,7 +1473,6 @@ tbody {
   text-align: center;
 
   &.about {
-    // font-size: 1.5em;
     text-align: center;
 
     .logo {
@@ -1555,16 +1482,12 @@ tbody {
 }
 
 .content-style {
-  // display: flex;
-  // flex-direction: column;
-
   ul {
     list-style-type: none;
     padding-left: 0;
 
     li {
       padding: 10px 0;
-
     }
   }
 
@@ -1594,36 +1517,38 @@ tbody {
   .quotes {
     font-style: italic;
   }
+}
 
-  .content-style-body {
-    padding: 45px;
-    column-gap: 45px;
+.content-style-body {
+  padding: 45px;
+  column-gap: 45px;
 
-    @media (min-width: 320px) {
-      column-count: 1;
-      font-weight: 300;
-      font-size: 1.15em;
-      line-height: 1.5em;
-      // font-size: 2em;
-      // line-height: 2em;
+  p {
+    margin-top: 0;
+  }
+
+  @media (min-width: 320px) {
+    column-count: 1;
+    font-weight: 300;
+    font-size: 1.15em;
+    line-height: 1.5em;
+  }
+
+  @media (min-width: 640px) {
+    column-count: 1;
+    padding: 45px 60px;
+  }
+
+  @media (min-width: 768px) {
+    column-count: 2;
+
+    h2 &.subtitle {
+      font-size: 5em;
     }
+  }
 
-    @media (min-width: 640px) {
-      column-count: 1;
-      padding: 45px 60px;
-    }
-
-    @media (min-width: 768px) {
-      column-count: 2;
-
-      h2 &.subtitle {
-        font-size: 5em;
-      }
-    }
-
-    @media (min-width: 900px) {
-      column-count: 3;
-      line-height: 1.4em;
-    }
+  @media (min-width: 900px) {
+    column-count: 3;
+    line-height: 1.4em;
   }
 }

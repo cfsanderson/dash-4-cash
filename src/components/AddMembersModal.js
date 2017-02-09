@@ -44,7 +44,6 @@ class AddMembersModal extends Component {
         <form className='add-members-form' onSubmit={this._addMember}>
           <div className='add-members-fields'>
             <h3>Personal Info</h3>
-            {/* {this.props.id} */}
             <p>
               <input
                 type='text'
@@ -70,7 +69,7 @@ class AddMembersModal extends Component {
               name='message'
               rows='10'
               cols='30'
-              onChange={console.log('?')}
+              // onChange={console.log('?')}
             />
           </div>
           <a

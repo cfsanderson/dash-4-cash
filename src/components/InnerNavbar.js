@@ -28,14 +28,6 @@ export default class InnerNavbar extends Component {
         </div>
       )
     }
-    //  return (
-    //   <div
-    //     className='profilePic sign-in'
-    //     onClick={() => this.props.auth.signIn()}>
-    //     <h5>Sign in</h5>
-    //     <i className='icon fa fa-user' aria-hidden='true' />
-    //   </div>
-    // )
   }
 
   _signOut = (event) => {
