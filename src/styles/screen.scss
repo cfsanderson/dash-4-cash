@@ -371,6 +371,10 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   background-image: url(../images/BG-runner-01.jpg);
+
+  h4 {
+    font-size: 1.65em;
+  }
 }
 
 .donate-words {
@@ -380,6 +384,10 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   background-image: url(../images/BG-runner-03.jpg);
+
+  h4 {
+    font-size: 1.65em;
+  }
 }
 
 .dash-words {
@@ -389,6 +397,10 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   background-image: url(../images/BG-runner-03.jpg);
+
+  h4 {
+    font-size: 1.65em;
+  }
 }
 
 .track-words {
@@ -398,6 +410,14 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   background-image: url(../images/BG-runner-04.jpg);
+
+  h4 {
+    font-size: 1.65em;
+  }
+}
+
+.homePage-content {
+  display: flex;
 }
 
 .ready-words {
@@ -1522,6 +1542,7 @@ tbody {
 .content-style-body {
   padding: 45px;
   column-gap: 45px;
+  // flex: 1;
 
   p {
     margin-top: 0;

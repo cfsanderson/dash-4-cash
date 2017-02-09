@@ -20,9 +20,9 @@ export default function Help () {
                 <li className='help-question'>What is a Dash?</li>
                 <li className='help-answer'>A "dash" is the time frame that your group has chosen for the competition to take place. Dashes can be set for 1 day, 1 week, or 1 month. At the end of the dash the person with the most miles or minutes wins the dash. The sum total of all the donations made to the group goes to the winner's designated charity.</li>
               </ul>
-              <h3>How-to-dos</h3>
+              {/* <h3>How-to-dos</h3>
               <p>How do I start a group?</p>
-              <p>What </p>
+              <p>What </p> */}
             </div>
           </div>
         </div>
