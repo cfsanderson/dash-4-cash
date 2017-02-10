@@ -42,15 +42,15 @@ class Home extends Component {
             <i className='fa fa-question-circle' aria-hidden='true' />
           </div>
           <section className='whatisD4C-words'>
-            <h4><span className='logo'>Dash 4 Cash</span> helps you to run with purpose.</h4>
-            {/* <div className='homePage-content'> */}
-            <div className='content-style-body'>
-              <p>What is your motivation to get in shape? Health? Beauty? Personal achievement? Those are great reasons but all of them have the same thing in common, YOU!</p>
-              <p>What if you could achieve your fitness goals AND help others in need? What if you could also help your friends to meet their goals all while raising funds and awareness for causes that you care about? Now you can.</p>
-              <p>Dash for Cash is a social fitness platform that helps people maintain a healthy lifestyle by connecting their fitness goals to a greater purpose. So how does it work?”</p>
+            <h4><span className='logo'>Dash 4 Cash</span> helps you run with purpose.</h4>
+            <div className='homePage-content'>
+              <div className='content-style-body-home'>
+                <p>What is your motivation to get in shape? Health? Beauty? Personal achievement? Those are great reasons but all of them have the same thing in common, YOU!</p>
+                <p>What if you could achieve your fitness goals AND help others in need? What if you could also help your friends to meet their goals all while raising funds and awareness for causes that you care about? Now you can.</p>
+                <p>Dash for Cash is a social fitness platform that helps people maintain a healthy lifestyle by connecting their fitness goals to a greater purpose. So how does it work?”</p>
+              </div>
+              <div className='iphone' ><img className='iphone' src={iphoneProfile} height='400px' /></div>
             </div>
-            {/* <div><img src={iphoneProfile} height='400px' /></div>
-            </div> */}
             <div className='continue'>
               <ScrollAnimLink to='donate' className='chevron'>
                 <i className='fa fa-chevron-down faa-float animated' aria-hidden='true' />
@@ -66,10 +66,12 @@ class Home extends Component {
           </div>
           <section className='donate-words'>
             <h4>Choose a charity that you would like to support.</h4>
-            <div className='content-style-body'>
-              {/* <div><img src={iphoneDonate} height='400px' /></div> */}
-              <p>If you need help finding one, we have a list of some great charities to get you started.</p>
-              <p>At the beginning of each “Dash” you will be asked to make a donation to the group. We accept donations starting at only $2 so feel free to start small. Your giving amounts are private but the group’s total donation amount will be made available for all to see.</p>
+            <div className='homePage-content'>
+              <div className='content-style-body-home'>
+                <p>If you need help finding one, we have a list of some great charities to get you started.</p>
+                <p>At the beginning of each “Dash” you will be asked to make a donation to the group. We accept donations starting at only $2 so feel free to start small. Your giving amounts are private but the group’s total donation amount will be made available for all to see.</p>
+              </div>
+              <div className='iphone'><img src={iphoneDonate} height='400px' /></div>
             </div>
             <div className='continue'>
               <ScrollAnimLink to='dash' className='chevron'>
@@ -86,9 +88,11 @@ class Home extends Component {
           </div>
           <section className='dash-words'>
             <h4>Now go for a run!</h4>
-            <div className='content-style-body'>
-              <p>Use your Strava app to track and log your activity just like normal. When you finish and upload your workout, D4C will sync your data automatically.</p>
-              {/* <div><img src={iphoneStrava} height='400px' /></div> */}
+            <div className='homePage-content'>
+              <div className='content-style-body-home'>
+                <p>Use your Strava app to track and log your activity just like normal. When you finish and upload your workout, D4C will sync your data automatically.</p>
+                <div><img className='iphone' src={iphoneStrava} height='400px' /></div>
+              </div>
             </div>
             <div className='continue'>
               <ScrollAnimLink to='track' className='chevron'>
@@ -105,10 +109,12 @@ class Home extends Component {
           </div>
           <section className='track-words'>
             <h4>Get competitive!</h4>
-            <div className='content-style-body'>
-              {/* <div><img src={iphoneLeaderboard} height='400px' /></div> */}
-              <p>Log into <span className='logo'>D4C</span> and see personal stats as well as your group’s progress. Dashes can last for a day, a week, or a month and are based on either total distance or total moving time* during that period. The group member with the most miles for that dash wins and the group's donations go to their charity of choice.</p>
-              <p>You will feel great as you watch your fitness grow along with your dollars. Every run now has a purpose and the potential to change not only your life but also the life of someone in need.</p>
+            <div className='homePage-content'>
+              <div className='content-style-body-home'>
+                <p>Log into <span className='logo'>D4C</span> and see personal stats as well as your group’s progress. Dashes can last for a day, a week, or a month and are based on either total distance or total moving time* during that period. The group member with the most miles for that dash wins and the group's donations go to their charity of choice.</p>
+                <p>You will feel great as you watch your fitness grow along with your dollars. Every run now has a purpose and the potential to change not only your life but also the life of someone in need.</p>
+                <div><img className='iphone' src={iphoneLeaderboard} height='400px' /></div>
+              </div>
             </div>
             <div className='continue'>
               <ScrollAnimLink to='ready' className='chevron'>
