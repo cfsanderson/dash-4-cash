@@ -1,7 +1,10 @@
-# Dash 4 Cash
+# [Dash 4 Cash](http://dash-4-cash.cfsanderson.surge.sh)
+
+![](./src/images/D4C-example.gif)
+
 Dash 4 Cash is my capstone project for the Front-End Engineering program at The Iron Yard in St. Petersburg, FL. I came up with D4C as a way to merge my love of running (and running data) with the ability to support charitable organizations through group accountability and competition.
 
-D4C uses Auth0 to authenticate users and pull in their running data from Strava.com. Users can then create groups and invite friends to those groups which are centered around a day, week, or month long "Dash". At the end of the "dash" the group member that has the most miles or minutes wins the total of the group's charitable donations for their charity of choice. The social accountability and healthy competition that are created help to keep people motivated to not just run, but run with purpose. 
+D4C uses Auth0 to authenticate users and pull in their running data from Strava.com. Users can then create groups and invite friends to those groups which are centered around a day, week, or month long "Dash". At the end of the "dash" the group member that has the most miles or minutes wins the total of the group's charitable donations for their charity of choice. The social accountability and healthy competition that are created help to keep people motivated to not just run, but run with purpose.
 
 There are a few features of the app that are not fully functional yet (credit card donations, email notifications,  etc.) but it does have mechanisms for all of the data and a fully functional GraphQL database backend that is hosted by GraphCool. Depending on future interest, I'd like to complete D4C and make it a fully featured production app.
 
