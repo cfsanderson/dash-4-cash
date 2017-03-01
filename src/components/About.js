@@ -1,7 +1,6 @@
 import React from 'react'
 import InnerNavbar from './InnerNavbar.js'
 import InnerFooter from './InnerFooter'
-import ProfilePic from '../images/Caleb-copy.jpg'
 
 export default function About () {
   return (
@@ -20,7 +19,6 @@ export default function About () {
             </div>
 
             <div className='content-style-body'>
-              {/* <p>Hi, I'm Caleb <img src={ProfilePic} className='about-profile' height='100px' width='100px' /></p> */}
               <p>You need to The message is clear, you need to take care of yourself.</p>
               <p><span className='logo'>Dash 4 Cash</span> integrates
                 - Most people would either like to get in shape or stay in shape.

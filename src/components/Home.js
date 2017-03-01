@@ -8,7 +8,7 @@ import posterURL from '../images/runners-frame1.jpg'
 import videoURL from '../images/runners.mp4'
 import iphoneDonate from '../images/iphone6-donate.png'
 import iphoneLeaderboard from '../images/iphone6-leaderboard.png'
-import iphoneMyStats from '../images/iphone6-mystats.png'
+// import iphoneMyStats from '../images/iphone6-mystats.png'
 import iphoneProfile from '../images/iphone6-profile.png'
 import iphoneStrava from '../images/iphone6-strava.png'
 

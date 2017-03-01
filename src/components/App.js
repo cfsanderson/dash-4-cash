@@ -12,6 +12,8 @@ import Help from './Help'
 import Contact from './Contact'
 import About from './About'
 
+console.log(Component)
+
 @withAuth
 class App extends Component {
 
@@ -23,7 +25,7 @@ class App extends Component {
 
   unAuthed = (nextState, replace) => {
     if (this.props.auth.isSignedIn) {
-      replace({pathname: '/profile'})
+      replace({ pathname: '/profile' })
     }
   }
 

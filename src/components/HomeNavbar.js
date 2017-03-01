@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import ScrollAnim from 'rc-scroll-anim'
-// import ui from '../ui'
 
 export default class HomeNavbar extends Component {
 
@@ -17,16 +16,6 @@ export default class HomeNavbar extends Component {
   toggle () {
     this.setState({ visible: !this.state.visible })
   }
-
-  // _dismissBg = (event) => {
-  //   if (event.target === event.currentTarget) {
-  //     ui.dismissMenu()
-  //   }
-  // }
-  //
-  // _dismiss = () => {
-  //   ui.dismissMenu()
-  // }
 
   render () {
     const ScrollAnimLink = ScrollAnim.Link
