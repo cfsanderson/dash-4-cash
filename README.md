@@ -16,7 +16,7 @@ I'd also like to thank my instructor, Jason Perry and fellow Iron Yard students 
 
 
 ## TODO / Task List
- 
+
 ### General
 - [x] page automatically scrolls to the top of a page when changing pages
 - [ ] close navbar with click anywhere OUTSIDE the nav.
