@@ -7,3 +7,6 @@ public
 # misc
 .DS_Store
 npm-debug.log
+
+# text editor prefs
+.vscode/
