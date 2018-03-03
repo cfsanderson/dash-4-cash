@@ -15,23 +15,23 @@ The main technologies used in D4C are React, MobX, and GraphQL with the other us
 I'd also like to thank my instructor, Jason Perry and fellow Iron Yard students for all their help along the way. I hope you like Dash 4 Cash and if you have any suggestions please feel free to contact me here on GitHub or at my website [CalebSanderson.com](calebsanderson.com)
 
 
-##TODO / Task List
+## TODO / Task List
 
-###General
+### General
 - [x] page automatically scrolls to the top of a page when changing pages
 - [ ] close navbar with click anywhere OUTSIDE the nav.
 - [ ] add payment collection possibly using Tilt?
 - [ ] add email client for invitations and win/loss notifications.
 - [ ] switch to horizontal navbar instead of hamburger on desktop view (hamburger on mobile only)
 
-###Home Page
+### Home Page
 - [x] after authentication with Strava, direct users to Profile page.
 
-####Home Page Stretch Goals...
+#### Home Page Stretch Goals...
 - [ ] add progress indicators (dots?)
 - [ ] Parallax effect on main content?
 
-###Profile Pages
+### Profile Pages
 - [x] style for displaying MyStats
   - [x] separate/distinguish the info groups
   - [x] style "today" stats bigger/better
@@ -40,7 +40,7 @@ I'd also like to thank my instructor, Jason Perry and fellow Iron Yard students 
   - [x] profile page (showing my TOTAL donations & my group's TOTAL donations)
   - [x] group page (showing my total donations TO THAT GROUP and the TOTAL DONATIONS OF THAT GROUP - sorry for shouting)
 
-###My Groups Pages
+### My Groups Pages
 - [x] # of current members displayed in each segment
 - [x] Add members button
 - [x] style input field to create new Groups
@@ -48,38 +48,38 @@ I'd also like to thank my instructor, Jason Perry and fellow Iron Yard students 
 - [ ] better instruction text for how to start a new group.
 - [ ] style group links
 
-###Individual Group Pages
+### Individual Group Pages
 - [x] basic style for leaderboard and make as a component
 - [x] Group name in header
 - [x] add Members button.
 - [x] profile pics in leaderboard, if no pic then display "fa-user-o"
 
-###Add Members modal
+### Add Members modal
 - [ ] better text
 
-###Donate modal
+### Donate modal
 - [x] populate "Choose a Group" drop-down selector with groups that the user is in
 - [x] Styling for the group drop-down selector (not showing up on iPad or mobile)
 
-###CreateNewGroup modal
+### CreateNewGroup modal
 - [x] empty form after creating a group
 - [x] prevent yellow active glow
 - [ ] option to delete a group?
 
-###InnerFooter
+### InnerFooter
 - [x] style similar to main footer
 - [x] stick to bottom of page
 
-###About Pages
+### About Pages
 - [ ] more compelling content text "start with why"
 - [x] basic styling
   - [x] 2 column chunks on screens wider than 640, 3 columns on full desktop.
 
-###Contact
+### Contact
 - [ ] better content text
 - [ ] basic email form and social media links?
 
-###Help
+### Help
 - [ ] better content text
 - [ ] breadcrumbs for
   - [ ] create a group
